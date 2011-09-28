@@ -1351,10 +1351,24 @@ The microtubule and impeller are in direct contact with the fluid, so any force 
 
 [*** force diagram ***]
 
-The internal force on the microtubule can come from a variety of sources (tension, stiffness, physical pinning, etc) external to the fluid behavior. 
+The internal force on the microtubule can come from a variety of sources (tension, stiffness, physical pinning, etc) external to the fluid behavior. The force on the impeller is entirely due to the connection to the microtubule through its local kinesin motor. Newton's third law requires that this force have a coresponding oposite acting on the microtubule, which is then also translated into the fluid. 
+These equal and oposite forces are both sources for the Oseen tensor. Since we are interested in long range bulk effects through the Oseen tensor, these two forces will form a higher order multipole in $\frac{\bf a}{\br}. In fact, due to the cylindric symetry, it will form a quadrapole source and thus the forces due to the kinesin will fall off extremely rapidly and will not contribute to the long range fluid motion.
+[*** suppliment this last bit with some badass math showing it to be true ***]
 
-Because the relative motion between the microtubule and the impeller layer is known, only the motion of the fluid at the impeller interface is needed to determine the motion of the system. 
-These forces are used as the source terms with the Oseen tensor to calculate the fluid velocity field which determines the motion of the entire system.
+The kinesin walk speed will, however, allow the microtube and impeller to move relative to each other in a well described manner. Because the relative motion between the microtubule and the impeller layer is known, only the motion of the fluid at the impeller interface is needed to determine the motion of the system. 
+As we have shown, the forces do to the kinesin motors directly do not contribute to the long range fluid motion, and the only remaining forces are those from microtubule backbone.
+This leads us to a method for determining the dynamics of the system. The Oseen tensor should be integrated over the force densities $f_{int}$along the backbone of the microtubule, ignoring the contribution from the impeller directly. 
+\begin{equation}
+\label{eq:fluidvelocity}
+\bf u(\bf r ) = \int_{backbone} \bf f_{int}(\bf r^\prime \cdot \bf J (\bf r - \bf r^\prime) d\bf r^\prime
+\end{equation}
+This will give us the large scale fluid motion, which will couple to the impellers. To get the velocity of the backbone itself, we simply subtract the kinesin walk velocity tangent to the microtubule backbone.
+\begin{equation}
+\label{eq:backbonevelocity}
+\bf u_{back}(\bf r ) = \bf u(\bf r ) - \bf v_k \frac{\partial \br}{\partial s}
+\end{equation}
+This sounds crazy, but the velocity shift will eventualy cause a compression of the backbone resulting in a net force along the microtubule that will be propagated outward as a forward fluid velocity.[***probably cut that part ***]
+
 
 \section{Numeric Implimentation of the Model}
 
