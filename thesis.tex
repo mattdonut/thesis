@@ -1318,17 +1318,17 @@ Having studied the dynamics of single polymer dynamics in an externally imposed 
 
 \section{Introducing the Oseen Tensor}
 Since we are in a low Reynolds number regime, the motion of the fluid is described by the simplified Stokes equations:
-\begin{align}
+\begin{equation}
 \label{eq:stokeseqns}
 \nabla p &= \mu \nabla^2 \bf u + \bf f \\
 \nabla \cdot \bf u &= 0
-\end{align}
+\end{equation}
 The linearity of the Stokes equations allows for solutions to be obtained via a Green's Function, such that for a continuous force density $\bf f(\bf r)$,
-\begin{align}
+\begin{equation}
 \label{eq:fluidgreensfunc}
 \bf u(\bf r ) &= \int \bf f(\bf r^\prime \cdot \bf J (\bf r - \bf r^\prime) d\bf r^\prime \\
 p(\bf r) &= \frac{\bf f(\bf r^\prime) \cdot (\br - \br^\prime)}{4 \pi | \br - \br^\prime|^3} d\br^prime
-\end{align}
+\end{equation}
 
 Where 
 
