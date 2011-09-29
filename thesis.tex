@@ -1347,11 +1347,42 @@ The impellers form a cylindrical sheath around the microtubule, dividing the flu
 
 [*** diagram ***]
 
-The microtubule and impeller are in direct contact with the fluid, so any force exerted on the objects will be also transmitted to the fluid locally. These forces form the force density used in the Oseen tensor to determine the fluid velocity in all of space, which will also determine the motion of the microtube impeller system.
+The microtubule and impellers are in direct contact with the fluid, so any force exerted on the objects will be also transmitted to the fluid locally. These forces form the force density used in the Oseen tensor to determine the fluid velocity in all of space, which will also determine the motion of the microtube impeller system.
 
-[*** force diagram ***]
+[*** force diagrams ***]
 
-The internal force on the microtubule can come from a variety of sources (tension, stiffness, physical pinning, etc) external to the fluid behavior. The force on the impeller is entirely due to the connection to the microtubule through its local kinesin motor. Newton's third law requires that this force have a coresponding oposite acting on the microtubule, which is then also translated into the fluid. 
+There are three primary generators of force; backbone stiffness, a gradient in backbone tension, and the kinesin motors. The first two force densities can be computed entirely from the microtubule configuration, and these values can then be used as inputs to the Oseen tensor.
+The force due to the kinesin coupling and walking is much harder to work out, however, we will show that it has negligeble effect on the long range fluid motion.
+
+%thus begins the math to show its a quadrapole
+Let us investigate the contribution to the fluid velocity field from a small segment of the microtubule impeller system. For convieniance, place the segment at the origin, and calculate the fluid motion at position $\br$.
+[*** tube/impeller cross section diagram ***]
+We can now simply write down the fluid response due to this force density.
+\begin{equation}
+\label{eq:forcedensitystart}
+\bf u(\br) = \int \frac{\bf f}{|\br + \bf a|} + \frac{(\br+\bf a) ((\br + \bf a) \cdot \bf f)}{|\br + \bf a|^3} d\bf a - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
+\end{equation}
+Because the kinesin binds the microtubule and the impeller together, Newton's Third Law dictates that the linear force density along the backbone needs to be equal and oposite for the impeller microtubule pair. This gives us that integrating $f$ around the full circle must give the same value as $F$.
+Due to the small size of the kinesin molecule, for long range interaction on the order of the length of the microtubule, or even characteristic curvatures of the microtubule, we should have $a << r$. We can pull out a factor of $r$ to obtain these expressions in terms of a unitless small parameter $\ep = a/r$.
+\label{eq:forcedensitycircleonly}
+\int \frac{\bf f}{|\br + \bf a|} + \frac{\br (\br \cdot \bf f)}{|\br + \bf a|^3} d\bf a
+\end{equation}
+%bad form?
+Becomes
+\label{eq:forcedensityepsilon}
+\int \frac{\bf f}{r|\hat{r} + \epsilon \hat{a}|} + \frac{(\hat{r} + \epsilon \hat{a}) ((\hat{r} + \epsilon \hat{a}) \cdot \bf f)}{r|(\hat{r} + \epsilon \hat{a})|^3} d\bf \hat{a}
+\end{equation}
+Apart from a global factor of $1/r$, only the directions of \br and \bf a remain, with all of the distance scaling being absorbed into the small parameter $\epsilon$. We can now expand the expression to find what the leading order contribution to the fluid velocity field will be.
+The zeroeth order term reduces simply to
+\label{eq:forcedensityzeroth}
+\int \frac{\bf f}{r|\hat{r}|} + \frac{(\hat{r}) ((\hat{r}) \cdot \bf f)}{r|(\hat{r})|^3} d\bf \hat{a} - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
+\end{equation}
+Which will vanish due to the requirement of Newton's Third Law.
+The first order term in $\epsilon$ requires a bit more work, but is still a straight forward derivitive. We first need to expand the magnitudes in terms of a square root, and then proceed as normal.
+\label{eq:forcedensityfirst}
+\frac{1}{r} \int  \bf f[(\hat{r} + \epsilon\hat{a})^2]^{-1/2} d\bf \hat{a} %%% Unfinished! %%%
+\end{equation}
+
 These equal and oposite forces are both sources for the Oseen tensor. Since we are interested in long range bulk effects through the Oseen tensor, these two forces will form a higher order multipole in $\frac{\bf a}{\br}. In fact, due to the cylindric symetry, it will form a quadrapole source and thus the forces due to the kinesin will fall off extremely rapidly and will not contribute to the long range fluid motion.
 [*** suppliment this last bit with some badass math showing it to be true ***]
 
