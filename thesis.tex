@@ -1360,10 +1360,10 @@ Let us investigate the contribution to the fluid velocity field from a small seg
 We can now simply write down the fluid response due to this force density.
 \begin{equation}
 \label{eq:forcedensitystart}
-\bf u(\br) = \int \frac{\bf f}{|\br + \bf a|} + \frac{(\br+\bf a) ((\br + \bf a) \cdot \bf f)}{|\br + \bf a|^3} d\bf a - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
+\delta\bf u(\br) = \int \frac{\bf f}{|\br + \bf a|} + \frac{(\br+\bf a) ((\br + \bf a) \cdot \bf f)}{|\br + \bf a|^3} d\bf a - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
 \end{equation}
 Because the kinesin binds the microtubule and the impeller together, Newton's Third Law dictates that the linear force density along the backbone needs to be equal and oposite for the impeller microtubule pair. This gives us that integrating $f$ around the full circle must give the same value as $F$.
-Due to the small size of the kinesin molecule, for long range interaction on the order of the length of the microtubule, or even characteristic curvatures of the microtubule, we should have $a << r$. We can pull out a factor of $r$ to obtain these expressions in terms of a unitless small parameter $\ep = a/r$.
+Due to the small size of the kinesin molecule, for long range interaction on the order of the length of the microtubule, or even characteristic curvatures of the microtubule, we should have $a << r$, where $a$ and $r$ are the magnatudes of $\bf a$ and $\br$ respectively. We can pull out a factor of $r$ to obtain these expressions in terms of a unitless small parameter $\ep = a/r$.
 \label{eq:forcedensitycircleonly}
 \int \frac{\bf f}{|\br + \bf a|} + \frac{\br (\br \cdot \bf f)}{|\br + \bf a|^3} d\bf a
 \end{equation}
@@ -1375,18 +1375,33 @@ Becomes
 Apart from a global factor of $1/r$, only the directions of \br and \bf a remain, with all of the distance scaling being absorbed into the small parameter $\epsilon$. We can now expand the expression to find what the leading order contribution to the fluid velocity field will be.
 The zeroeth order term reduces simply to
 \label{eq:forcedensityzeroth}
-\int \frac{\bf f}{r|\hat{r}|} + \frac{(\hat{r}) ((\hat{r}) \cdot \bf f)}{r|(\hat{r})|^3} d\bf \hat{a} - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
+\delta\bf u_0(\br) = \int \frac{\bf f}{r|\hat{r}|} + \frac{(\hat{r}) ((\hat{r}) \cdot \bf f)}{r|(\hat{r})|^3} d\bf \hat{a} - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
 \end{equation}
 Which will vanish due to the requirement of Newton's Third Law.
 The first order term in $\epsilon$ requires a bit more work, but is still a straight forward derivitive. We first need to expand the magnitudes in terms of a square root, and then proceed as normal.
 \label{eq:forcedensityfirst}
-\frac{1}{r} \int  \bf f[(\hat{r} + \epsilon\hat{a})^2]^{-1/2} d\bf \hat{a} %%% Unfinished! %%%
+\delta \bf u(\br) = \frac{1}{r} \int  \bf f[(\hat{r} + \epsilon\hat{a})^2]^{-1/2} d\bf \hat{a} +(\hat{r} + \epsilon\hat{a})(\hat{r} + \epsilon\hat{a})\cdot \bf f [(\hat{r} + \epsilon\hat{a})^2]^{-3/2} d\bf a - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
 \end{equation}
+\begin{equation}
+\label{eq:forcedensityfirstderiv}
+\frac{d}{d\epsilon} \delta \bf u(\br) = \frac{1}{r} \int 
+-\bf f [(\hat{r} + \epsilon\hat{a})^2]^{-3/2} (\hat{r} + \epsilon\hat{a})\cdot \hat{a}
++\hat{a}(\hat{r} + \epsilon\hat{a})\cdot \bf f [(\hat{r} + \epsilon\hat{a})^2]^{-3/2}
++ (\hat{r} + \epsilon\hat{a})(\hat{a}\cdot\bf f)[(\hat{r} + \epsilon\hat{a})^2]^{-3/2}
+- 3 ((\hat{r} + \epsilon\hat{a})(\hat{r} + \epsilon\hat{a})\cdot\bf f [(\hat{r} + \epsilon\hat{a})^2]^{-5/2} (\hat{r} + \epsilon\hat{a})\cdot \hat{a}
+\end{equation}
+\begin{equation}
+\label{eq:forcedensitylimit}
+\lim_{\epsilon\to 0} \frac{d}{d\epsilon} \delta \bf u(\br) = \frac{1}{r} \int 
+-\bf f [(\hat{r})^2]^{-3/2} (\hat{r})\cdot \hat{a}
++\hat{a}(\hat{r})\cdot \bf f [(\hat{r})^2]^{-3/2}
++ (\hat{r})(\hat{a}\cdot\bf f)[(\hat{r})^2]^{-3/2}
+- 3 ((\hat{r})(\hat{r})\cdot\bf f [(\hat{r})^2]^{-5/2} (\hat{r})\cdot \hat{a}
+\end{equation}
+As we can see, each term in the integrand is an odd function of $\hat{a}$, and the integral is around the whole circle, so this vanishes. This means that the leading order term from the kinesin coupling force density is going to be surpressed by two factors of the small parameter $\epsilon$ relative to the other force densities in the system. As such, for long range considerations we can safely ignore the forces caused directly by the kinesin molecule itself do to it's small size. That is not to say that the kinesin does not effect the system at all.
 
-These equal and oposite forces are both sources for the Oseen tensor. Since we are interested in long range bulk effects through the Oseen tensor, these two forces will form a higher order multipole in $\frac{\bf a}{\br}. In fact, due to the cylindric symetry, it will form a quadrapole source and thus the forces due to the kinesin will fall off extremely rapidly and will not contribute to the long range fluid motion.
-[*** suppliment this last bit with some badass math showing it to be true ***]
-
-The kinesin walk speed will, however, allow the microtube and impeller to move relative to each other in a well described manner. Because the relative motion between the microtubule and the impeller layer is known, only the motion of the fluid at the impeller interface is needed to determine the motion of the system. 
+While the long range fluid motion will not be strongly influenced by the kinesin motor forces, these short range effects will allow the impellers and microtubule to move relative to each other. While the details of the local fluid motion are complex, the bulk effect is known; the kinesin walk along the microtubule at a steady rate, creating a fixed relationship between the impeller velocity and the microtubule velocity. 
+Because the relative motion between the microtubule and the impeller layer is known, only the motion of the fluid at the impeller interface is needed to determine the motion of the system. 
 As we have shown, the forces do to the kinesin motors directly do not contribute to the long range fluid motion, and the only remaining forces are those from microtubule backbone.
 This leads us to a method for determining the dynamics of the system. The Oseen tensor should be integrated over the force densities $f_{int}$along the backbone of the microtubule, ignoring the contribution from the impeller directly. 
 \begin{equation}
@@ -1402,7 +1417,10 @@ This sounds crazy, but the velocity shift will eventualy cause a compression of 
 
 
 \section{Numeric Implimentation of the Model}
-
+The complexity of the interaction makes analytic solutions difficult, however, the dependance of the fluid flow only on the current state of the microtubule makes it suitable for direct simulation. A straightforward integration of the velocity field will yield the complete system dynamics.
+\subsection{The discrete modele}
+As with the single microtubule case, the microtubules are modeled as a chain of discrete points. Unfortunatly, the use of the long range fluid interactions prevents us from using pure rigid links, so this model uses a backbone comprised of stiff spring links. The spring constant is chosen to be as strong as possible for the given timestep.
+In addition to the springforce tension term, the backbone stiffness is modeled as a discrete fourth derivitive along the spine, with an adjustable scaling parameter.
 
 
 
