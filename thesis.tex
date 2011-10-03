@@ -19,8 +19,11 @@
 \title{Polymer Dynamics Across many regimes}
 
 \author{Matthew Brunner}
-\author{J.M. Deutsch}
 \affiliation{Department of Physics, UCSC}
+
+\section{Introduction}
+Polymer dynamics is a new and exciting field with applications across many different disciplines. While the bulk statistical properties have been studied for quite some time, improvements in microscopic techniques have allowed investigations into individual and dynamical properties.
+
 %My Vacuum polymer paper
 
 \section{Introduction}
@@ -300,14 +303,6 @@ does not appear to have a nonzero asymptote, and is likely to be a low
 power law or logarithmic in nature.
 
 
-%For my own reference:
-%\begin{eqnarray}
-%\rho(x,x^\prime;U) = \int e^{-\frac{1}{\hbar}\int_0^U[\frac{m\dot{x}(u)^2}{2} + V(x(u))]du}dx(u) \\
-%U = \beta\hbar \\
-%\rho(x,x^\prime;\beta) = \sqrt{\frac{m\omega}{2\pi\hbar\sinh(\hbar\omega/kT)}}e^{ \frac{-m\omega}{2\hbar\sinh(\hbar\omega/kT)}[(x^2+x^{\prime2})\cosh(\frac{\hbar\omega}{kT}) - 2xx^{\prime2}] }
-%\end{eqnarray}
-
-
 \section{Conclusions}
 
 In this paper, we considered the equilibrium properties of an ideal linear chain in a vacuum
@@ -336,15 +331,10 @@ how statistics in the $x-y$ plane and $z$ direction are coupled to cause
 this effect.
 
 
-% If you have acknowledgments, this puts in the proper section head.
-%\begin{acknowledgments}
-% put your acknowledgments here.
-%\end{acknowledgments}
-
-
-
-
 %Mixing Paper
+\section{Transition to Biopolymers}
+While discovering the properties of a polymer by itself is extremely useful as a foundation for understanding their behavior, polymers are often found in complex systems. Bioploymers are are a huge class of polymers engaged in complex behaviors, and these behaviors are crucial to biological processes that allow living organisms to operate.
+
 
 \section{Introduction}
 
@@ -1302,11 +1292,11 @@ flows giving rise to micro-mixing have been studied in related systems~\cite{Gol
 understand the large scale cytoplasmic motion for Drosophila oocytes.
 
 
-\section{Acknowledgements}
+%\section{Acknowledgements}
 
-The authors would like to thank Ian Carbone, and Bill Sullivan for useful discussions.
-This material is based upon work supported by National Institutes of Health GM046295 (to W.M.S.), and National Science Foundation
-CCLI Grant DUE-0942207 (to J.M.D.).
+%The authors would like to thank Ian Carbone, and Bill Sullivan for useful discussions.
+%5This material is based upon work supported by National Institutes of Health GM046295 (to W.M.S.), and National Science Foundation
+%CCLI Grant DUE-0942207 (to J.M.D.).
 
 
 
@@ -1319,19 +1309,20 @@ Having studied the dynamics of single polymer dynamics in an externally imposed 
 \section{Introducing the Oseen Tensor}
 Since we are in a low Reynolds number regime, the motion of the fluid is described by the simplified Stokes equations:
 \begin{equation}
-\label{eq:stokeseqns}
-\nabla p &= \mu \nabla^2 \bf u + \bf f \\
-\nabla \cdot \bf u &= 0
+\begin{array}{l}
+\nabla p = \mu \nabla^2 \bf u + \bf f \\
+\nabla \cdot \bf u = 0
+\end{array}
 \end{equation}
 The linearity of the Stokes equations allows for solutions to be obtained via a Green's Function, such that for a continuous force density $\bf f(\bf r)$,
 \begin{equation}
 \label{eq:fluidgreensfunc}
-\bf u(\bf r ) &= \int \bf f(\bf r^\prime \cdot \bf J (\bf r - \bf r^\prime) d\bf r^\prime \\
-p(\bf r) &= \frac{\bf f(\bf r^\prime) \cdot (\br - \br^\prime)}{4 \pi | \br - \br^\prime|^3} d\br^prime
+\begin{array}{rcl}
+\bf u(\bf r ) &=& \int \bf f(\bf r^\prime \cdot \bf J (\bf r - \bf r^\prime) d\bf r^\prime \\
+p(\bf r) &=& \frac{\bf f(\bf r^\prime) \cdot (\br - \br^\prime)}{4 \pi | \br - \br^\prime|^3} d\br^\prime
+\end{array}
 \end{equation}
-
 Where 
-
 \begin{equation}
 \label{eq:oseentensordef}
 J(\br) = \frac{1}{8\pi\mu} ( \frac{I}{|\br|} + \frac{\br\br^T}{|\br^3|})
@@ -1349,55 +1340,87 @@ The impellers form a cylindrical sheath around the microtubule, dividing the flu
 
 The microtubule and impellers are in direct contact with the fluid, so any force exerted on the objects will be also transmitted to the fluid locally. These forces form the force density used in the Oseen tensor to determine the fluid velocity in all of space, which will also determine the motion of the microtube impeller system.
 
-[*** force diagrams ***]
+%%%force diagrams
+
+\begin{figure}[htp]
+\begin{center}
+(a)
+\includegraphics[width=0.45\hsize]{gradforces.png}
+(b)
+\includegraphics[width=0.45\hsize]{stiffforces2.png}
+(c)
+\includegraphics[width=0.45\hsize]{ktforces.png}
+\caption{ 
+(a)
+A gradient in tension creates a force density along the axis of the microtubule backbone. This is determined by the microtubule configuration.
+(b)
+The microtubule curvature creates a force density that acts on the fluid. THis is also determined by the microtubule configuration.
+(c)
+The kinesin motors act on both the microtubule and the impellers, and both of these force densities are transmitted to the fluid. These force densities arise due to a local coupling. and therefore are related by Newton's third law.
+}
+\label{fig:RvsL}
+\end{center}
+\end{figure}
+
 
 There are three primary generators of force; backbone stiffness, a gradient in backbone tension, and the kinesin motors. The first two force densities can be computed entirely from the microtubule configuration, and these values can then be used as inputs to the Oseen tensor.
 The force due to the kinesin coupling and walking is much harder to work out, however, we will show that it has negligeble effect on the long range fluid motion.
 
 %thus begins the math to show its a quadrapole
-Let us investigate the contribution to the fluid velocity field from a small segment of the microtubule impeller system. For convieniance, place the segment at the origin, and calculate the fluid motion at position $\br$.
+Let us investigate the contribution to the fluid velocity field from a small segment of the microtubule impeller system. For convieniance, place the segment at the origin, and calculate the fluid motion at position $\br$. The kinesin motors apply force between the microtubule and impellers in two ways. They walk along the axis of the microtubule producing the significant force along the axis, and they also hold the impellers onto the microtubule, creating a rigid link force radialy. A key feature of the nature of these forces is symetry of inversion through the center axis.
 [*** tube/impeller cross section diagram ***]
 We can now simply write down the fluid response due to this force density.
 \begin{equation}
 \label{eq:forcedensitystart}
-\delta\bf u(\br) = \int \frac{\bf f}{|\br + \bf a|} + \frac{(\br+\bf a) ((\br + \bf a) \cdot \bf f)}{|\br + \bf a|^3} d\bf a - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
+\delta\bf u(\br) = \int \frac{\bf f}{|\br + \bf a|} + \frac{(\br+\bf a) ((\br + \bf a) \cdot \bf f)}{|\br + \bf a|^3} d\hat{a} - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
 \end{equation}
+Where $\delta \bf u(\br)$ is the contribution to the fluid velocity at position $\br$ from a differential segment of the microtubule impeller system, $a$ is the vector pointing from the center of the microtubule to a point in the impeller sheath, and $f$ and $F$ are the force densities produced by the kinesin interaction. Note that $F$ is a linear force density and $f$ is a force per unit area, due to the radial nature of the coupling.
 Because the kinesin binds the microtubule and the impeller together, Newton's Third Law dictates that the linear force density along the backbone needs to be equal and oposite for the impeller microtubule pair. This gives us that integrating $f$ around the full circle must give the same value as $F$.
-Due to the small size of the kinesin molecule, for long range interaction on the order of the length of the microtubule, or even characteristic curvatures of the microtubule, we should have $a << r$, where $a$ and $r$ are the magnatudes of $\bf a$ and $\br$ respectively. We can pull out a factor of $r$ to obtain these expressions in terms of a unitless small parameter $\ep = a/r$.
+Due to the small size of the kinesin molecule, for long range interaction on the order of the length of the microtubule, or even characteristic curvatures of the microtubule, we should have $a << r$, where $a$ and $r$ are the magnitudes of $\bf a$ and $\br$ respectively. We can pull out a factor of $r$ to obtain these expressions in terms of a unit-less small parameter $\epsilon = a/r$.
+\begin{equation}
 \label{eq:forcedensitycircleonly}
 \int \frac{\bf f}{|\br + \bf a|} + \frac{\br (\br \cdot \bf f)}{|\br + \bf a|^3} d\bf a
 \end{equation}
 %bad form?
 Becomes
+\begin{equation}
 \label{eq:forcedensityepsilon}
 \int \frac{\bf f}{r|\hat{r} + \epsilon \hat{a}|} + \frac{(\hat{r} + \epsilon \hat{a}) ((\hat{r} + \epsilon \hat{a}) \cdot \bf f)}{r|(\hat{r} + \epsilon \hat{a})|^3} d\bf \hat{a}
 \end{equation}
-Apart from a global factor of $1/r$, only the directions of \br and \bf a remain, with all of the distance scaling being absorbed into the small parameter $\epsilon$. We can now expand the expression to find what the leading order contribution to the fluid velocity field will be.
+Apart from a global factor of $1/r$, only the directions of $\br$ and $\bf a$ remain, with all of the distance scaling being absorbed into the small parameter $\epsilon$. We can now expand the expression to find what the leading order contribution to the fluid velocity field will be.
 The zeroeth order term reduces simply to
+\begin{equation}
 \label{eq:forcedensityzeroth}
 \delta\bf u_0(\br) = \int \frac{\bf f}{r|\hat{r}|} + \frac{(\hat{r}) ((\hat{r}) \cdot \bf f)}{r|(\hat{r})|^3} d\bf \hat{a} - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
 \end{equation}
 Which will vanish due to the requirement of Newton's Third Law.
 The first order term in $\epsilon$ requires a bit more work, but is still a straight forward derivitive. We first need to expand the magnitudes in terms of a square root, and then proceed as normal.
+\begin{equation}
 \label{eq:forcedensityfirst}
 \delta \bf u(\br) = \frac{1}{r} \int  \bf f[(\hat{r} + \epsilon\hat{a})^2]^{-1/2} d\bf \hat{a} +(\hat{r} + \epsilon\hat{a})(\hat{r} + \epsilon\hat{a})\cdot \bf f [(\hat{r} + \epsilon\hat{a})^2]^{-3/2} d\bf a - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
 \end{equation}
+
 \begin{equation}
+\begin{array}{rcl}
 \label{eq:forcedensityfirstderiv}
-\frac{d}{d\epsilon} \delta \bf u(\br) = \frac{1}{r} \int 
--\bf f [(\hat{r} + \epsilon\hat{a})^2]^{-3/2} (\hat{r} + \epsilon\hat{a})\cdot \hat{a}
-+\hat{a}(\hat{r} + \epsilon\hat{a})\cdot \bf f [(\hat{r} + \epsilon\hat{a})^2]^{-3/2}
-+ (\hat{r} + \epsilon\hat{a})(\hat{a}\cdot\bf f)[(\hat{r} + \epsilon\hat{a})^2]^{-3/2}
-- 3 ((\hat{r} + \epsilon\hat{a})(\hat{r} + \epsilon\hat{a})\cdot\bf f [(\hat{r} + \epsilon\hat{a})^2]^{-5/2} (\hat{r} + \epsilon\hat{a})\cdot \hat{a}
+\frac{d}{d\epsilon} \delta \bf u(\br) &=& \frac{1}{r} \int 
+-\bf f [(\hat{r} + \epsilon\hat{a})^2]^{-3/2} (\hat{r} + \epsilon\hat{a})\cdot \hat{a} \\
+&+&\hat{a}(\hat{r} + \epsilon\hat{a})\cdot \bf f [(\hat{r} + \epsilon\hat{a})^2]^{-3/2} \\
+&+& (\hat{r} + \epsilon\hat{a})(\hat{a}\cdot\bf f)[(\hat{r} + \epsilon\hat{a})^2]^{-3/2}\\
+&-& 3 ((\hat{r} + \epsilon\hat{a})(\hat{r} + \epsilon\hat{a})\cdot\bf f [(\hat{r} + \epsilon\hat{a})^2]^{-5/2} (\hat{r} + \epsilon\hat{a})\cdot \hat{a}
+\end{array}
 \end{equation}
 \begin{equation}
+\begin{array}{rcl}
 \label{eq:forcedensitylimit}
-\lim_{\epsilon\to 0} \frac{d}{d\epsilon} \delta \bf u(\br) = \frac{1}{r} \int 
--\bf f [(\hat{r})^2]^{-3/2} (\hat{r})\cdot \hat{a}
-+\hat{a}(\hat{r})\cdot \bf f [(\hat{r})^2]^{-3/2}
-+ (\hat{r})(\hat{a}\cdot\bf f)[(\hat{r})^2]^{-3/2}
-- 3 ((\hat{r})(\hat{r})\cdot\bf f [(\hat{r})^2]^{-5/2} (\hat{r})\cdot \hat{a}
+\lim_{\epsilon\to 0} \frac{d}{d\epsilon} \delta \bf u(\br) &=& \frac{1}{r} \int 
+-\bf f [(\hat{r})^2]^{-3/2} (\hat{r})\cdot \hat{a} \\
+&+&\hat{a}(\hat{r})\cdot \bf f [(\hat{r})^2]^{-3/2} \\
+&+& (\hat{r})(\hat{a}\cdot\bf f)[(\hat{r})^2]^{-3/2} \\
+&-& 3 ((\hat{r})(\hat{r})\cdot\bf f [(\hat{r})^2]^{-5/2} (\hat{r})\cdot \hat{a}
+\end{array}
 \end{equation}
+
 As we can see, each term in the integrand is an odd function of $\hat{a}$, and the integral is around the whole circle, so this vanishes. This means that the leading order term from the kinesin coupling force density is going to be surpressed by two factors of the small parameter $\epsilon$ relative to the other force densities in the system. As such, for long range considerations we can safely ignore the forces caused directly by the kinesin molecule itself do to it's small size. That is not to say that the kinesin does not effect the system at all.
 
 While the long range fluid motion will not be strongly influenced by the kinesin motor forces, these short range effects will allow the impellers and microtubule to move relative to each other. While the details of the local fluid motion are complex, the bulk effect is known; the kinesin walk along the microtubule at a steady rate, creating a fixed relationship between the impeller velocity and the microtubule velocity. 
@@ -1406,7 +1429,7 @@ As we have shown, the forces do to the kinesin motors directly do not contribute
 This leads us to a method for determining the dynamics of the system. The Oseen tensor should be integrated over the force densities $f_{int}$along the backbone of the microtubule, ignoring the contribution from the impeller directly. 
 \begin{equation}
 \label{eq:fluidvelocity}
-\bf u(\bf r ) = \int_{backbone} \bf f_{int}(\bf r^\prime \cdot \bf J (\bf r - \bf r^\prime) d\bf r^\prime
+\bf u(\bf r ) = \int_{backbone} \bf f_{int}(\bf r^\prime) \cdot \bf J (\bf r - \bf r^\prime) d\bf r^\prime
 \end{equation}
 This will give us the large scale fluid motion, which will couple to the impellers. To get the velocity of the backbone itself, we simply subtract the kinesin walk velocity tangent to the microtubule backbone.
 \begin{equation}
@@ -1418,12 +1441,30 @@ This sounds crazy, but the velocity shift will eventualy cause a compression of 
 
 \section{Numeric Implimentation of the Model}
 The complexity of the interaction makes analytic solutions difficult, however, the dependance of the fluid flow only on the current state of the microtubule makes it suitable for direct simulation. A straightforward integration of the velocity field will yield the complete system dynamics.
-\subsection{The discrete modele}
-As with the single microtubule case, the microtubules are modeled as a chain of discrete points. Unfortunatly, the use of the long range fluid interactions prevents us from using pure rigid links, so this model uses a backbone comprised of stiff spring links. The spring constant is chosen to be as strong as possible for the given timestep.
+\subsection{The discrete model}
+As with the single microtubule case, the microtubules are modeled as a chain of discrete points. Unfortunatly, the use of the long range fluid interactions prevents us from using pure rigid links, so this model uses a backbone comprised of stiff spring links, such that the force on each element is:
+\begin{equation}
+\label{eq:discretespring}
+\bf T(\br_i) = k_T ( |\bf d_{i-}| - l )\bf \hat{d_{i-}} + ( |\bf d_{i+}| - l )\bf \hat{d_{i+}}
+\end{equation}
+With 
+\begin{eqnarray*}
+\bf d_{i-} &= \br_{i-1} - \br_i \\
+\bf d_{i+} &= \br_{i+1} - \br_i
+\end{eqnarray*}
+
+Where $\br_i$ are the positions of the individual microtubule segments and $k_T$ and $l$  are adjustable parameters, with $k_T$ being the spring constant and $l$ being the rest length of the segment.  The spring constant is chosen to be as strong as possible for the given timestep, in order to match as closely as possible to and incompressable chain.
 In addition to the springforce tension term, the backbone stiffness is modeled as a discrete fourth derivitive along the spine, with an adjustable scaling parameter.
 
 
+\begin{equation}
+\label{eq:discretestiff}
+%%%note: fix this!!
+\bf C(\br_i) =  - k_C[ (r_{i+2} - r_i) - (r_i - r_{i-2})]
+\end{equation}
 
+In addition to the bulk forces, there are also boundry cases, as well as pinning the endpoints of the microtubule. The pinning is accomplished simply by including a spring force, similar to the tension spring force, that is centered to a specific fixed point in space.
+All of these forces are directly transmitted to the fluid, and thus must be included in the Oseen tensor calculation.
 
 % Create the reference section using BibTeX:
 
