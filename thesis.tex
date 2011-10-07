@@ -30,9 +30,23 @@ Polymer dynamics is a new and exciting field with applications across many diffe
 
 Polymer chains in a vacuum have been shown to have great importance
 in many experimental situations, most often in application to mass
-spectroscopy techniques that utilize the desorption of proteins into a vacuum. The
-ability to desorb very large molecules without compromising their
-integrity has many uses in biology~\cite{Hillenkamp}. Understanding
+spectroscopy techniques that utilize Matrix-assisted laser desorption/ionization(MALDI). 
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\hsize]{maldi}
+\caption{A MALDI TOF mass spectrometer.}
+\label{fig:rgplot}
+\end{center}
+\end{figure}
+The MALDI technique involves embedding the large polymers of interest into a matrix of much smaller molecules, commonly acids to promote ionization durning the vaporization process. 
+Once the analate and matrix are co-crystalized, they are placed into a vacuum and bombarded with a laser, usually in the UV. 
+The matrix is chosen to be absorptive in the range of the excitation laser, and produces a hot plume that carries the polymer of interest into the vacuum undamaged.
+Once in the vacuum, the polymer can be manipulated via electric fields or optical trapping as needed.
+
+The ability to desorb very large molecules without compromising their
+integrity has many uses in biology~\cite{Hillenkamp}. 
+
+Understanding
 the statistical mechanics of such systems may help to improve current
 spectroscopic techniques by providing information about other quantities,
 aside from mass, that may be usefully measured. Aside from other
@@ -336,6 +350,26 @@ this effect.
 While discovering the properties of a polymer by itself is extremely useful as a foundation for understanding their behavior, polymers are often found in complex systems. Bioploymers are are a huge class of polymers engaged in complex behaviors, and these behaviors are crucial to biological processes that allow living organisms to operate.
 
 
+\section{Cytoplasmic Streaming}
+One of the biological processes in which the properties of polymers plays a very important role is cytoplasmic streaming.
+Cytoplasmic streaming is a process by which the contents of a single cell are rapidly moved on a scale that covers the entire cell. While most often seen in plants, whose cell walls restrict outside purturbations of the interior fluid, the effect is seen in a wide variety of cells. 
+The biological funtions that this streaming accomplishes vary from case to case, whether it be for delivery of materials for focused grouth or a more chaotic stirring to distribute organelles.
+The driving forces behind this mass motion of cytoplasm are beleived to be motor proteins carrying cargo along the cytoskelton, causing hydrodynamic drag to extend to large scale fluid motion.
+The exact components of the streaming mechanisam are still under investigation, and depend on the system in question.
+
+\section{Drosophila Oocyte}
+The specific instance of this streaming we studied is the fast streaming present in the developement of Drosophila oocytes. This streaming happens at a specific time during the developement cycle, just before cytoplasm from nearby nurse cells is dumped asymetrically into the oocyte.
+
+[*** diagram of oocyte nurse cell arrangement***]
+
+A great deal of work has been done to determine what components are involved in this particular instance of streaming
+
+The specific timing of this streaming emphasizes the importance of not just the streaming, but also in getting the streaming to turn on and off quickly. Many experiments have been done to explore the effect of miss-timed or nonexistant streaming
+
+
+It is possible that this triggering is done via some biochemical means, but its is aslo possible that the streaming activation is done through a more physical means.
+The large scale streaming requires the correlated effort of a significaqnt fraction of the motors involved, so a small change in the local force conditions could cross a critial value and begin large scale streaming.
+
 \section{Introduction}
 
 Microtubules are flexible hollow polymers of tubulin subunits that
@@ -347,11 +381,8 @@ along the microtubules with kinesin moving toward their fast growing
 ``plus-ends" and dynein moving toward their slow growing ``minus-ends".
 Many studies have focused on motor driven transport processes that
 generate asymmetric distributions of specific cytoplasmic constituents;
-asymmetries that are essential for complex cellular functions.  In this
-letter we will analyze a surprising role for microtubules and kinesin in
-a mass transport process called cytoplasmic streaming that has evolved
-to accomplish just the opposite; efficient homogeneous mixing of the
-contents of a cell~\cite{SerbusSaxton} and see there Supplemental Movie 13~\cite{Movie13}.
+asymmetries that are essential for complex cellular functions. 
+We will analyze a surprising role for microtubules and kinesin in cytoplasmic streaming that has evolved to accomplish just the opposite; efficient homogeneous mixing of the contents of a cell~\cite{SerbusSaxton} and see there Supplemental Movie 13~\cite{Movie13}.
 
 
 Vigorous streaming is initiated during the final stages of
@@ -384,6 +415,16 @@ along dynamically changing curved paths that produce travelling
 waves~\cite{SerbusSaxton}.  
 The streaming cytoplasmic fluid moves along those paths, in patterns reminiscent
 of flowing water and seaweed.
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=0.5\hsize]{biomodel.png}
+\caption{ 
+A speculative model for fast streaming in Drosophila oocytes.
+}
+\label{fig:spheres}
+\end{center}
+\end{figure}
+
 Yolk particles in the
 cytoplasm have a speed of roughly $0.25 \mu m/s$.  The particles
 within a region stream for the most part in one direction,
@@ -1328,7 +1369,10 @@ Where
 J(\br) = \frac{1}{8\pi\mu} ( \frac{I}{|\br|} + \frac{\br\br^T}{|\br^3|})
 \end{equation}
 
-is a second rank tensor field know as the Oseen Tensor.
+is a second rank tensor field known as the Oseen Tensor.
+The Oseen tensor has had great sucess in describing how small or thin objects interact in fluid, as well as the self interaction of polymers. 
+In general the Oseen tensor has higher order corrections in $a/R$, but these begin at $(a/R)^3$ and should not play a significant role in cross polymer interactions.
+Of particular interest is its use in modeling polymers as a long chain of beads, which will lend itself well to numerical simulation.
 [***Cite some places using the tensor***]
 
 \section{Model for Hydrodynamic Interactions}
@@ -1500,7 +1544,12 @@ This was implemented as a inverse fourth power law:
 In addition to the bulk forces, there are also boundry cases, as well as pinning the endpoints of the microtubule. The pinning is accomplished simply by including a spring force, similar to the tension spring force, that is centered to a specific fixed point in space.
 All of these forces are directly transmitted to the fluid, and thus must be included in the Oseen tensor calculation. There is a difficulty when transitioning to the discrete case due to the singularity of the Oseen tensor at the origin. 
 For this reason, the effect of the forces generated on a specific segment on the fluid at the same location is more difficult to determine.
-By symetry, one would expect that any effect on the fluid should share direction with that of the force generating it, and as such we can use the fact that the contribution to the fluid motion is proportional to the force to introduce an adjustable parameter to scale this effect. Because this is occurs locally, we don't expect this to effect the long range behavior of the system as a whole. 
+%By symetry, one would expect that any effect on the fluid should share direction with that of the force generating it, and as such we can use the fact that the contribution to the fluid motion is proportional to the force to introduce an adjustable parameter to scale this effect. Because this is occurs locally, we don't expect this to effect the long range behavior of the system as a whole. 
+The standard practice in this case is to use the Oseen tensor as an interaction between elements, and to use a simple free draining drag model for the local motion. Since our model is that of a long chain of beads we simply use the drag due to a small sphere.
+\begin{equation}
+\label{eq:discretesum}
+\bf J_{ii} = \frac{1}{4\pi\mu} f_i
+\end{equation}
 Finally we see that for any point in space, the fluid velocity is given by:
 \begin{equation}
 \label{eq:discretesum}
@@ -1523,7 +1572,15 @@ The result was essentially as expected, with a solution that asymptotically appr
 [*** show a picture ***]
 
 \section{Correlation between multiple microtubules}
+A key feature found in the microtubules during fast streaming is the formation of correlated groups to enable larger scale coordinated forces on the fluid. These correlations can be seen in various experiments performed here [cite].
 
+[***picture***]
+
+We have previously shown that the motions of the microtubules is potentially consistant with the simple model of kinesin driven impellers in a pre-existing flow field. We still need to determine if a large group of microtubules are capable of spontaneously generating such a flow field.
+In the stages before fast streaming, the microtubules on a large size scale in a state of disorder. However, since the microtubules align with a local flow field and then, once aligned, they contribute to that flow, it believable that a type of field amplification occurs.
+Essentially, the long range interaction through the fluid should bring about a transition to a phase of long range order.
+The spontaneous generation of this ordered phase will cause some aspects of the resulting system, such as the direction of the resulting global flow field, to depend sensitively on the initial conditions of the system.
+However, many properties of the system in this phase, such as the flow speed and characteristic oscilation frequencies, should be independant of the initial conditions.
 % Create the reference section using BibTeX:
 
 %bibliography from Vacuum paper
