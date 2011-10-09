@@ -38,8 +38,8 @@ spectroscopy techniques that utilize Matrix-assisted laser desorption/ionization
 \label{fig:rgplot}
 \end{center}
 \end{figure}
-The MALDI technique involves embedding the large polymers of interest into a matrix of much smaller molecules, commonly acids to promote ionization durning the vaporization process. 
-Once the analate and matrix are co-crystalized, they are placed into a vacuum and bombarded with a laser, usually in the UV. 
+The MALDI technique involves embedding the large polymers of interest into a matrix of much smaller molecules, commonly acids to promote ionization during the vaporization process. 
+Once the analate and matrix are co-crystallized, they are placed into a vacuum and bombarded with a laser, usually in the UV. 
 The matrix is chosen to be absorptive in the range of the excitation laser, and produces a hot plume that carries the polymer of interest into the vacuum undamaged.
 Once in the vacuum, the polymer can be manipulated via electric fields or optical trapping as needed.
 
@@ -1345,7 +1345,8 @@ understand the large scale cytoplasmic motion for Drosophila oocytes.
 %Multi poly stuff
 
 \section{Introducing Many Polymer Dynamics}
-Having studied the dynamics of single polymer dynamics in an externally imposed flow field, we must now investigate how such a field could be brought about due to a large group of microtubles. In order to produce a global flow field in the fluid, we need a large number of microtubules all aligned and contributing to the driving of the field in a correlated manner. This leads to use of a mean field type calculation to determine a self consistant values. In addition to investigating steady state values, the behavior at low field could determine criteria underwhich spontaneous global velocity field formation could occur. In order to do these types of calculations, a more detailed view of the interaction between elements in the system needs to be taken.
+Having studied the dynamics of single polymer dynamics in an externally imposed flow field, we must now investigate how such a field could be brought about due to a large group of microtubles. In order to produce a global flow field in the fluid, we need a large number of microtubules all aligned and contributing to the driving of the field in a correlated manner. 
+In addition to investigating steady state values, the behavior at low field could determine criteria underwhich spontaneous global velocity field formation could occur. In order to do these types of calculations, a more detailed view of the interaction between elements in the system needs to be taken.
 
 \section{Introducing the Oseen Tensor}
 Since we are in a low Reynolds number regime, the motion of the fluid is described by the simplified Stokes equations:
@@ -1376,7 +1377,13 @@ Of particular interest is its use in modeling polymers as a long chain of beads,
 [***Cite some places using the tensor***]
 
 \section{Model for Hydrodynamic Interactions}
-
+For our model, we are going to use the same structure for the mircotubule as for the solitary case. This models the microtubule as a chain of beads with some tension $T$ and stiffness parameter $C$. The equation of motion for the microtubule is very similar, except now we need to include the Oseen interaction tensor.
+The microtubule and impellers are in direct contact with the fluid and at the interface the velocity of the fluid must match the velocity of the objects suspended in it.
+This means that any force exerted on the objects will be also transmitted to the fluid locally. 
+These forces form the force density used in the Oseen tensor to determine the fluid velocity in all of space, which will also determine the motion of the microtube impeller system.
+This is a bit more complex than simply adding the tensor to the previous equation of motion, as the interaction tensor needs to include the forces of all objects moving in the fluid. 
+Before we simply included the kinesin as a force tangent to the backbone of the microtubule, and while that is still going to be the case, we now need to include consideration for the reaction force produced against the impeller, as this will be transmitted back to the microtubule by the long range hydrodynamic forces.
+In order to determine the effect that this extra force density will have on the dynamics, we need to be more explicit with the configuration of the impellers.
 Consider the impellers of largest dimension $q$ to be attached to the microtubule by kinesin motors with no side being prefered at a characteristic distance $a$ with, as in the single microtubule consideration, $a < q \ll L$, with $L$ again being the microtubule length. 
 We can consider this to form a uniform density of impellers around the microtubule, and the kinesin motors cause the impeller and the microtubule to move relative to each other with a fixed velocity in the direction of the tangent of the microtubule backbone. 
 \begin{figure}[htp]
@@ -1388,10 +1395,13 @@ The impellers are carried along the microtubule by the kinesin motors. Kinesin i
 \label{fig:quadforce}
 \end{center}
 \end{figure}
-
-The microtubule and impellers are in direct contact with the fluid and at the interface the velocity of the fluid must match the velocity of the objects suspended in it.
-This means that any force exerted on the objects will be also transmitted to the fluid locally. 
-These forces form the force density used in the Oseen tensor to determine the fluid velocity in all of space, which will also determine the motion of the microtube impeller system.
+\begin{equation}
+\label{eq:fluidmodel}
+\bf u(\br) =  \int \bf J(\br-\br^\prime)[-C \frac{\partial^4 \br^\prime}{\partial s^4} + \frac{\partial}{\partial s}(T(s)\frac{\partial \br^\prime}{\partial s}) - f_k \frac{\partial \br^\prime}{\partial s}] + \bf \int J(\br-\br^\prime+\bf a) \frac{f_k}{2\pi|\bf a|} \frac{\partial \br^\prime}{\partial s} d\bf \hat{a} ds
+\end{equation}
+where $\bf u$ is the fluid velocity and $a$ is a vector pointing radially outward from the microtubule axis to the impeller location. 
+Because the microtubule system is in contact with the fluid, the motion of the microtubule will follow that of the fluid along the backbone locations.
+However, due to the long range of the hydrodynamic interaction, the system can now be far more sensitive to the overall configuration which could potentially lead to more complex steady state solutions than the non interacting single microtubule.
 
 %%%force diagrams
 
@@ -1411,10 +1421,9 @@ The microtubule curvature creates a force density that acts on the fluid. THis i
 (c)
 The kinesin motors act on both the microtubule and the impellers, applying forces that bind them together and drive the impellers along the microtubule. Both of these force densities are transmitted to the fluid. These force densities arise due to a local coupling. and therefore are related by Newton's third law.
 }
-\label{fig:RvsL}
+\label{fig:forcedensities}
 \end{center}
 \end{figure}
-
 
 There are three primary generators of force; backbone stiffness, a gradient in backbone tension, and the kinesin motors. The first two force densities can be computed entirely from the microtubule configuration, and these values can then be used as inputs to the Oseen tensor.
 The force due to the kinesin coupling and walking is much harder to work out, however, we will show that it has negligeble effect on the long range fluid motion.
@@ -1437,7 +1446,6 @@ At a given location along the microtubule, the forces generated by the kinesin m
 \end{figure}
 
 Let us investigate the contribution to the fluid velocity field from a small segment of the microtubule impeller system. For convieniance, place the segment at the origin, and calculate the fluid motion at position $\br$. The kinesin motors apply force between the microtubule and impellers in two ways. They walk along the axis of the microtubule producing the significant force along the axis, and they also hold the impellers onto the microtubule, creating a rigid link force radialy. A key feature of the nature of these forces is symetry of inversion through the center axis.
-
 
 We can now simply write down the fluid response due to this force density.
 \begin{equation}
@@ -1492,13 +1500,30 @@ The first order term in $\epsilon$ requires a bit more work, but is still a stra
 \end{equation}
 
 As we can see, each term in the integrand is an odd function of $\hat{a}$, and the integral is around the whole circle, so this vanishes. 
-This means that the leading order term from the kinesin coupling force density is going to be surpressed by two factors of the small parameter $\epsilon$ relative to the other force densities in the system. 
-As such, for long range considerations we can safely ignore the forces caused directly by the kinesin molecule itself do to it's small size. 
+This means that the leading order term from the kinesin coupling force density is going to be surpressed by two factors of the small parameter $\epsilon$.
+How does this compare with the other forces in the system? Well, the tension can be decomposed into equal and oposite pairs between adjancent segments of the microtubule.
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=\hsize]{tenbal.png}
+\caption{ 
+While the forces connecting the microtubule backbone must balance, these forces are a) axial and lack the symetric cancelation of the quadrapole and b) the seperation between them is the basis for the characteristic length scale of the microtubule itself, and is thus fixed in relation to the size scale of the interaction.
+}
+\label{fig:quadforce}
+\end{center}
+\end{figure}
+However, for this force the cancelations found in the kinesin quadrapole run into some problems. For one, the seperation between the two oposing forces is axial, and lacks the mirror symetry needed to form the quadrapole. This means that it would at best form a chain of dipoles. 
+The real problem here, for both the tension and the stiffness, is that the corresponding small parameter needed to form the multipole cancelation is directly tied to the characteristic length scale of the microtubule curvature; indeed, the curvature is defined by these forces. 
+So not only would it be a chain of dipoles, the density of those dipoles would need to diverge in the limit of small seperation between the opposing forces.
+Luckily, if we instead sum the forces on each individual segment, we are left with the simple linear force density of the gradiant of the tension. This gradiant is expected to be nonzero due to the tethering of one end of the microtubule.
+A nonzero linear force density along the axis of the microtubule would apply directly through the Oseen tensor with no cancelation, and thus fall off as $\br^{-1}$, where as as we saw the kinesin forces fall off as $\br^{-3}$.
+ 
 That is not to say that the kinesin does not effect the system at all.
 
 While the long range fluid motion will not be strongly influenced by the kinesin motor forces, these short range effects will allow the impellers and microtubule to move relative to each other. While the details of the local fluid motion are complex, the bulk effect is known; the kinesin walk along the microtubule at a steady rate, creating a fixed relationship between the impeller velocity and the microtubule velocity. 
 Because the relative motion between the microtubule and the impeller layer is known, only the motion of the fluid at the impeller interface is needed to determine the motion of the system. 
 As we have shown, the forces do to the kinesin motors directly do not contribute to the long range fluid motion, and the only remaining forces are those from microtubule backbone.
+
+%describe fluid coupling
 This leads us to a method for determining the dynamics of the system. The Oseen tensor should be integrated over the force densities $f_{int}$along the backbone of the microtubule, ignoring the contribution from the impeller directly. 
 \begin{equation}
 \label{eq:fluidvelocity}
