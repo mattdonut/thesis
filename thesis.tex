@@ -537,23 +537,81 @@ by a factor of order $a/d$.
 Of course there are  many microtubules in these cells. To understand how this
 affects the above analysis, consider all space filled with an infinite forest of them all oriented
 in the same direction. 
-First if we ignore the microtubules and just consider the spherical impellers, then
-if we move to a reference frame moving with the impeller velocity, the system is static
-and the velocity everywhere is zero. Therefore in the original reference frame, the
-fluid is also moving uniformly at the impeller velocity. This is not correct because
-we have ignored the hydrodynamic drag of the microtubules represented by the line going through
-the spheres in Fig. \ref{fig:spheres}. To estimate their effect on the fluid velocity, 
-denote the drag coefficient on an impeller by $b_I$ and that of a section of microtubule length $d$ by $b_M$. Then
-we go to a reference frame velocity $v$ such that the total force acting on the combined system of
-impellers and microtubules is zero, so that $b_I(v_0 - v) - b_M v = 0$, or $v = b_I v_0/(b_I + b_M)$.
-Because the net force acting on this system is zero in this frame, $v$ is the velocity
-of the fluid far from the microtubules.
-Because within logarithmic corrections, the drag coefficients are proportional to the maximal
-linear dimensions, then a conservative estimate of
-this speed is of order $v_0 a/d$. The exact formula depends on the shape of
-the impellers. This argument assumes an infinite volume of
-microtubules but the corrections to this due to the finite nature of the system
-are not important for the estimates we are making.
+
+%%% Begin new explaination
+Let us assume that the microtubules and impellers have managed to set up fast streaming and the fluid now has a long range global velocity $v$.
+Because they are tethered at one end, the microtubules are stationary in this configuration, and as such the net force on them must be zero. 
+This means that the hydrodynamic drag on a section of microtubule must be exactly balanced by the other forces acting on that segment.
+There are two other forces acting on the segment; the kinesin and the neighboring segments.
+\begin{equation}
+\label{eq:mfnetMforce}
+b_M v = \frac{\partial}{\partial s}T + F_k
+\end{equation} 
+We also know that the same force balance must hold for the impellers, with their drag force relative to their fixed velocity. 
+However, they don't have connections between neighbors so there is no tension term. 
+Their force balance is 
+\begin{equation}
+\label{eq:mfnetIforce}
+b_I (v - v_0) =  -F_k
+\end{equation}
+The force exerted on the fluid is simply opposite of the drag terms. It is important to note here that these two equations are for forces acting in slightly different locations, as one is for the microtubule segment and the other for the impeller. 
+We will go on later to show that this small separation (on the order of the length of the kinesin), will give rise to a quadrapole like term in the fluid motion.
+This term is suppressed by two factors of a small parameter formed by the ratio of the kinesin length and the characteristic seperation of the microtubules.
+For considering the long range flow field of the fluid, it is safe to neglect these terms and for now treat these two force equations as happening at the same location.
+The total force acting on the fluid is then:
+\begin{equation}
+\label{eq:mfnetFforce}
+b_I (v - v_0) + b_M v = -\frac{\partial}{\partial s}T
+\end{equation}
+The equality to the gradiant of the tension will be useful in simulating the fluid motion later, as the tension is determined by the configuration of the microtubule directly.
+
+To determine the value of the fluid flow speed, we need to find the long range fluid velocity due to the force densities supplied by the microtubules and impellers.
+Since the microtubules and impellers are assumed to fill all of space, we can treat their effect as a uniform force density applied to the fluid.
+The fluid velocity field due to an applied local force is proportional to the force and falls of as $1/r$. If we integrate this over a region of linear dimension $R$, we get that the flow velocity is
+\begin{equation}
+\label{eq:mfflow}
+v = \int -C \frac{(b_I (v - v_0) + b_M v)}{|\br|} d^3\br = -2\pi C R^2 (b_I (v - v_0) + b_M v)
+\end{equation}
+Solve this for $v$
+\begin{equation}
+\label{eq:mfflowsol}
+v = \frac{2\pi C R^2 b_I}{2\pi C R^2(b_I + b_M) + 1} v_0
+\end{equation}
+And now take the limit as the total system size goes to infinity
+\begin{equation}
+\label{eq:mfflowlimit}
+\lim_{R\to\infty} v = \frac{b_I}{b_I + b_M} v_0 = \frac{a}{a+d} v_0
+\end{equation}
+The second equality comes from the fact that the drag coefficiants are proportional to the maximal linear dimensions of the objects in question. Because of that reason, we expect $b_M > b_I$ because the impellers must be able to fit along the microtubule.
+
+This result makes good intuitive sense, as we would expect the fluid velocity to be some form of weighted average between the velocities of the two classes of objects in contact with it. 
+It also has the nice limit that if the drag from the microtubule were to be small, the fluid would move at the walk speed of the kinesin, and that if the drag from the microtubule were to be very large, the fluid velocity would be greatly supressed but never quite zero.
+In the case of exact symetry between the two lengths, the fluid velocity becomes halfway between the walk speed and zero, as one would expect.
+
+The exact result will depend on the shape of the impellers, and the local fluid velocities near the microtubule impeller system will of course be more complex than a constant uniform flow field.
+%%%end old explaination
+
+
+%%% Begin old explaination
+% First if we ignore the microtubules and just consider the spherical impellers, then
+% if we move to a reference frame moving with the impeller velocity, the system is static
+% and the velocity everywhere is zero. Therefore in the original reference frame, the
+% fluid is also moving uniformly at the impeller velocity. This is not correct because
+% we have ignored the hydrodynamic drag of the microtubules represented by the line going through
+% the spheres in Fig. \ref{fig:spheres}. To estimate their effect on the fluid velocity, 
+% denote the drag coefficient on an impeller by $b_I$ and that of a section of microtubule length $d$ by $b_M$. Then
+% we go to a reference frame velocity $v$ such that the total force acting on the combined system of
+% impellers and microtubules is zero, so that $b_I(v_0 - v) - b_M v = 0$, or $v = b_I v_0/(b_I + b_M)$.
+% Because the net force acting on this system is zero in this frame, $v$ is the velocity
+% of the fluid far from the microtubules.
+% Because within logarithmic corrections, the drag coefficients are proportional to the maximal
+% linear dimensions, then a conservative estimate of
+% this speed is of order $v_0 a/d$. The exact formula depends on the shape of
+% the impellers. This argument assumes an infinite volume of
+% microtubules but the corrections to this due to the finite nature of the system
+% are not important for the estimates we are making.
+
+%%%end old explaination
 
 The identities of impellers in this system are still unknown but there are many possible
 candidates. Anything with  large linear dimensions in at least one direction 
