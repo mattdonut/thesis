@@ -556,14 +556,15 @@ b_I (v - v_0) =  -F_k
 \end{equation}
 The force exerted on the fluid is simply opposite of the drag terms. It is important to note here that these two equations are for forces acting in slightly different locations, as one is for the microtubule segment and the other for the impeller. 
 We will go on later to show that this small separation (on the order of the length of the kinesin), will give rise to a quadrapole like term in the fluid motion.
-This term is suppressed by two factors of a small parameter formed by the ratio of the kinesin length and the characteristic seperation of the microtubules.
+This term falls off as $1/\br^3$ and should not have significant effect on the long distance fluid motion.
 For considering the long range flow field of the fluid, it is safe to neglect these terms and for now treat these two force equations as happening at the same location.
 The total force acting on the fluid is then:
 \begin{equation}
 \label{eq:mfnetFforce}
 b_I (v - v_0) + b_M v = -\frac{\partial}{\partial s}T
 \end{equation}
-The equality to the gradiant of the tension will be useful in simulating the fluid motion later, as the tension is determined by the configuration of the microtubule directly.
+The equality to the gradiant of the tension will be useful in simulating the fluid motion later, as the tension is determined by the configuration of the microtubule directly. 
+In the more general case, all of the forces that act directly on the microtubule would be present on the right hand side of this equaton, while the forces due to the kinesin cancel out.
 
 To determine the value of the fluid flow speed, we need to find the long range fluid velocity due to the force densities supplied by the microtubules and impellers.
 Since the microtubules and impellers are assumed to fill all of space, we can treat their effect as a uniform force density applied to the fluid.
@@ -1674,6 +1675,8 @@ In the stages before fast streaming, the microtubules on a large size scale in a
 Essentially, the long range interaction through the fluid should bring about a transition to a phase of long range order.
 The spontaneous generation of this ordered phase will cause some aspects of the resulting system, such as the direction of the resulting global flow field, to depend sensitively on the initial conditions of the system.
 However, many properties of the system in this phase, such as the flow speed and characteristic oscilation frequencies, should be independant of the initial conditions.
+In fact, the derivation used to find the flow velocity for the case of an entire volume filled with microtubules and impellers continues to work in lower dimensions.
+As long as the microtubules are essentially at rest in a steady state, the fluid velocity will be determined as a fraction of the impeller velocity given by $a/(a+d)$, which is entirly determined by the size and density of the microtubule and impellers.
 % Create the reference section using BibTeX:
 
 %bibliography from Vacuum paper
