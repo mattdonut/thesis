@@ -12,6 +12,7 @@
 \def\br{{\bf r}}
 \def\bu{{\bf u}}
 \def\bw{{\bf w}}
+\def\ba{\mathbf{a}}
 \def\vcmi{v_{cm,i}}
 
 \begin{document}
@@ -1415,22 +1416,22 @@ In addition to investigating steady state values, the behavior at low field coul
 Since we are in a low Reynolds number regime, the motion of the fluid is described by the simplified Stokes equations:
 \begin{equation}
 \begin{array}{l}
-\nabla p = \mu \nabla^2 \bf u + \bf f \\
-\nabla \cdot \bf u = 0
+\nabla p = \mu \nabla^2 \mathbf{u} +  \mathbf{f} \\
+\nabla \cdot  \mathbf{u} = 0
 \end{array}
 \end{equation}
-The linearity of the Stokes equations allows for solutions to be obtained via a Green's Function, such that for a continuous force density $\bf f(\bf r)$,
+The linearity of the Stokes equations allows for solutions to be obtained via a Green's Function, such that for a continuous force density $ \mathbf{f}( \mathbf{r})$,
 \begin{equation}
 \label{eq:fluidgreensfunc}
 \begin{array}{rcl}
-\bf u(\bf r ) &=& \int \bf f(\bf r^\prime \cdot \bf J (\bf r - \bf r^\prime) d\bf r^\prime \\
-p(\bf r) &=& \frac{\bf f(\bf r^\prime) \cdot (\br - \br^\prime)}{4 \pi | \br - \br^\prime|^3} d\br^\prime
+ \mathbf{u}(\br ) &=& \int  \mathbf{f}(\br^\prime \cdot  \mathbf{J} (\br - \br^\prime) d\br^\prime \\
+p(\br) &=& \frac{ \mathbf{f}(\br^\prime) \cdot (\br - \br^\prime)}{4 \pi | \br - \br^\prime|^3} d\br^\prime
 \end{array}
 \end{equation}
 Where 
 \begin{equation}
 \label{eq:oseentensordef}
-J(\br) = \frac{1}{8\pi\mu} ( \frac{I}{|\br|} + \frac{\br\br^T}{|\br^3|})
+ \mathbf{J}(\br) = \frac{1}{8\pi\mu} ( \frac{I}{|\br|} + \frac{\br\br^T}{|\br^3|})
 \end{equation}
 
 is a second rank tensor field known as the Oseen Tensor.
@@ -1460,9 +1461,9 @@ The impellers are carried along the microtubule by the kinesin motors. Kinesin i
 \end{figure}
 \begin{equation}
 \label{eq:fluidmodel}
-\bf u(\br) =  \int \bf J(\br-\br^\prime)[-C \frac{\partial^4 \br^\prime}{\partial s^4} + \frac{\partial}{\partial s}(T(s)\frac{\partial \br^\prime}{\partial s}) - f_k \frac{\partial \br^\prime}{\partial s}] + \bf \int J(\br-\br^\prime+\bf a) \frac{f_k}{2\pi|\bf a|} \frac{\partial \br^\prime}{\partial s} d\bf \hat{a} ds
+ \mathbf{u}(\br) =  \int  \mathbf{J}(\br-\br^\prime)[-C \frac{\partial^4 \br^\prime}{\partial s^4} + \frac{\partial}{\partial s}(T(s)\frac{\partial \br^\prime}{\partial s}) - f_k \frac{\partial \br^\prime}{\partial s}] + \int  \mathbf{J}(\br-\br^\prime+ \mathbf{a}) \frac{ \mathbf{f_k}}{2\pi| \mathbf{a}|} \frac{\partial \br^\prime}{\partial s} d \hat{ \mathbf{a}} \;ds
 \end{equation}
-where $\bf u$ is the fluid velocity and $a$ is a vector pointing radially outward from the microtubule axis to the impeller location. 
+where $ \mathbf{u}$ is the fluid velocity and $ \mathbf{a}$ is a vector pointing radially outward from the microtubule axis to the impeller location. 
 Because the microtubule system is in contact with the fluid, the motion of the microtubule will follow that of the fluid along the backbone locations.
 However, due to the long range of the hydrodynamic interaction, the system can now be far more sensitive to the overall configuration which could potentially lead to more complex steady state solutions than the non interacting single microtubule.
 
@@ -1513,52 +1514,52 @@ Let us investigate the contribution to the fluid velocity field from a small seg
 We can now simply write down the fluid response due to this force density.
 \begin{equation}
 \label{eq:forcedensitystart}
-\delta\bf u(\br) = \frac{1}{8\pi\mu}\int \frac{\bf f}{|\br + \bf a|} + \frac{(\br+\bf a) ((\br + \bf a) \cdot \bf f)}{|\br + \bf a|^3} d\hat{a} - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
+\delta \mathbf{u}(\br) = \frac{1}{8\pi\mu}\int \frac{ \mathbf{f}}{|\br +  \mathbf{a}|} + \frac{(\br+ \mathbf{a}) ((\br +  \mathbf{a}) \cdot  \mathbf{f})}{|\br +  \mathbf{a}|^3} d\hat{ \mathbf{a}} - \frac{ \mathbf{F}}{|\br|} - \frac{\br (\br \cdot  \mathbf{F})}{|\br|^3}
 \end{equation}
-Where $\delta \bf u(\br)$ is the contribution to the fluid velocity at position $\br$ from a differential segment of the microtubule impeller system, $a$ is the vector pointing from the center of the microtubule to a point in the impeller sheath, and $f$ and $F$ are the force densities produced by the kinesin interaction. Note that $F$ is a linear force density and $f$ is a force per unit area, due to the radial nature of the coupling.
+Where $\delta  \mathbf{u}(\br)$ is the contribution to the fluid velocity at position $\br$ from a differential segment of the microtubule impeller system, $a$ is the vector pointing from the center of the microtubule to a point in the impeller sheath, and $f$ and $F$ are the force densities produced by the kinesin interaction. Note that $F$ is a linear force density and $f$ is a force per unit area, due to the radial nature of the coupling.
 Because the kinesin binds the microtubule and the impeller together, Newton's Third Law dictates that the linear force density along the backbone needs to be equal and oposite for the impeller microtubule pair. This gives us that integrating $f$ around the full circle must give the same value as $F$.
-Due to the small size of the kinesin molecule, for long range interaction on the order of the length of the microtubule, or even characteristic curvatures of the microtubule, we should have $a << r$, where $a$ and $r$ are the magnitudes of $\bf a$ and $\br$ respectively. We can pull out a factor of $r$ to obtain these expressions in terms of a unit-less small parameter $\epsilon = a/r$.
+Due to the small size of the kinesin molecule, for long range interaction on the order of the length of the microtubule, or even characteristic curvatures of the microtubule, we should have $a << r$, where $a$ and $r$ are the magnitudes of $ \mathbf{a}$ and $\br$ respectively. We can pull out a factor of $r$ to obtain these expressions in terms of a unit-less small parameter $\epsilon = a/r$.
 \begin{equation}
 \label{eq:forcedensitycircleonly}
-\int \frac{\bf f}{|\br + \bf a|} + \frac{\br (\br \cdot \bf f)}{|\br + \bf a|^3} d\bf a
+\int \frac{ \mathbf{f}}{|\br +  \mathbf{a}|} + \frac{\br (\br \cdot  \mathbf{f})}{|\br +  \mathbf{a}|^3} d \mathbf{a}
 \end{equation}
 %bad form?
 Becomes
 \begin{equation}
 \label{eq:forcedensityepsilon}
-\int \frac{\bf f}{r|\hat{r} + \epsilon \hat{a}|} + \frac{(\hat{r} + \epsilon \hat{a}) ((\hat{r} + \epsilon \hat{a}) \cdot \bf f)}{r|(\hat{r} + \epsilon \hat{a})|^3} d\bf \hat{a}
+\int \frac{\bf f}{r|\hat{\br} + \epsilon \hat{ \mathbf{a}}|} + \frac{(\hat{\br} + \epsilon \hat{ \mathbf{a}}) ((\hat{\br} + \epsilon \hat{ \mathbf{a}}) \cdot  \mathbf{f})}{r|(\hat{\br} + \epsilon \hat{ \mathbf{a}})|^3} d\hat{ \mathbf{a}}
 \end{equation}
-Apart from a global factor of $1/r$, only the directions of $\br$ and $\bf a$ remain, with all of the distance scaling being absorbed into the small parameter $\epsilon$. We can now expand the expression to find what the leading order contribution to the fluid velocity field will be.
+Apart from a global factor of $1/r$, only the directions of $\br$ and $ \mathbf{a}$ remain, with all of the distance scaling being absorbed into the small parameter $\epsilon$. We can now expand the expression to find what the leading order contribution to the fluid velocity field will be.
 The zeroeth order term reduces simply to
 \begin{equation}
 \label{eq:forcedensityzeroth}
-\delta\bf u_0(\br) = \int \frac{\bf f}{r|\hat{r}|} + \frac{(\hat{r}) ((\hat{r}) \cdot \bf f)}{r|(\hat{r})|^3} d\bf \hat{a} - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
+\delta \mathbf{u_0}(\br) = \int \frac{\bf f}{r|\hat{\br}|} + \frac{(\hat{\br}) (\hat{\br} \cdot \mathbf{f})}{r|(\hat{\br})|^3} d\hat{\ba} - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
 \end{equation}
 Which will vanish due to the requirement of Newton's Third Law.
 The first order term in $\epsilon$ requires a bit more work, but is still a straight forward derivitive. We first need to expand the magnitudes in terms of a square root, and then proceed as normal.
 \begin{equation}
 \label{eq:forcedensityfirst}
-\delta \bf u(\br) = \frac{1}{r} \int  \bf f[(\hat{r} + \epsilon\hat{a})^2]^{-1/2} d\bf \hat{a} +(\hat{r} + \epsilon\hat{a})(\hat{r} + \epsilon\hat{a})\cdot \bf f [(\hat{r} + \epsilon\hat{a})^2]^{-3/2} d\bf a - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \bf F)}{|\br|^3}
+\delta \mathbf{u}(\br) = \frac{1}{r} \int  \mathbf{f}[(\hat{\br} + \epsilon\hat{\ba})^2]^{-1/2} d\hat{\ba} +(\hat{\br} + \epsilon\hat{\ba})(\hat{\br} + \epsilon\hat{\ba})\cdot \mathbf{f} [(\hat{\br} + \epsilon\hat{\ba})^2]^{-3/2} d\ba - \frac{\bf F}{|\br|} - \frac{\br (\br \cdot \mathbf{F})}{|\br|^3}
 \end{equation}
 
 \begin{equation}
 \begin{array}{rcl}
 \label{eq:forcedensityfirstderiv}
-\frac{d}{d\epsilon} \delta \bf u(\br) &=& \frac{1}{r} \int 
--\bf f [(\hat{r} + \epsilon\hat{a})^2]^{-3/2} (\hat{r} + \epsilon\hat{a})\cdot \hat{a} \\
-&+&\hat{a}(\hat{r} + \epsilon\hat{a})\cdot \bf f [(\hat{r} + \epsilon\hat{a})^2]^{-3/2} \\
-&+& (\hat{r} + \epsilon\hat{a})(\hat{a}\cdot\bf f)[(\hat{r} + \epsilon\hat{a})^2]^{-3/2}\\
-&-& 3 ((\hat{r} + \epsilon\hat{a})(\hat{r} + \epsilon\hat{a})\cdot\bf f [(\hat{r} + \epsilon\hat{a})^2]^{-5/2} (\hat{r} + \epsilon\hat{a})\cdot \hat{a}
+\frac{d}{d\epsilon} \delta \mathbf{u}(\br) &=& \frac{1}{r} \int 
+-\mathbf{f} [(\hat{\br} + \epsilon\hat{\ba})^2]^{-3/2} (\hat{\br} + \epsilon\hat{\ba})\cdot \hat{\ba} \\
+&+&\hat{\ba}(\hat{\br} + \epsilon\hat{\ba})\cdot \mathbf{f} [(\hat{\br} + \epsilon\hat{\ba})^2]^{-3/2} \\
+&+& (\hat{\br} + \epsilon\hat{\ba})(\hat{\ba}\cdot\mathbf{f})[(\hat{\br} + \epsilon\hat{\ba})^2]^{-3/2}\\
+&-& 3 ((\hat{\br} + \epsilon\hat{\ba})(\hat{\br} + \epsilon\hat{\ba})\cdot\mathbf{f} [(\hat{\br} + \epsilon\hat{\ba})^2]^{-5/2} (\hat{\br} + \epsilon\hat{\ba})\cdot \hat{\ba}
 \end{array}
 \end{equation}
 \begin{equation}
 \begin{array}{rcl}
 \label{eq:forcedensitylimit}
-\lim_{\epsilon\to 0} \frac{d}{d\epsilon} \delta \bf u(\br) &=& \frac{1}{r} \int 
--\bf f [(\hat{r})^2]^{-3/2} (\hat{r})\cdot \hat{a} \\
-&+&\hat{a}(\hat{r})\cdot \bf f [(\hat{r})^2]^{-3/2} \\
-&+& (\hat{r})(\hat{a}\cdot\bf f)[(\hat{r})^2]^{-3/2} \\
-&-& 3 ((\hat{r})(\hat{r})\cdot\bf f [(\hat{r})^2]^{-5/2} (\hat{r})\cdot \hat{a}
+\lim_{\epsilon\to 0} \frac{d}{d\epsilon} \delta \mathbf{u}(\br) &=& \frac{1}{r} \int 
+-\bf f [(\hat{\br})^2]^{-3/2} (\hat{\br})\cdot \hat{\ba} \\
+&+&\hat{\ba}(\hat{\br})\cdot \mathbf{f} [(\hat{\br})^2]^{-3/2} \\
+&+& (\hat{\br})(\hat{\ba}\cdot\mathbf{f})[(\hat{\br})^2]^{-3/2} \\
+&-& 3 ((\hat{\br})(\hat{\br})\cdot\mathbf{f} [(\hat{\br})^2]^{-5/2} (\hat{\br})\cdot \hat{\ba}
 \end{array}
 \end{equation}
 
@@ -1590,17 +1591,17 @@ As we have shown, the forces do to the kinesin motors directly do not contribute
 This leads us to a method for determining the dynamics of the system. The Oseen tensor should be integrated over the force densities $f_{int}$along the backbone of the microtubule, ignoring the contribution from the impeller directly. 
 \begin{equation}
 \label{eq:fluidvelocity}
-\bf u(\bf r ) = \int_{backbone} \bf f_{int}(\bf r^\prime) \cdot \bf J (\bf r - \bf r^\prime) d\bf r^\prime
+\mathbf{u}(\br ) = \int_{backbone} \mathbf{f}_{int}(\br^\prime) \cdot \mathbf{J} (\br - \br^\prime) d\br^\prime
 \end{equation}
 This will give us the large scale fluid motion which will determine the large scale motion of the entire system. The coupling from the fluid back to the impeller microtubule system will depend on the short range fluid interactions brought about by the kinesin motors, however, we still expect the long range motion to match with the fluid. By symetry, the difference in velocities will be axial, and the kinesin will still maintain a fixed relationship between the microtubule and impeller. From that we expect the fluid velocity to apear to be a weighted average of the microtubule and impeller velocity.
 \begin{equation}
 \label{eq:systemvelocity}
-\bf u(\br) = \bf v_I(1-\delta) + \bf v_M \delta
+\mathbf{u}(\br) = \mathbf{v}_I(1-\delta) + \mathbf{v}_M \delta
 \end{equation}
-Where $\bf v_I$ and $\bf_vM$ are the impeller and microtubule velocities, respectively. If we use the relation between these two velocities we find an expression for our microtubule velocity
+Where $\mathbf{v}_I$ and $\mathbf{v}_M$ are the impeller and microtubule velocities, respectively. If we use the relation between these two velocities we find an expression for our microtubule velocity
 \begin{equation}
 \label{eq:mtubevelocity}
-\frac{d \br}{dt} = \bf v_M = \bf u(\br) - (1-\delta)v_k \frac{\partial \br}{\partial s}
+\frac{d \br}{dt} = \mathbf{v}_M = \mathbf{u}(\br) - (1-\delta)v_k \frac{\partial \br}{\partial s}
 \end{equation}
 where $v_k$ is the kinesin walk speed. As we can see, the effect of the coupling on the microtubule motion is to surpress the kinesin walk speed by some fraction, just as in the single microtubule discussion. 
 The geometry of the impeller microtubule arrangement, with the impellers forming a cylindrical sheath around the microtubule, suggests that the long range fluid motion would match more closely with the impeller velocity. This is added to by the fact that the characteristic size of the impeller is expected to be much greater than the microtubule thickness giving them more sensitivity to long range fluid motions.
@@ -1608,7 +1609,7 @@ This leads us to believe that $\delta$ should be a small number, and that the fl
 Even if that is not the case, while the exact value of this surpression depends on the detailed interaction between the microtubule and impellers, the large scale behavior can be obtained by a simple rescaling of the walk speed, giving us the simple relation:
 \begin{equation}
 \label{eq:backbonevelocity}
-\frac{d \br}{dt} = \bf u(\bf r ) - \bf v_k \frac{\partial \br}{\partial s}
+\frac{d \br}{dt} = \mathbf{u}(\br ) - \mathbf{v}_k \frac{\partial \br}{\partial s}
 \end{equation}
 
 \section{Numeric Implimentation of the Model}
@@ -1617,26 +1618,26 @@ The complexity of the interaction makes analytic solutions difficult, however, t
 As with the single microtubule case, the microtubules are modeled as a chain of discrete points. Unfortunatly, the use of the long range fluid interactions prevents us from using pure rigid links, so this model uses a backbone comprised of stiff spring links, such that the force on each element is:
 \begin{equation}
 \label{eq:discretespring}
-\bf T(\br_i) = k_T ( |\bf d_{i-}| - l )\bf \hat{d_{i-}} + ( |\bf d_{i+}| - l )\bf \hat{d_{i+}}
+\mathbf{T}(\br_i) = k_T ( |\mathbf{d}_{i-}| - l )\hat{\mathbf{d}_{i-}} + ( |\mathbf{d}_{i+}| - l )\hat{\mathbf{d}_{i+}}
 \end{equation}
 With 
 \begin{eqnarray*}
-\bf d_{i-} &= \br_{i-1} - \br_i \\
-\bf d_{i+} &= \br_{i+1} - \br_i
+\mathbf{d}_{i-} &= \br_{i-1} - \br_i \\
+\mathbf{d}_{i+} &= \br_{i+1} - \br_i
 \end{eqnarray*}
 
 Where $\br_i$ are the positions of the individual microtubule segments and $k_T$ and $l$  are adjustable parameters, with $k_T$ being the spring constant and $l$ being the rest length of the segment.  The spring constant is chosen to be as strong as possible for the given timestep, in order to match as closely as possible to and incompressable chain.
 In addition to the springforce tension term, the backbone stiffness is modeled as a discrete fourth derivitive along the spine, with an adjustable scaling parameter.
 \begin{equation}
 \label{eq:discretestiff}
-\bf C(\br_i) =  - k_C[ (r_{i+2} - r_i) - (r_i - r_{i-2})]
+\mathbf{C}(\br_i) =  - k_C[ (\br_{i+2} - \br_i) - (\br_i - \br_{i-2})]
 \end{equation}
 
 In order for the microtubules to not cross through each other, they are also given a hardcore repulsion force that sharply and smoothly falls off to zero at some characteristic radius $d$.
 This was implemented as a inverse fourth power law:
 \begin{equation}
 \label{eq:discretehardcore}
-\bf H(\br_i) = \sum(1 - \frac{d^4}{|\br_i - \br_j|^4})*(\br_i - \br_j)
+\mathbf{H}(\br_i) = \sum(1 - \frac{d^4}{|\br_i - \br_j|^4})*(\br_i - \br_j)
 \end{equation}
 
 In addition to the bulk forces, there are also boundry cases, as well as pinning the endpoints of the microtubule. The pinning is accomplished simply by including a spring force, similar to the tension spring force, that is centered to a specific fixed point in space.
@@ -1646,12 +1647,12 @@ For this reason, the effect of the forces generated on a specific segment on the
 The standard practice in this case is to use the Oseen tensor as an interaction between elements, and to use a simple free draining drag model for the local motion. Since our model is that of a long chain of beads we simply use the drag due to a small sphere.
 \begin{equation}
 \label{eq:discretesum}
-\bf J_{ii} = \frac{1}{4\pi\mu} f_i
+\mathbf{J}_{ii} = \frac{1}{4\pi\mu} \mathbf{f}_i
 \end{equation}
 Finally we see that for any point in space, the fluid velocity is given by:
 \begin{equation}
 \label{eq:discretesum}
-\bf u(\br_i) = k_s[T(\br_i) + C(\br_i) + H(\br_i)] + \sum_{j\neq i} J(r_i - r_j) [T(\br_j) + C(\br_j) H(\br_j)]
+\mathbf{u}(\br_i) = k_s[T(\br_i) + C(\br_i) + H(\br_i)] + \sum_{j\neq i} J(r_i - r_j) [T(\br_j) + C(\br_j) H(\br_j)]
 \end{equation}
 However, due to the relative velocity between the fluid and the microtubule backbone, the velocity used to update the position of the microtubule locations $r_i$ is found by subtracting the kinesin walk speed.
 \begin{equation}
@@ -1691,11 +1692,19 @@ This new boundry condition changes the greens function used to construct the flu
 Because of this difficulty, we will first investigate the case of an infinite plane hard wall at $z=0$. Hopefully, this should provide some insight into the behavior of the microtubule impeller system near the cortex.
 
 Fortunately, the Green's function for the infinite wall case has aloready been solved. The technique is  similar to that of the method of image charges in classical electromagnatism, with the added complication of the sources being vector quantities instead of scalers. This vector nature of the sourcees gives rise to a number of corrections to the simple reflection.
-Unfortunately, it is somewhat complex, though luckily not of higher order scaling than the unmodified Oseen tensor. The interaction tensor is now:
-
-[***massive equation ***] 
-
+Unfortunately, it is somewhat complex, though luckily not of higher order scaling than the unmodified Oseen tensor. The interaction $\mathbf{J}^w(\mathbf{x},\mathbf{y})$ between a point force $\bf f$ at location $\bf x$ and a fluid location $\bf y$ is now:
+\begin{equation}
+\label{eq:oseenwall}
+\mathbf{J}^w(\mathbf{x}, \mathbf{y}) = \frac{1}{8\pi\mu \br^*} [ 
+- (\mathbf{I} + \frac{(\br^*\cdot\mathbf{f})\br^*}{\br^{*2}}) 
++ \frac{2 h}{\br^{*2}}( (\frac{3 x_3(\br^*\cdot\tilde{\mathbf{f}})}{\br^{*2}} \br^* - \tilde{\mathbf{f}}_3)\br^* - x_3\tilde{\mathbf{f}} + (\br^*\cdot\tilde{\mathbf{f}})\hat{\mathbf{z}})]
+\end{equation}
+Where $\br^*$ is equal to $(x_1-y_1,x_2-y_2,x_3+y_3)$, the reflected displacement vector, $h = y_3$ the distance of the fluid from the wall, and $\tilde{\mathbf{f}} = (f_1,f_2,-f_3)$, the reflected force. 
+One can recognize the first term as the reflected Oseen tensor, similar to a negative charge in the method of images. 
+However, as previously mentioned, the fact the force must also have its direction flipped adds several additional terms.
 For a wall located at $z=0$
+
+
 % Create the reference section using BibTeX:
 
 %bibliography from Vacuum paper
