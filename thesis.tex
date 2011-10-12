@@ -546,7 +546,9 @@ There are two other forces acting on the segment; the kinesin and the neighborin
 \begin{equation}
 \label{eq:mfnetMforce}
 b_M v = \frac{\partial}{\partial s}T + F_k
-\end{equation} 
+\end{equation}
+Where $b_M$ is the local drag coefficiant of the segment of microtubule, which can be approximated to within logarithmic corrections as that of a sphere with radius equal to the segment length, therefore in an fluid of viscocity $/eta$, $b_M = 6/pi /eta d$
+
 We also know that the same force balance must hold for the impellers, with their drag force relative to their fixed velocity. 
 However, they don't have connections between neighbors so there is no tension term. 
 Their force balance is 
@@ -554,6 +556,7 @@ Their force balance is
 \label{eq:mfnetIforce}
 b_I (v - v_0) =  -F_k
 \end{equation}
+Where $b_I$ is the local drag coefficiant for the impeellers, with $b_I = 6/pi/eta a$.
 The force exerted on the fluid is simply opposite of the drag terms. It is important to note here that these two equations are for forces acting in slightly different locations, as one is for the microtubule segment and the other for the impeller. 
 We will go on later to show that this small separation (on the order of the length of the kinesin), will give rise to a quadrapole like term in the fluid motion.
 This term falls off as $1/\br^3$ and should not have significant effect on the long distance fluid motion.
@@ -573,6 +576,7 @@ The fluid velocity field due to an applied local force is proportional to the fo
 \label{eq:mfflow}
 v = \int -C \frac{(b_I (v - v_0) + b_M v)}{|\br|} d^3\br = -2\pi C R^2 (b_I (v - v_0) + b_M v)
 \end{equation}
+Where $C$ is proportionality constant determined by the fluid interaction strength which will not effect the final result of this analysis.
 Solve this for $v$
 \begin{equation}
 \label{eq:mfflowsol}
@@ -1677,6 +1681,21 @@ The spontaneous generation of this ordered phase will cause some aspects of the 
 However, many properties of the system in this phase, such as the flow speed and characteristic oscilation frequencies, should be independant of the initial conditions.
 In fact, the derivation used to find the flow velocity for the case of an entire volume filled with microtubules and impellers continues to work in lower dimensions.
 As long as the microtubules are essentially at rest in a steady state, the fluid velocity will be determined as a fraction of the impeller velocity given by $a/(a+d)$, which is entirly determined by the size and density of the microtubule and impellers.
+
+\section{Hydrodynamics near a hard wall}
+Up until now, we have only considered microtubules pinned at one end freely floating in the cytoplasm, but in a biological system, the microtubules are believed to be anchored to the cell cortex. 
+The presence of this stationary wall may have a significant effect on the microtubule motion, as it imposes a new boundry condition on the fluid motion; namely that the velocity must vanish at the cortex.
+
+
+This new boundry condition changes the greens function used to construct the fluid velocity from the forces applied to the system. The determination of this greens function is dependant on the specific boundry geometry, and potentially untractable.
+Because of this difficulty, we will first investigate the case of an infinite plane hard wall at $z=0$. Hopefully, this should provide some insight into the behavior of the microtubule impeller system near the cortex.
+
+Fortunately, the Green's function for the infinite wall case has aloready been solved. The technique is  similar to that of the method of image charges in classical electromagnatism, with the added complication of the sources being vector quantities instead of scalers. This vector nature of the sourcees gives rise to a number of corrections to the simple reflection.
+Unfortunately, it is somewhat complex, though luckily not of higher order scaling than the unmodified Oseen tensor. The interaction tensor is now:
+
+[***massive equation ***] 
+
+For a wall located at $z=0$
 % Create the reference section using BibTeX:
 
 %bibliography from Vacuum paper
