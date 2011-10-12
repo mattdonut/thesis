@@ -1670,6 +1670,11 @@ The result was essentially as expected, with a solution that asymptotically appr
 
 [*** show a picture ***]
 
+It is interesting to note that the hydrodynamic interaction have little to no effect on this type of solution. 
+The explanation for this is that in this configuration the stiffness and the gradiant in the tension exactly cancel each other, producing no velocity pertubations in the fluid from the main circular portion of the microtubule.
+Because the primary long range force generators are gone, very little interaction is achieved through the fluid, and the result looks very similar to the non interacting case.
+
+
 \section{Correlation between multiple microtubules}
 A key feature found in the microtubules during fast streaming is the formation of correlated groups to enable larger scale coordinated forces on the fluid. These correlations can be seen in various experiments performed here [cite].
 
@@ -1691,7 +1696,7 @@ The presence of this stationary wall may have a significant effect on the microt
 This new boundry condition changes the greens function used to construct the fluid velocity from the forces applied to the system. The determination of this greens function is dependant on the specific boundry geometry, and potentially untractable.
 Because of this difficulty, we will first investigate the case of an infinite plane hard wall at $z=0$. Hopefully, this should provide some insight into the behavior of the microtubule impeller system near the cortex.
 
-Fortunately, the Green's function for the infinite wall case has aloready been solved. The technique is  similar to that of the method of image charges in classical electromagnatism, with the added complication of the sources being vector quantities instead of scalers. This vector nature of the sourcees gives rise to a number of corrections to the simple reflection.
+Fortunately, the Green's function for the infinite wall case has aloready been solved[CITE]. The technique is  similar to that of the method of image charges in classical electromagnatism, with the added complication of the sources being vector quantities instead of scalers. This vector nature of the sourcees gives rise to a number of corrections to the simple reflection.
 Unfortunately, it is somewhat complex, though luckily not of higher order scaling than the unmodified Oseen tensor. The interaction $\mathbf{J}^w(\mathbf{x},\mathbf{y})$ between a point force $\bf f$ at location $\bf x$ and a fluid location $\bf y$ is now:
 \begin{equation}
 \label{eq:oseenwall}
@@ -1701,8 +1706,18 @@ Unfortunately, it is somewhat complex, though luckily not of higher order scalin
 \end{equation}
 Where $\br^*$ is equal to $(x_1-y_1,x_2-y_2,x_3+y_3)$, the reflected displacement vector, $h = y_3$ the distance of the fluid from the wall, and $\tilde{\mathbf{f}} = (f_1,f_2,-f_3)$, the reflected force. 
 One can recognize the first term as the reflected Oseen tensor, similar to a negative charge in the method of images. 
-However, as previously mentioned, the fact the force must also have its direction flipped adds several additional terms.
-For a wall located at $z=0$
+However, as previously mentioned, the fact the force must also have its direction flipped adds several additional terms. These terms together ensure that the velocity of the fluid will vanish at the boundry.
+
+Other than the modification of the interaction tensor, the model remains almost unchanged.
+Due to the assumptions used to generate this solution, it is of course only valid for $z>0$, and can result in very strange behaviors if applied for regions below the plane. 
+These usually result in extremely singular velicies, and so extra care must be made to ensure that no part of the finite time step used in a simulation will cross this boundry. 
+To ensure this, a hard wall potential similar to that used for the hard core repulsion of the microtubule segments is placed at $z=0$.
+
+\section{Effects of the wall}
+The hard wall serves to damp out fluid motion near its surface due to its strong interaction with the fluid viscocity. 
+This is seen in the interaction tensor as a negative force mirrored across the wall, opposing the motion of the true force above it.
+One can imagine that, much like the case in electromagnatism, these mirror forces could form some sort of dipolar arrangement. 
+This arrangement would have faster falloff with distance and could easily interfere with the ability of the entire system of microtubules to correlate over large distances.
 
 
 % Create the reference section using BibTeX:
