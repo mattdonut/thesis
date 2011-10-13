@@ -723,205 +723,7 @@ This implies that
 R =  (C/(\beta f_k))^{1/3}.
 \end{equation}
 
-This analysis was extended to non-zero $v_s$ and as shown in the supplemental materials~\cite{SupplMat}, does not
-appreciably change the estimate we will give below for microtubule wave parameters in fast streaming oocytes. 
-
-
-When the microtubule is tethered to an impenetrable surface (in this case, the oocyte cortex) and the external cytoplasmic streaming velocity $v_s$
-is parallel to that surface, the form of the solution changes considerably. Numerical results show that the microtubule becomes completely two dimensional,
-lying close to the surface. For low enough $v_s$, travelling wave
-solutions are close to prolate cycloids, meaning that the microtubule periodically loops back
-on itself (see supplemental movie 2~\cite{SupplMovies}. This can be understood analytically. For sufficiently large $v_s$ it transitions to other states finally becoming 
-two dimensional and looking close to a sinusoid (see supplemental movie 3~\cite{SupplMovies}. This is analyzed in detail in
-the supplemental materials~\cite{SupplMat}.
-
-We have not included hydrodynamic and steric interactions between
-different microtubules except in the approximate way of giving rise to
-a constant cytoplasmic streaming velocity. Given the microtubule density in the
-oocyte, we expect these interactions to be substantial. However the wave
-like motion that we find is quite robust. Attaching microtubules together or
-considering additional forces still leads to periodic or sometimes chaotic
-motion, still at the same characteristic time and spatial scales. Therefore
-despite the simplicity of the model, we expect that the basic length
-and time scales that we predict should be quite robust.
-
-\section{Comparison with Experiment and Discussion}
-
-We now check to see whether the above model is consistent with experimental
-results.  
-
-Estimates of the microtubule elastic constant $C$ vary
-considerably~\cite{Felgner,GittesRigidity}  but range mostly within 
-$2$ to $4 \times 10^{-23} N m^2$. We estimate the force due to the kinesin
-per unit length, $f_k$ to be its velocity $v_k$ times the cytoplasmic
-viscosity. We will assume as suggested by our above analysis, that
-$a/d$ is between $1/4$ and $1$. We will take the kinesin velocity $v_k$ to be approximately $1
-\mu m/s$~\cite{SvobodaBlock,MeyhoferHoward}. The effective viscosity of the cytoplasm for small
-particles has been studied extensively and appears to vary depending on the type of cell on the length scale~\cite{LubyPhelps}. 
-Particles of different sizes diffusing in the cytoplasm diffuse as if the medium had a different viscosity. Its viscoelastic properties will depend on many
-factors such as the state of gelation of actin filaments~\cite{YinStossel}.
-We will assume that during fast cytoplasmic streaming, the cytoplasmic actin is mainly in a "sol" state allowing fast streaming
-to more readily take place. If this is not the case, the effective viscosity could be much higher~\cite{LubyPhelps}
-but the dissipation would increase proportionally requiring a higher energy input. 
-For small particles of radius approximately $20 nm$, the effective  viscosity 
-as measured by diffusion is approximately 8 times that of water~\cite{LubyPhelps} and we will use this
-value for comparison with experiment.  
-This gives $f_k = (a/d) v \eta$ in the range  $2$ to $8 \times 10^{-9} N/m$.
-Plugging these numbers into Eq. \ref{eq:R} gives $R$ in the range  $30$ to $50 \mu m$.
-We can estimate the angular velocity using Eq. \ref{eq:Romega} (which
-ignores cytoplasmic streaming). To get the largest range of times, we assume that the hydrodynamic drag
-coefficient is due solely to the impellers, so that $\nu = (a/d) \eta$. This
-is equivalent to $\omega = v_k/R$ or a period of $ T = 2 \pi R/v_k$ which ranges 
-from $190$ to $310 s$.
-
-Serbus and colleagues have observed microtubule behavior in living Drosophila oocytes using GFP-tubulin 
-and confocal fluorescence microscopy~\cite{SerbusSaxton}. 
-Time-lapse movies showed bright fibrous fluorescence, representing
-groups of microtubules, in a background of diffuse fluorescence from non-polymerized GFP-tubulin.
-The microtubule patterns changed over time, as did the patterns of motion of organelles that
-either excluded the GFP-tubulin or were themselves auto-fluorescent. Bends in the microtubules were
-at times visible in the $x-y$ optical plane and some remained visible within that plane for $30-90 s$,
-allowing measurement of a radius of curvature that we expect to approximately correspond to the
-$R$ in the above analysis. $R$ was measured  to be $19.5\pm 6.5 \mu m$ with $9$ measurements (standard error $2.1 \mu m$),  and
-the wave velocity was $v = 0.265 \pm 0.04 \mu m/s$ with $4$ measurements. Because these waves
-appear roughly sinusoidal, we can also estimate the period $T$. Assuming a wavelength of $4R$
-then the measured velocity gives a period of $T= 294 s$ with an even larger error bar
-considering the fact that this assumes a waveform that is probably not accurate. Nevertheless
-it suggests a characteristic time.
-
-
-
-The motion studied here can be contrasted with ciliary
-motion~\cite{Kennedy} which has a period on the order of $.05 s$. Clearly
-the two mechanisms have fundamentally different explanations. 
-The experimental time scale points to the mechanism described here rather
-than ciliary motion.  The agreement found with experiment in our above
-analysis is to some extent fortuitous, given the large uncertainties
-in the experimental system. But nevertheless, it provides evidence that
-the simple mechanism proposed is the origin of the behavior seen in
-cytoplasmic streaming.  The experimental evidence~\cite{SerbusSaxton} that dynein inhibits
-streaming and that minus ends of microtubules are in contact with the
-cortex~\cite{ChaSerbus}, both support this hypothesis as well. 
-
-More generally, the above analysis elucidates, at a qualitative level, the phenomena seen
-in experiment~\cite{SerbusSaxton}, of strong cytoplasmic streaming
-occurring concomitantly with wave-like motion of microtubules.
-The movement of a relatively few number of kinesin motors on a microtubule 
-couples to the fluid causing a bulk hydrodynamic flow. The force a
-kinesin exerts on a microtubule sets the microtubule into motion causing
-it to execute wave-like motion. This in turn causes the flow lines around microtubules to be time dependent,
-making the microtubules act as stirrers for the surrounding fluid, which leads to 
-chaotic flows and strong mixing~\cite{Aref,Aref2000}. 
-
-
-
-\begin{figure}[htp]
-\begin{center}
-(a) \includegraphics[width=0.3\hsize]{koch2.eps}
-(b)\includegraphics[width=0.3\hsize]{squiggle_sim.eps}
-\caption{ 
-The configuration a rotating microtubule in a gliding assay~\cite{MaloneyHerskowitzKoch,MaloneyKochVideo} with the leading end
-stuck to a kinesin protein is shown in (a). (b) Shows the two dimensional simulation
-of Eq. \ref{eq:microtubule} showing a similar shape.
-}
-\label{fig:squiggle}
-\end{center}
-\end{figure}
-
-
-Can such motion be directly observed in an {\em in vitro}
-experiment?  In fact it has been seen frequently as an unwanted artifact
-of sample preparation.
-Microtubule gliding assays were pioneered more than two
-decades ago~\cite{ValeSchnappEtAl} and have become a
-standard technique to better understand the motion of kinesin motors.
-When a solution microtubules and ATP is placed on a glass surface on
-which there is a high density of kinesin molecules, the kinesins propel
-the microtubules with their minus ends leading.  Occasionally the minus
-end sticks, perhaps to damaged kinesins, and continued forces of the
-trailing portion of the microtubule cause flexing and curve generation.
-
-Microtubule gliding assay videos of high quality~\cite{MaloneyHerskowitzKoch} provide an excellent
-source of data for investigating the two dimensional version of the problem
-studied here~\cite{MaloneyKochVideo}. The microtubule is being pushed by kinesin molecules
-that on average, apply a force tangent to the microtubule. When an
-end is tethered by sticking to a kinesin molecule, as noted above, this leads to 
-a physical situation that is well described by Eq. \ref{eq:microtubule}. It should be
-emphasized that the values of the tangential force $f_k$ and the drag
-coefficient $\nu$ will be much larger than in the oocyte case.
-Consequently, sometimes microtubules flex,, 
-forming a G-shaped curve that rotates around the anchored minus end 
-of the microtubule.  Fig. \ref{fig:squiggle} shows a comparison of
-snapshots of the microtubule with that of a
-simulation of Eq. \ref{eq:microtubule}. The resemblance is quite striking and provides evidence that
-the theoretical modelling of this bending instability is valid. Note that
-the shape obtained is independent of the values of model parameters. From
-measuring the radius $R$ of the G-like configuration and its angular
-velocity of rotation, we can compute both $f_k$ and $\nu$ from Eqs.
-\ref{eq:R} and \ref{eq:Romega}, giving  $\nu = \omega C/(\beta R^4)$
-and $f_k = \nu R \omega$. Measurements give $R \approx 1.33 \pm 0.2
-\mu m$ and the period $T = 12 \pm 1 s$. Therefore $\nu = 133 N s/m^2$
-and $f_k =  9.3\times 10^{-5} N/m$, both estimates are accurate within
-a factor of 2 assuming that $C$ has been well determined.  The force
-exerted by a kinesin motor in this situation is close to the experimentally determined stall
-value of approximately $f_m = 5 pN$~\cite{MeyhoferHoward}. Assuming that
-each motor attached can exert this force, this gives
-an average distance between motors of $f_m/f_k = 53 nm$. This assumes that
-the attachment of the motors is flexible enough to allow microtubule interactions capable of exerting this stall force. If
-this is not the case, we expect the kinesins to be spaced more closely but
-by no more than half this amount. This distance
-seems reasonable given the high density of kinesin molecules attached
-to the glass, and the size of the $\alpha-\beta$ tubulin dimer which is
-approximately $8 nm$ in length. Thus the above considerations can give
-a quantitative measure of the forces and drag in these gliding assays.
-
-
-Nevertheless, it would also be of interest to verify the travelling wave solutions experimentally
-in three dimensions for isolated
-microtubules and kinesin, for example, by utilizing a single molecule optical trap, or by some other
-means, allowing for a more rigorous test of the predictions made here.
-
-
-It is of interest to speculate on the reason for this microscopic mixing
-mechanism.  If the microtubules were attached from the {\em plus} end,
-there would be no dynamical instability from kinesin generated forces
-but the cytoplasmic streaming would be more efficient, with greater transfer
-of force from outside the oocyte, because the tension at the
-tether point would increase linearly with the length of the microtubule,
-whereas the tension saturates to a constant value in the case considered
-above. However as discussed earlier, complex stirring patterns are
-expected to be far more efficacious in mixing than steady-state flows.
-This agitation could then serve an important biological function.
-
-
-In summary, we have found a very simple set of conditions for generating efficient mixing
-in large eukaryotic cells. If microtubules are aligned so that their minus ends
-are in contact with the cell perimeter and dynein is suppressed, this will lead 
-(a) to cytoplasmic streaming in the bulk of the cell and (b) wave-like motion of
-microtubules. The latter will promote efficient mixing of the cell's contents by
-inducing chaotic flows.
-The efficiency of the cytoplasmic streaming is due to the long range nature of
-hydrodynamic coupling and the indirect linkage of microtubules to the oocyte surroundings via the cortex, leading to momentum transfer.
-The wave-like motion is due to an instability in the dynamics which breaks chiral
-symmetry and is a consequence of the tangential forces exerted by motor proteins on the elastic
-microtubules. Given the uncertainties in the experimental system and approximations
-made in the analysis, The wave-like motion seen in experiments agrees well with our theoretical predictions
-suggesting these effects represent a robust phenomenon.
-We are now engaged in experimentation to gather more accurate data on microtubule behavior 
-{\em in vivo} and {\em in vitro} under various conditions in order to further understand
-the mechanisms for fast cytoplasmic streaming discussed here.
-
-The authors would like to thank Ian Carbone, and Bill Sullivan for useful discussions.
-We also would like to gratefully acknowledge Andy Maloney and Steven J. Koch for their permission
-to use a snapshot of their video, Fig.  \ref{fig:squiggle}(a) \cite{MaloneyKochVideo} of their
-experimental results~\cite{MaloneyHerskowitzKoch}. This was generously distributed to us
-by them~\cite{KochLab} through the practice of Open Notebook Science~\cite{OpenNotebookScience} 
-This material is based upon work supported by National Institutes of Health GM046295 (to W.M.S.), National Science Foundation
-CCLI Grant DUE-0942207 (to J.M.D.),
-the  Defense Threat Reduction Agency basic research grant HDTRA-1-09-1-0018 (to Steven J. Koch),
-and the National Science Foundation IGERT Grant DGE-0549500 (to Steven J. Koch).
-
-
+%%%INSERT MATH PAPER
 
 %Single chain math Paper
 \section{Motion of Microtubule With Kinesin Walkers}
@@ -1376,6 +1178,208 @@ these. In the Geometric Model the form of the equations is much simpler,
 making it possible to understand the overall structure of the problem
 more easily. In the present case, a precise understanding of the numerical
 results will be the subject of future research.
+
+
+%%%END MATH PAPAER
+This analysis was extended to non-zero $v_s$ and as shown in the supplemental materials~\cite{SupplMat}, does not
+appreciably change the estimate we will give below for microtubule wave parameters in fast streaming oocytes. 
+
+
+When the microtubule is tethered to an impenetrable surface (in this case, the oocyte cortex) and the external cytoplasmic streaming velocity $v_s$
+is parallel to that surface, the form of the solution changes considerably. Numerical results show that the microtubule becomes completely two dimensional,
+lying close to the surface. For low enough $v_s$, travelling wave
+solutions are close to prolate cycloids, meaning that the microtubule periodically loops back
+on itself (see supplemental movie 2~\cite{SupplMovies}. This can be understood analytically. For sufficiently large $v_s$ it transitions to other states finally becoming 
+two dimensional and looking close to a sinusoid (see supplemental movie 3~\cite{SupplMovies}. This is analyzed in detail in
+the supplemental materials~\cite{SupplMat}.
+
+We have not included hydrodynamic and steric interactions between
+different microtubules except in the approximate way of giving rise to
+a constant cytoplasmic streaming velocity. Given the microtubule density in the
+oocyte, we expect these interactions to be substantial. However the wave
+like motion that we find is quite robust. Attaching microtubules together or
+considering additional forces still leads to periodic or sometimes chaotic
+motion, still at the same characteristic time and spatial scales. Therefore
+despite the simplicity of the model, we expect that the basic length
+and time scales that we predict should be quite robust.
+
+\section{Comparison with Experiment and Discussion}
+
+We now check to see whether the above model is consistent with experimental
+results.  
+
+Estimates of the microtubule elastic constant $C$ vary
+considerably~\cite{Felgner,GittesRigidity}  but range mostly within 
+$2$ to $4 \times 10^{-23} N m^2$. We estimate the force due to the kinesin
+per unit length, $f_k$ to be its velocity $v_k$ times the cytoplasmic
+viscosity. We will assume as suggested by our above analysis, that
+$a/d$ is between $1/4$ and $1$. We will take the kinesin velocity $v_k$ to be approximately $1
+\mu m/s$~\cite{SvobodaBlock,MeyhoferHoward}. The effective viscosity of the cytoplasm for small
+particles has been studied extensively and appears to vary depending on the type of cell on the length scale~\cite{LubyPhelps}. 
+Particles of different sizes diffusing in the cytoplasm diffuse as if the medium had a different viscosity. Its viscoelastic properties will depend on many
+factors such as the state of gelation of actin filaments~\cite{YinStossel}.
+We will assume that during fast cytoplasmic streaming, the cytoplasmic actin is mainly in a "sol" state allowing fast streaming
+to more readily take place. If this is not the case, the effective viscosity could be much higher~\cite{LubyPhelps}
+but the dissipation would increase proportionally requiring a higher energy input. 
+For small particles of radius approximately $20 nm$, the effective  viscosity 
+as measured by diffusion is approximately 8 times that of water~\cite{LubyPhelps} and we will use this
+value for comparison with experiment.  
+This gives $f_k = (a/d) v \eta$ in the range  $2$ to $8 \times 10^{-9} N/m$.
+Plugging these numbers into Eq. \ref{eq:R} gives $R$ in the range  $30$ to $50 \mu m$.
+We can estimate the angular velocity using Eq. \ref{eq:Romega} (which
+ignores cytoplasmic streaming). To get the largest range of times, we assume that the hydrodynamic drag
+coefficient is due solely to the impellers, so that $\nu = (a/d) \eta$. This
+is equivalent to $\omega = v_k/R$ or a period of $ T = 2 \pi R/v_k$ which ranges 
+from $190$ to $310 s$.
+
+Serbus and colleagues have observed microtubule behavior in living Drosophila oocytes using GFP-tubulin 
+and confocal fluorescence microscopy~\cite{SerbusSaxton}. 
+Time-lapse movies showed bright fibrous fluorescence, representing
+groups of microtubules, in a background of diffuse fluorescence from non-polymerized GFP-tubulin.
+The microtubule patterns changed over time, as did the patterns of motion of organelles that
+either excluded the GFP-tubulin or were themselves auto-fluorescent. Bends in the microtubules were
+at times visible in the $x-y$ optical plane and some remained visible within that plane for $30-90 s$,
+allowing measurement of a radius of curvature that we expect to approximately correspond to the
+$R$ in the above analysis. $R$ was measured  to be $19.5\pm 6.5 \mu m$ with $9$ measurements (standard error $2.1 \mu m$),  and
+the wave velocity was $v = 0.265 \pm 0.04 \mu m/s$ with $4$ measurements. Because these waves
+appear roughly sinusoidal, we can also estimate the period $T$. Assuming a wavelength of $4R$
+then the measured velocity gives a period of $T= 294 s$ with an even larger error bar
+considering the fact that this assumes a waveform that is probably not accurate. Nevertheless
+it suggests a characteristic time.
+
+
+
+The motion studied here can be contrasted with ciliary
+motion~\cite{Kennedy} which has a period on the order of $.05 s$. Clearly
+the two mechanisms have fundamentally different explanations. 
+The experimental time scale points to the mechanism described here rather
+than ciliary motion.  The agreement found with experiment in our above
+analysis is to some extent fortuitous, given the large uncertainties
+in the experimental system. But nevertheless, it provides evidence that
+the simple mechanism proposed is the origin of the behavior seen in
+cytoplasmic streaming.  The experimental evidence~\cite{SerbusSaxton} that dynein inhibits
+streaming and that minus ends of microtubules are in contact with the
+cortex~\cite{ChaSerbus}, both support this hypothesis as well. 
+
+More generally, the above analysis elucidates, at a qualitative level, the phenomena seen
+in experiment~\cite{SerbusSaxton}, of strong cytoplasmic streaming
+occurring concomitantly with wave-like motion of microtubules.
+The movement of a relatively few number of kinesin motors on a microtubule 
+couples to the fluid causing a bulk hydrodynamic flow. The force a
+kinesin exerts on a microtubule sets the microtubule into motion causing
+it to execute wave-like motion. This in turn causes the flow lines around microtubules to be time dependent,
+making the microtubules act as stirrers for the surrounding fluid, which leads to 
+chaotic flows and strong mixing~\cite{Aref,Aref2000}. 
+
+
+
+\begin{figure}[htp]
+\begin{center}
+(a) \includegraphics[width=0.3\hsize]{koch2.eps}
+(b)\includegraphics[width=0.3\hsize]{squiggle_sim.eps}
+\caption{ 
+The configuration a rotating microtubule in a gliding assay~\cite{MaloneyHerskowitzKoch,MaloneyKochVideo} with the leading end
+stuck to a kinesin protein is shown in (a). (b) Shows the two dimensional simulation
+of Eq. \ref{eq:microtubule} showing a similar shape.
+}
+\label{fig:squiggle}
+\end{center}
+\end{figure}
+
+
+Can such motion be directly observed in an {\em in vitro}
+experiment?  In fact it has been seen frequently as an unwanted artifact
+of sample preparation.
+Microtubule gliding assays were pioneered more than two
+decades ago~\cite{ValeSchnappEtAl} and have become a
+standard technique to better understand the motion of kinesin motors.
+When a solution microtubules and ATP is placed on a glass surface on
+which there is a high density of kinesin molecules, the kinesins propel
+the microtubules with their minus ends leading.  Occasionally the minus
+end sticks, perhaps to damaged kinesins, and continued forces of the
+trailing portion of the microtubule cause flexing and curve generation.
+
+Microtubule gliding assay videos of high quality~\cite{MaloneyHerskowitzKoch} provide an excellent
+source of data for investigating the two dimensional version of the problem
+studied here~\cite{MaloneyKochVideo}. The microtubule is being pushed by kinesin molecules
+that on average, apply a force tangent to the microtubule. When an
+end is tethered by sticking to a kinesin molecule, as noted above, this leads to 
+a physical situation that is well described by Eq. \ref{eq:microtubule}. It should be
+emphasized that the values of the tangential force $f_k$ and the drag
+coefficient $\nu$ will be much larger than in the oocyte case.
+Consequently, sometimes microtubules flex,, 
+forming a G-shaped curve that rotates around the anchored minus end 
+of the microtubule.  Fig. \ref{fig:squiggle} shows a comparison of
+snapshots of the microtubule with that of a
+simulation of Eq. \ref{eq:microtubule}. The resemblance is quite striking and provides evidence that
+the theoretical modelling of this bending instability is valid. Note that
+the shape obtained is independent of the values of model parameters. From
+measuring the radius $R$ of the G-like configuration and its angular
+velocity of rotation, we can compute both $f_k$ and $\nu$ from Eqs.
+\ref{eq:R} and \ref{eq:Romega}, giving  $\nu = \omega C/(\beta R^4)$
+and $f_k = \nu R \omega$. Measurements give $R \approx 1.33 \pm 0.2
+\mu m$ and the period $T = 12 \pm 1 s$. Therefore $\nu = 133 N s/m^2$
+and $f_k =  9.3\times 10^{-5} N/m$, both estimates are accurate within
+a factor of 2 assuming that $C$ has been well determined.  The force
+exerted by a kinesin motor in this situation is close to the experimentally determined stall
+value of approximately $f_m = 5 pN$~\cite{MeyhoferHoward}. Assuming that
+each motor attached can exert this force, this gives
+an average distance between motors of $f_m/f_k = 53 nm$. This assumes that
+the attachment of the motors is flexible enough to allow microtubule interactions capable of exerting this stall force. If
+this is not the case, we expect the kinesins to be spaced more closely but
+by no more than half this amount. This distance
+seems reasonable given the high density of kinesin molecules attached
+to the glass, and the size of the $\alpha-\beta$ tubulin dimer which is
+approximately $8 nm$ in length. Thus the above considerations can give
+a quantitative measure of the forces and drag in these gliding assays.
+
+
+Nevertheless, it would also be of interest to verify the travelling wave solutions experimentally
+in three dimensions for isolated
+microtubules and kinesin, for example, by utilizing a single molecule optical trap, or by some other
+means, allowing for a more rigorous test of the predictions made here.
+
+
+It is of interest to speculate on the reason for this microscopic mixing
+mechanism.  If the microtubules were attached from the {\em plus} end,
+there would be no dynamical instability from kinesin generated forces
+but the cytoplasmic streaming would be more efficient, with greater transfer
+of force from outside the oocyte, because the tension at the
+tether point would increase linearly with the length of the microtubule,
+whereas the tension saturates to a constant value in the case considered
+above. However as discussed earlier, complex stirring patterns are
+expected to be far more efficacious in mixing than steady-state flows.
+This agitation could then serve an important biological function.
+
+
+In summary, we have found a very simple set of conditions for generating efficient mixing
+in large eukaryotic cells. If microtubules are aligned so that their minus ends
+are in contact with the cell perimeter and dynein is suppressed, this will lead 
+(a) to cytoplasmic streaming in the bulk of the cell and (b) wave-like motion of
+microtubules. The latter will promote efficient mixing of the cell's contents by
+inducing chaotic flows.
+The efficiency of the cytoplasmic streaming is due to the long range nature of
+hydrodynamic coupling and the indirect linkage of microtubules to the oocyte surroundings via the cortex, leading to momentum transfer.
+The wave-like motion is due to an instability in the dynamics which breaks chiral
+symmetry and is a consequence of the tangential forces exerted by motor proteins on the elastic
+microtubules. Given the uncertainties in the experimental system and approximations
+made in the analysis, The wave-like motion seen in experiments agrees well with our theoretical predictions
+suggesting these effects represent a robust phenomenon.
+We are now engaged in experimentation to gather more accurate data on microtubule behavior 
+{\em in vivo} and {\em in vitro} under various conditions in order to further understand
+the mechanisms for fast cytoplasmic streaming discussed here.
+
+The authors would like to thank Ian Carbone, and Bill Sullivan for useful discussions.
+We also would like to gratefully acknowledge Andy Maloney and Steven J. Koch for their permission
+to use a snapshot of their video, Fig.  \ref{fig:squiggle}(a) \cite{MaloneyKochVideo} of their
+experimental results~\cite{MaloneyHerskowitzKoch}. This was generously distributed to us
+by them~\cite{KochLab} through the practice of Open Notebook Science~\cite{OpenNotebookScience} 
+This material is based upon work supported by National Institutes of Health GM046295 (to W.M.S.), National Science Foundation
+CCLI Grant DUE-0942207 (to J.M.D.),
+the  Defense Threat Reduction Agency basic research grant HDTRA-1-09-1-0018 (to Steven J. Koch),
+and the National Science Foundation IGERT Grant DGE-0549500 (to Steven J. Koch).
+
+
 
 
 \section{Conclusions}
