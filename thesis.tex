@@ -718,82 +718,82 @@ impellers.
 
 \section{Travelling Wave Instability of Microtubules}
 
-We now show how the kinesin generated tangential forces on microtubules give rise to travelling wave conformations 
-and calculate their angular and spatial frequency.
-A microtubule has a configuration $\br(s)$ parameterized by 
-an arclength $s$ and, at long enough length scales, can be modeled as being inextensible, 
-that is $|\partial \br/\partial s| = 1$
-with an elastic bending constant $C$. The inextensibility is enforced by a position dependent tension $T(s)$. 
-There is also a force acting on the microtubule as a result of kinesin walking along it.
-The magnitude of the force is proportional to the local speed and the size of the kinesin-driven impeller
-and the direction of the force is tangent to the microtubule,
-which, we will see, has the effect of making it buckle. We denote this with a force per unit length of $f_k$. 
-We also include a force due to the cytoplasm streaming at a velocity $v_s$ which
-we take to be in the $\hat k$ direction away from the minus end and this force tends to straighten the microtubule. This leads to the equation
-\begin{equation}
-\label{eq:microtubule}
-\nu \frac{\partial \br}{\partial t} =  -C \frac{\partial^4 \br}{\partial s^4} + \frac{\partial}{\partial s}(T(s)\frac{\partial \br}{\partial s}) -
-f_k \frac{\partial \br}{\partial s} + \nu v_{s}{\hat k} .
-\end{equation}
-where $\nu$ is a hydrodynamic drag coefficient per unit length. 
+% We now show how the kinesin generated tangential forces on microtubules give rise to travelling wave conformations 
+% and calculate their angular and spatial frequency.
+% A microtubule has a configuration $\br(s)$ parameterized by 
+% an arclength $s$ and, at long enough length scales, can be modeled as being inextensible, 
+% that is $|\partial \br/\partial s| = 1$
+% with an elastic bending constant $C$. The inextensibility is enforced by a position dependent tension $T(s)$. 
+% There is also a force acting on the microtubule as a result of kinesin walking along it.
+% The magnitude of the force is proportional to the local speed and the size of the kinesin-driven impeller
+% and the direction of the force is tangent to the microtubule,
+% which, we will see, has the effect of making it buckle. We denote this with a force per unit length of $f_k$. 
+% We also include a force due to the cytoplasm streaming at a velocity $v_s$ which
+% we take to be in the $\hat k$ direction away from the minus end and this force tends to straighten the microtubule. This leads to the equation
+% \begin{equation}
+% \label{eq:microtubule}
+% \nu \frac{\partial \br}{\partial t} =  -C \frac{\partial^4 \br}{\partial s^4} + \frac{\partial}{\partial s}(T(s)\frac{\partial \br}{\partial s}) -
+% f_k \frac{\partial \br}{\partial s} + \nu v_{s}{\hat k} .
+% \end{equation}
+% where $\nu$ is a hydrodynamic drag coefficient per unit length. 
 
-\begin{figure}[htp]
-\begin{center}
-\includegraphics[width=\hsize]{simulation1.eps}
-\caption{ 
-The motion of a microtubule with a constant force being applied tangent to its axis. 
-A constant velocity in the horizontal direction  from left to right has also been applied representing
-the background from cytoplasmic streaming. The white ball on the left represents
-the point at which the microtubule's minus end is tethered. See supplemental
-movie 1~\cite{SupplMovies}. In a real oocyte, the radius of curvature would
-correspond to approximately $40 \mu m$ and the dimensions of the entire figure are
-roughly comparable to the oocyte. The thickness of the microtubule has been magnified
-by a factor of about $2000$ to facilitate viewing.
-}
-\label{fig:simulation}
-\end{center}
-\end{figure}
+% \begin{figure}[htp]
+% \begin{center}
+% \includegraphics[width=\hsize]{simulation1.eps}
+% \caption{ 
+% The motion of a microtubule with a constant force being applied tangent to its axis. 
+% A constant velocity in the horizontal direction  from left to right has also been applied representing
+% the background from cytoplasmic streaming. The white ball on the left represents
+% the point at which the microtubule's minus end is tethered. See supplemental
+% movie 1~\cite{SupplMovies}. In a real oocyte, the radius of curvature would
+% correspond to approximately $40 \mu m$ and the dimensions of the entire figure are
+% roughly comparable to the oocyte. The thickness of the microtubule has been magnified
+% by a factor of about $2000$ to facilitate viewing.
+% }
+% \label{fig:simulation}
+% \end{center}
+% \end{figure}
 
 
-We first implemented this equation numerically for a range of parameters
-and enforced boundary conditions that tethered the minus end against the cortex, while
-the plus end was free. Starting from random initial conditions, the equation rapidly goes to a steady state that
-typically is described by a curve that asymptotically becomes helical for large $s$ and rotates uniformly at constant
-angular velocity. The results of a steady state configuration are shown in Fig. \ref{fig:simulation}. 
-The supplemental movies~\cite{SupplMovies} discussed below, show microtubule solutions for different
-parameters.
-Supplemental movie 1 shows the full time dependence~\cite{SupplMovies}. The chirality of the helix depends on its initial conditions.
-Therefore the direction of rotation is random but stable once steady state is reached.
+% We first implemented this equation numerically for a range of parameters
+% and enforced boundary conditions that tethered the minus end against the cortex, while
+% the plus end was free. Starting from random initial conditions, the equation rapidly goes to a steady state that
+% typically is described by a curve that asymptotically becomes helical for large $s$ and rotates uniformly at constant
+% angular velocity. The results of a steady state configuration are shown in Fig. \ref{fig:simulation}. 
+% The supplemental movies~\cite{SupplMovies} discussed below, show microtubule solutions for different
+% parameters.
+% Supplemental movie 1 shows the full time dependence~\cite{SupplMovies}. The chirality of the helix depends on its initial conditions.
+% Therefore the direction of rotation is random but stable once steady state is reached.
 
-As the microtubule is made longer, the angular velocity and radius of the helix go to
-a constant limit. However the tethered part is not helical but nevertheless rotates
-in synchrony with the rest of the microtubule. These dynamics we analyzed in detail
-(see the supplemental information) to find the form of the solution to this equation.
-In particular we show that this equation supports travelling waves and find the
-relationship between the angular velocity of rotation $\omega$ and the asymptotic
-radius of the helix, and the external velocity fields $v_s$. In the case where $v_s = 0$, the
-relationship simplifies to 
-\begin{equation}
-\label{eq:Romega}
-\nu R \omega/f_k = 1.
-\end{equation}
-independent of chain length.
+% As the microtubule is made longer, the angular velocity and radius of the helix go to
+% a constant limit. However the tethered part is not helical but nevertheless rotates
+% in synchrony with the rest of the microtubule. These dynamics we analyzed in detail
+% (see the supplemental information) to find the form of the solution to this equation.
+% In particular we show that this equation supports travelling waves and find the
+% relationship between the angular velocity of rotation $\omega$ and the asymptotic
+% radius of the helix, and the external velocity fields $v_s$. In the case where $v_s = 0$, the
+% relationship simplifies to 
+% \begin{equation}
+% \label{eq:Romega}
+% \nu R \omega/f_k = 1.
+% \end{equation}
+% independent of chain length.
 
-It is interesting to note that for travelling waves, solutions can be at any scale. There is a continuous family of solutions
-all with the same shape but different scale factors. In the case of a helix, many different radii $R$ are solutions to
-these equations.
+% It is interesting to note that for travelling waves, solutions can be at any scale. There is a continuous family of solutions
+% all with the same shape but different scale factors. In the case of a helix, many different radii $R$ are solutions to
+% these equations.
 
-What determines the value of $R$ that is selected? As with other problems in pattern formation such as the ``geometric model"~\cite{Kessler}
-or the full dendrite problem~\cite{Barbieri}, it is the boundary conditions
-that are responsible for the unique value of $R$ that is selected. In this case, the microtubule minus end is tethered, $\bu(0) = 0$
-but the plus end is free.
-The solution will only exist for discrete values
-of $\beta \equiv C/(R^3 f_k)$. Numerical analysis gives, $\beta = 0.05 \pm 0.0005$. 
-This implies that 
-\begin{equation}
-\label{eq:R}
-R =  (C/(\beta f_k))^{1/3}.
-\end{equation}
+% What determines the value of $R$ that is selected? As with other problems in pattern formation such as the ``geometric model"~\cite{Kessler}
+% or the full dendrite problem~\cite{Barbieri}, it is the boundary conditions
+% that are responsible for the unique value of $R$ that is selected. In this case, the microtubule minus end is tethered, $\bu(0) = 0$
+% but the plus end is free.
+% The solution will only exist for discrete values
+% of $\beta \equiv C/(R^3 f_k)$. Numerical analysis gives, $\beta = 0.05 \pm 0.0005$. 
+% This implies that 
+% \begin{equation}
+% \label{eq:R}
+% R =  (C/(\beta f_k))^{1/3}.
+% \end{equation}
 
 %%%INSERT MATH PAPER
 
@@ -1747,7 +1747,15 @@ Because this simulation does not apply any external flow fields, we expect the s
 We ran this simulation using a range of parameters similar to that used in the single microtubule simulation, again using a random starting configuration and tethering the minus end of the microtubule to a fixed point in space. 
 The result was essentially as expected, with a solution that asymptotically approached a circle rotating at a constant rate. A typical solution is shown here:
 
-[*** show a picture ***]
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=\hsize]{singtest.png}
+\caption{ 
+Simulation results for a single polymer without fluid interaction(blue) and with fluid interaction(orange), with all other parameters held the same. They are qualitatively the same, though the radius is slightly larger with fluid interactions activated.
+}
+\label{fig:singtest}
+\end{center}
+\end{figure}
 
 It is interesting to note that the hydrodynamic interaction have little to no effect on this type of solution. 
 The explanation for this is that in this configuration the stiffness and the gradiant in the tension exactly cancel each other, producing no velocity pertubations in the fluid from the main circular portion of the microtubule.
