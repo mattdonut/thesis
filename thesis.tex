@@ -419,30 +419,30 @@ While discovering the properties of a polymer by itself is extremely useful as a
 
 \section{Cytoplasmic Streaming}
 One of the biological processes in which the properties of polymers plays a very important role is cytoplasmic streaming.
-Cytoplasmic streaming is a process by which the contents of a single cell are rapidly moved on a scale that covers the entire cell. 
-
 While most often seen in plants, whose cell walls restrict outside purturbations of the interior fluid, the effect is seen in a wide variety of cells. 
-The biological funtions that this streaming accomplishes vary from case to case, whether it be for delivery of materials for focused grouth or a more chaotic stirring to distribute organelles.
+The biological funtions that this streaming accomplishes vary from case to case, whether it be for delivery of materials for focused growth or a more chaotic stirring to distribute organelles.
 The driving forces behind this mass motion of cytoplasm are beleived to be motor proteins carrying cargo along the cytoskelton, causing hydrodynamic drag to extend to large scale fluid motion.
 The exact components of the streaming mechanisam are still under investigation, and depend on the system in question.
 
 \section{Drosophila Oocyte}
-The specific instance of this streaming we studied is the fast streaming present in the developement of Drosophila oocytes. This streaming happens at the 10B development stage during the developement cycle, just before cytoplasm from nearby nurse cells is dumped asymetrically into the oocyte.
+The specific example of cytoplasmic streaming we studied is that found in certain stages of the development of Drosophila, a commonly studied type of fly. 
+The streaming takes place during the Drosophila's oocyte stage, when it consists primarily of one large cell and a few nurse cellls.
 
 [*** diagram of oocyte nurse cell arrangement***]
 
+At this stage of development, it is vital to acheive the correct distribution of components used to form the adult organism. 
+In some cases, materials need to be localized into specific regions, while in other cases materials need to be efficiantly mixed into the entire cytoplasm.
+Interestingly, cytoplasmic streaming is believed to contribute to both of these processes.
+
+In Drosophila oocytes there are two forms of microtubule based streaming. 
+First is a slow disorganized streaming, where slow localized motion of cytoplasm is thought to help distribute pattern forming determinants such as oskar mRNA. 
+These slow streams are rather chaotic in appearance, and do not show long range correlations across the cell.
+The second type of streaming present is a fast, well-ordered motion of cytoplasm that begins just before nurse cells inject more cytoplasm into the oocyte. 
+In this stage, the streaming diplays correlations in direction on the size scale of the entire cell. It is beleived that this fast streaming is crucial for proper distribution of material withing the oocyte.
+In both of these cases, motor protiens walking along a microtubule meshwork appear to play a vital role. 
 A great deal of work has been done to determine what components are involved in this particular instance of streaming [***Cite some of it here***]
 
-It is not only important to understand the mechanism at work during the streaming itself, but also in the mechanisms used to control the timing of that streaming phase.
-One theory is that a competition between the plus end directed Kinesin-1 and the minus end directed Dynine inhibits the streaming by reducing the impact of the motor proteins.
-The large scale streaming requires the correlated effort of a significaqnt fraction of the motors involved, so a small change in the local force conditions could cross a critial value and begin large scale streaming.
-
-
-%Mixing Paper
-\chapter{Single Polymer Dynamics}
-
-\section{Microtubules and Molecular Motors}
-
+\subsection{Microtubule Pathways}
 Microtubules are flexible hollow polymers of tubulin subunits that
 serve many critical functions in eukaryotic cells. They are utilized
 in structural contexts, because of their relatively stiff, yet flexible,
@@ -453,8 +453,26 @@ along the microtubules with kinesin moving toward their fast growing
 Many studies have focused on motor driven transport processes that
 generate asymmetric distributions of specific cytoplasmic constituents;
 asymmetries that are essential for complex cellular functions. 
-We will analyze a surprising role for microtubules and kinesin in cytoplasmic streaming that has evolved to accomplish just the opposite; efficient homogeneous mixing of the contents of a cell~\cite{SerbusSaxton} and see there Supplemental Movie 13~\cite{Movie13}.
 
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=0.5\hsize]{biomodel.png}
+\caption{ 
+A speculative model for fast streaming in Drosophila oocytes.
+}
+\label{fig:spheres}
+\end{center}
+\end{figure}
+
+
+
+It is not only important to understand the mechanism at work during the streaming itself, but also in the mechanisms used to control the timing of that streaming phase.
+The large scale streaming requires the correlated effort of a significaqnt fraction of the motors involved, so a small change in the local force conditions could cross a critial value and begin large scale streaming.
+
+
+\subsection{Components of Mixing}
+
+% We will analyze a surprising role for microtubules and kinesin in cytoplasmic streaming that has evolved to accomplish just the opposite; efficient homogeneous mixing of the contents of a cell~\cite{SerbusSaxton} and see there Supplemental Movie 13~\cite{Movie13}.
 
 Vigorous streaming is initiated during the final stages of
 development of {\em Drosophila} oocytes to disperse asymmetrically
@@ -495,6 +513,7 @@ A speculative model for fast streaming in Drosophila oocytes, care of Bill Saxto
 \label{fig:spheres}
 \end{center}
 \end{figure}
+
 
 Yolk particles in the
 cytoplasm have a speed of roughly $0.25 \mu m/s$.  The particles
@@ -544,6 +563,12 @@ wave-like motion of microtubules, and show that the time and length scales
 predicted are in good agreement with the previous experimental
 results.
 
+%Mixing Paper
+\chapter{Single Polymer Dynamics}
+
+\section{Microtubules and Molecular Motors}
+Consider impellers to be objects each with maximum linear dimension
+$a$, and with a mean spacing of $d$ arranged in a straight line along the microtubule, as shown in Fig ~\ref{fig:spheres}. 
 
 \begin{figure}[htp]
 \begin{center}
@@ -556,10 +581,6 @@ The velocity is measured at a point a distance $r$ from the axis.
 \end{center}
 \end{figure}
 
-\section{Enhancement of Streaming Due to Hydrodynamics} 
-
-Consider impellers to be objects each with maximum linear dimension
-$a$, and with a mean spacing of $d$ arranged in a straight line as shown in Fig ~\ref{fig:spheres}. 
 These impellers are pictured as spheres, but hydrodynamics is not sensitive to
 the exact shape of an impeller, as it depends mainly on its maximum linear dimension~\cite{BergRandomWalksinBiology}. 
 We will
@@ -604,6 +625,7 @@ dependence. In other words, for a spherical region just enveloping a microtubule
 the fluid velocity is slowly varying and reduced from the kinesin motor velocity 
 by a factor of order $a/d$.
 
+\section{Enhancement of Streaming Due to Hydrodynamics} 
 
 Of course there are  many microtubules in these cells. To understand how this
 affects the above analysis, consider all space filled with an infinite forest of them all oriented
@@ -823,6 +845,22 @@ f_k \frac{\partial \br}{\partial s} + \nu v_{s}{\hat k} .
 \end{equation}
 $C$ denotes the elastic bending constant of the microtubule. The tension $T(s)$ enforces the inextensibility of microtubules which
 can be written as  $|\partial \br/\partial s| = 1.$ 
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=\hsize]{simulation1.eps}
+\caption{ 
+The motion of a microtubule with a constant force being applied tangent to its axis. 
+A constant velocity in the horizontal direction  from left to right has also been applied representing
+the background from cytoplasmic streaming. The white ball on the left represents
+the point at which the microtubule's minus end is tethered. See supplemental
+movie 1~\cite{SupplMovies}. In a real oocyte, the radius of curvature would
+correspond to approximately $40 \mu m$ and the dimensions of the entire figure are
+roughly comparable to the oocyte. The thickness of the microtubule has been magnified
+by a factor of about $2000$ to facilitate viewing.
+}
+\label{fig:simulation}
+\end{center}
+\end{figure}
 Kinesin motors walking along the microtubule are assumed to be carrying cargo that acts as an impeller pushing the surrounding
 cytoplasmic medium. By Newton's third law, this force produces a drag on the impellers that transmits this force to the
 attached microtubule. Assuming a high density of kinesin walkers, the effective force on the microtubule will be in the
@@ -1483,7 +1521,8 @@ understand the large scale cytoplasmic motion for Drosophila oocytes.
 %Multi poly stuff
 \chapter{Fluid Mediated Polymer Interactions}
 \label{chap:Interact}
-Having studied the dynamics of single polymer dynamics in an externally imposed flow field, we must now investigate how such a field could be brought about due to a large group of microtubles. In order to produce a global flow field in the fluid, we need a large number of microtubules all aligned and contributing to the driving of the field in a correlated manner. 
+Having studied the dynamics of individual polymers in an externally imposed flow field, we must now investigate how such a field could be brought about due to a large group of microtubles. 
+In order to produce a global flow field in the fluid, we need a large number of microtubules all aligned and contributing to the driving of the field in a correlated manner. 
 In addition to investigating steady state values, the behavior at low field could determine criteria underwhich spontaneous global velocity field formation could occur. In order to do these types of calculations, a more detailed view of the interaction between elements in the system needs to be taken.
 
 \section{Introduction to the Oseen Tensor}
