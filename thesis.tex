@@ -490,7 +490,7 @@ of flowing water and seaweed.
 \begin{center}
 \includegraphics[width=0.5\hsize]{biomodel.png}
 \caption{ 
-A speculative model for fast streaming in Drosophila oocytes.
+A speculative model for fast streaming in Drosophila oocytes, care of Bill Saxton et al. [***should look up proper citing for this***]
 }
 \label{fig:spheres}
 \end{center}
@@ -812,7 +812,7 @@ impellers.
 % but opposite force on a microtubule generates dynamic bending along
 % its length.  The results of this work have been used to understand this
 % phenomenon in recent work by the authors~\cite{DeutschBrunnerSaxton}.
-
+\label{sect:MathAnalysis
 We begin with the equation for a microtubule with an applied force tangent to the direction of chain. The position
 of the microtubule at arclength $s$ and at time $t$ is denoted $\br(s,t)$. As is usual at small scales, all inertial effects are negligible
 and the system is dominated by the drag coefficient per unit length $\nu$,
@@ -1267,9 +1267,9 @@ the supplemental materials~\cite{SupplMat}.
 
 We have not included hydrodynamic and steric interactions between
 different microtubules except in the approximate way of giving rise to
-a constant cytoplasmic streaming velocity. Given the microtubule density in the
-oocyte, we expect these interactions to be substantial. However the wave
-like motion that we find is quite robust. Attaching microtubules together or
+a constant cytoplasmic streaming velocity. 
+The complete many body interaction is analyzed in chapter \ref{chap:Interact}, and we find that the microtubules do indeed have a strong tenndancy to self correlate into a single directed global flow. 
+The wave like motion that we find is quite robust. Attaching microtubules together or
 considering additional forces still leads to periodic or sometimes chaotic
 motion, still at the same characteristic time and spatial scales. Therefore
 despite the simplicity of the model, we expect that the basic length
@@ -1441,15 +1441,15 @@ We are now engaged in experimentation to gather more accurate data on microtubul
 {\em in vivo} and {\em in vitro} under various conditions in order to further understand
 the mechanisms for fast cytoplasmic streaming discussed here.
 
-The authors would like to thank Ian Carbone, and Bill Sullivan for useful discussions.
-We also would like to gratefully acknowledge Andy Maloney and Steven J. Koch for their permission
-to use a snapshot of their video, Fig.  \ref{fig:squiggle}(a) \cite{MaloneyKochVideo} of their
-experimental results~\cite{MaloneyHerskowitzKoch}. This was generously distributed to us
-by them~\cite{KochLab} through the practice of Open Notebook Science~\cite{OpenNotebookScience} 
-This material is based upon work supported by National Institutes of Health GM046295 (to W.M.S.), National Science Foundation
-CCLI Grant DUE-0942207 (to J.M.D.),
-the  Defense Threat Reduction Agency basic research grant HDTRA-1-09-1-0018 (to Steven J. Koch),
-and the National Science Foundation IGERT Grant DGE-0549500 (to Steven J. Koch).
+% The authors would like to thank Ian Carbone, and Bill Sullivan for useful discussions.
+% We also would like to gratefully acknowledge Andy Maloney and Steven J. Koch for their permission
+% to use a snapshot of their video, Fig.  \ref{fig:squiggle}(a) \cite{MaloneyKochVideo} of their
+% experimental results~\cite{MaloneyHerskowitzKoch}. This was generously distributed to us
+% by them~\cite{KochLab} through the practice of Open Notebook Science~\cite{OpenNotebookScience} 
+% This material is based upon work supported by National Institutes of Health GM046295 (to W.M.S.), National Science Foundation
+% CCLI Grant DUE-0942207 (to J.M.D.),
+% the  Defense Threat Reduction Agency basic research grant HDTRA-1-09-1-0018 (to Steven J. Koch),
+% and the National Science Foundation IGERT Grant DGE-0549500 (to Steven J. Koch).
 
 
 
@@ -1466,9 +1466,7 @@ is selected. There are many other questions that are interesting.
 What is the motion when there are obstacles that prevent free motion
 of the microtubule? Do these lead to chaotic behavior? What happens
 in the case of many microtubules interacting through steric and hydrodynamic
-interactions? This last question is difficult to answer and will
-be tied into the question of large scale collective motion of forests of
-microtubules and the velocity flows that they produce. Velocity
+interactions? This last question is difficult to answer and is the subject of \ref{chap:Interact}. Velocity
 flows giving rise to micro-mixing have been studied in related systems~\cite{GoldsteinTuvalvandeMeentPNAS,GoldsteinTuvalvandeMeentPRL,MeentSedermanGladdenGoldstein,VerchotLubiczGoldstein} and it would be very interesting to
 understand the large scale cytoplasmic motion for Drosophila oocytes.
 
@@ -1484,7 +1482,7 @@ understand the large scale cytoplasmic motion for Drosophila oocytes.
 
 %Multi poly stuff
 \chapter{Fluid Mediated Polymer Interactions}
-
+\label{chap:Interact}
 Having studied the dynamics of single polymer dynamics in an externally imposed flow field, we must now investigate how such a field could be brought about due to a large group of microtubles. In order to produce a global flow field in the fluid, we need a large number of microtubules all aligned and contributing to the driving of the field in a correlated manner. 
 In addition to investigating steady state values, the behavior at low field could determine criteria underwhich spontaneous global velocity field formation could occur. In order to do these types of calculations, a more detailed view of the interaction between elements in the system needs to be taken.
 
@@ -1740,7 +1738,7 @@ However, due to the relative velocity between the fluid and the microtubule back
 \end{equation}
 This derivitive is then used for a standard fourth order Runge Kutte integration in order to advance the system in time.
 
-\section{Single Microtube verification}
+\section{Single Microtubule verification}
 The new algorithm was then used to simulate a single microtubule in order to see what effect the fluid interaction would have on the single microtubule solution, as well as verify that the algorithm works.
 Because this simulation does not apply any external flow fields, we expect the solution to closely resemble the zero field case from the theory without fluid coupling.
 
