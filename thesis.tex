@@ -658,7 +658,7 @@ We will go on later to show that this small separation (on the order of the leng
 This term falls off as $1/\br^3$ and should not have significant effect on the long distance fluid motion.
 For considering the long range flow field of the fluid, it is safe to neglect these terms and for now treat these two force equations as happening at the same location.
 
-The total force acting on the fluid is then:
+The total force acting on the fluid per unit length is then:
 \begin{equation}
 \label{eq:mfnetFforce}
 b_I (v - v_0) + b_M v = -\frac{\partial}{\partial s}T(s)
@@ -684,7 +684,9 @@ And now take the limit as the total system size goes to infinity
 \label{eq:mfflowlimit}
 \lim_{R\to\infty} v = \frac{b_I}{b_I + b_M} v_0 = \frac{a}{a+d} v_0
 \end{equation}
-The second equality comes from the fact that the drag coefficients are proportional to the maximal linear dimensions of the objects in question. Because of that reason, we expect $b_M > b_I$ because the impellers must be able to fit along the microtubule.
+The second equality comes from the fact that the drag coefficients are proportional to the maximal linear dimensions of the objects in question. 
+In this case $a$ for the impellers, and $d$ for the segment of microtubule. 
+Because of this, we expect $b_M > b_I$ because the impellers must be able to fit along the microtubule.
 
 This result makes good intuitive sense, as we would expect the fluid velocity to be some form of weighted average between the velocities of the two classes of objects in contact with it. 
 It also has the nice limit that if the drag from the microtubule were to be small, the fluid would move at the walk speed of the kinesin, and that if the drag from the microtubule were to be very large, the fluid velocity would be greatly suppressed but never quite zero.
@@ -731,14 +733,15 @@ Another important biological issue is the necessity to have some microtubules in
 with the cortex of the
 oocyte, for example by tethering or by frictional forces. A free floating microtubule with kinesin moving on it will apply {\em zero} net force
 to the fluid. This is a simple consequence of Newton's third law, or equivalently, conservation
-of momentum. This does not contradict
+of momentum. 
+Contact with the cortex is crucial as it allows for transfer of force from outside of
+the oocyte to the cytoplasm, enabling fast streaming of the bulk to be powered by a much smaller volume of kinesin driven
+impellers.
+This does not contradict
 the fact that bacteria are able to swim: the force propelling the bacterium forward is
 countered by an equal and opposite force on the environment, leading to velocity fields that
 are dipolar at large distances. Unlike the case analyzed above, this will not lead to long range hydrodynamic motion
 of the fluid and will not lead to efficient cytoplasmic streaming by relatively few motor proteins. 
-Contact with the cortex is crucial as it allows for transfer of force from outside of
-the oocyte to the cytoplasm enabling fast streaming of the bulk to be powered by a much smaller volume of kinesin driven
-impellers.
 
 %\section{Travelling Wave Instability of Microtubules}
 
