@@ -413,9 +413,14 @@ this effect.
 \part{Biopolymers}
 
 \chapter{Previous Work}
-This should be a fairly large chapter about previous work done in the field of biopolymer dynamics and probably background on Cytoplasmic Streaming.
-Most likely I will coalesce the information and work from the other papers into this section for better readability.
-While discovering the properties of a polymer by itself is extremely useful as a foundation for understanding their behavior, polymers are often found in complex systems. Bioploymers are are a huge class of polymers engaged in complex behaviors, and these behaviors are crucial to biological processes that allow living organisms to operate.
+While discovering the properties of a polymer by itself is extremely useful as a foundation for understanding their behavior, polymers are rarely found in vacuum.
+Polymers are often found in complex systems, with one of the most familiar examples being biology.
+Biological systems make extensive use of polymers, and produce many different kinds for a variety of uses.
+Some are used for structural support, some for energy storage, others can be used to store information.
+A biopolymer can be any kind of polymer created or used by a biological system.
+Bioplolymers can also play a less direct role in biological functions.
+The structural biopolymers often pay a vital role in dynamic properties by laying the foundation on which other dynamic processes can operate.
+
 
 \section{Cytoplasmic Streaming}
 One of the biological processes in which the properties of polymers plays a very important role is cytoplasmic streaming. 
@@ -424,16 +429,17 @@ It is usually characterized by motion over distances that would be prohibative t
 
 While most often seen in plants, whose cell walls restrict outside perturbations of the interior fluid, the effect is seen in a wide variety of cells. 
 The biological functions that this streaming accomplishes vary from case to case, whether it be for delivery of materials for focused growth or a more chaotic stirring to distribute organelles.
-The driving forces behind this mass motion of cytoplasm are believed to be motor proteins carrying cargo along the cytoskelton, causing hydrodynamic drag to extend to large scale fluid motion.
+The driving forces behind this mass motion of cytoplasm are believed to be motor proteins carrying cargo along the cytoskelton.
+The hydrodynamic drag from these cargos, called impellers, along with the high fluid viscocity inside the cell, cause long range motion of the fluid.
+This long range fluid motion can have many uses for the cell.
+In some cases, materials need to be localized into specific regions, while in other cases materials need to be efficiently mixed into the entire cytoplasm.
 The exact components of the streaming mechanism are still under investigation, and depend on the system in question.
 
 \section{Drosophila Oocyte}
 The specific example of cytoplasmic streaming we studied is that found in certain stages of the development of Drosophila, a commonly studied type of fly.
 The streaming takes place during the Drosophila's oocyte stage, when it consists of one large cell and a few nurse cellls.
-The Drosophila makes an excelent place to observe the nature of cytoplasmic streaming. [***needs more words***]
-
-At this stage of development, it is vital to achieve the correct distribution of components used to form the adult organism. 
-In some cases, materials need to be localized into specific regions, while in other cases materials need to be efficiently mixed into the entire cytoplasm.
+They make an for an excelent system in which to study cytoplasmic streaming.
+They are extensivly studied and provide a well understood basis on which to perform variations to explore the parameters involved in streaming.
 
 In Drosophila oocytes there are two forms of microtubule based streaming. 
 First is a slow disorganized streaming, where slow localized motion of cytoplasm is thought to help distribute pattern forming determinants. 
@@ -442,6 +448,8 @@ The second type of streaming present is a fast, well-ordered motion of cytoplasm
 In this stage, the streaming displays correlations in direction on the size scale of the entire cell. It is beleived that this fast streaming is crucial for proper distribution of material withing the oocyte.
 In both of these cases, motor proteins walking along a microtubule mesh-work appear to play a vital role. 
 A great deal of work has been done to determine what components are involved in this particular instance of streaming [***Cite some of it here***]
+
+
 
 \subsection{Microtubule Pathways}
 Microtubules are flexible hollow polymers of tubulin subunits that
@@ -459,9 +467,9 @@ asymmetries that are essential for complex cellular functions.
 \begin{center}
 \includegraphics[width=0.5\hsize]{biomodel.png}
 \caption{ 
-A speculative model for fast streaming in Drosophila oocytes, care of Bill Saxton et al. [***should look up proper citing for this***]
+A speculative model for fast streaming in Drosophila oocytes, care of Bill Saxton et al. (A) During the slow streaming stage, microtubules are not aligned and only small scale motion is observed. (B) During the fast streaming stage, microtubules are see in correlated into long dynamic arrays. The lower panels show expanded views of the boxes shown in the upper panels. 
 }
-\label{fig:spheres}
+\label{fig:biomodel}
 \end{center}
 \end{figure}
 
@@ -475,12 +483,15 @@ The large scale streaming requires the correlated effort of a significant fracti
 
 % We will analyze a surprising role for microtubules and kinesin in cytoplasmic streaming that has evolved to accomplish just the opposite; efficient homogeneous mixing of the contents of a cell~\cite{SerbusSaxton} and see there Supplemental Movie 13~\cite{Movie13}.
 
-Vigorous streaming is initiated during the final stages of
-development of {\em Drosophila} oocytes to disperse asymmetrically
+Vigorous streaming is is observed during the final stages of
+development of {\em Drosophila} oocytes which serves to disperse asymmetrically
 distributed mRNA particles, protein complexes, and membranous
 organelles.  The mixing process is important for subsequent
 embryonic development, and cannot be accomplished by
-diffusion alone.  For example  a $ 1\mu m$ yolk-filled vesicle in
+diffusion alone.  
+The fluid viscosity is quite high and, on the size scale of the cell, the organelles are actually rather large. 
+This gives a diffusion timescale that is far to long to be effective for biological processes. 
+For example  a $ 1\mu m$ yolk-filled vesicle in
 the cytoplasm, assuming a viscosity 8 times that of water ~\cite{LubyPhelps}
 would take approximately a week to diffuse the $500 \mu m$  length
 of an oocyte. This is far too long to satisfy the need for the mixing
@@ -493,8 +504,8 @@ chambers, has been the subject of much investigation ~\cite{Squires}. The
 way that a fluid at low Reynolds number is stirred has a
 profound effect on the efficiency of homogenization. For
 example,  the steady state flow fields generated by a single
-stir bar inside a closed chamber are far less efficient than
-the more chaotic flows generated when  several stir bars are used~\cite{Aref,Aref2000}.
+stirrer inside a closed chamber are far less efficient than
+the more chaotic flows generated when  several stirrers are used~\cite{Aref,Aref2000}.
 Rigorous analyses in two dimensions show that mixing is
 most efficient when topological chaos is created by three or more
 stirrers, as can be shown by application of the Thurston-Nielsen
@@ -506,10 +517,8 @@ waves~\cite{SerbusSaxton}.
 The streaming cytoplasmic fluid moves along those paths, in patterns reminiscent
 of flowing water and seaweed.
 
-
-
-Yolk particles in the
-cytoplasm have a speed of roughly $0.25 \mu m/s$.  The particles
+During fast streaming, yolk particles in the
+cytoplasm are observed to have a speed of roughly $0.25 \mu m/s$.  The particles
 within a region stream for the most part in one direction,
 but with a non-negligible deviation in that direction over
 time. The fluctuating directions, which parallel the curved paths of
@@ -518,7 +527,7 @@ in a chaotic manner that, as the preceding paragraph suggests,
 is important for efficient mixing.
 
 At first sight, it might appear that the time-dependent wave-like
-motion is due to turbulence of the surrounding fluid. However at such minuscule Reynolds
+motion is due to turbulence of the surrounding fluid. However at the low Reynolds found in this system
 numbers, inertial effects are negligible and turbulence is
 impossible~\cite{BergRandomWalksinBiology}. Therefore one is left with a mystery of
 the relationship of fluid and filament and
@@ -568,7 +577,7 @@ $a$, and with a mean spacing of $d$ arranged in a straight line along the microt
 \includegraphics[width=\hsize]{spheres.eps}
 \caption{ 
 A train of spherically shaped impellers of diameter $a$ and separation $d$, all moving in a fluid with a velocity $v_0$.
-The velocity is measured at a point a distance $r$ from the axis.
+The fluid velocity is measured at a point a distance $r$ from the axis.
 }
 \label{fig:spheres}
 \end{center}
@@ -620,7 +629,7 @@ by a factor of order $a/d$.
 
 \section{Enhancement of Streaming Due to Hydrodynamics} 
 
-Of course there are  many microtubules in these cells. To understand how this
+As we have seen, there are actually many microtubules in these cells. To understand how this
 affects the above analysis, consider all space filled with an infinite forest of them all oriented
 in the same direction. 
 
@@ -1816,6 +1825,7 @@ This divides our pahse space up into additional regions.
 One region is where the system always transitions to correlated streaming. One would imagine that this region would be one where interactions between microtubules are strong and long range compared to the other length scales in the system.
 Another region is one where the system can support fast, correlated streaming, but may only reach it from certain classes of initial configurations. This region is obviously less robust if the intent is to achieve fast streaming.
 A third region is one in which the system can never support fast correlated streaming. This would most likely be a region in which the interaction between microtubules is cut off at a range less than the typical spacing between microtubues.
+
 \section{Hydrodynamics near a hard wall}
 Up until now, we have only considered microtubules pinned at one end freely floating in the cytoplasm, but in a biological system, the microtubules are believed to be anchored to the cell cortex. 
 The presence of this stationary wall may have a significant effect on the microtubule motion, as it imposes a new boundary condition on the fluid motion; namely that the velocity must vanish at the cortex.
