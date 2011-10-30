@@ -1803,23 +1803,35 @@ It is interesting to note that the hydrodynamic interaction have little to no ef
 The explanation for this is that in this configuration the stiffness and the gradient in the tension exactly cancel each other, producing no velocity perturbations in the fluid from the main circular portion of the microtubule.
 Because the primary long range force generators are gone, very little interaction is achieved through the fluid, and the result looks very similar to the non interacting case.
 
-\section{Several Microtubules Simulation}
-Now more microtubules are added to the simulation. The microtubules are anchored with their (plus?) ends relatively close to each other in a plane, on the order of the hardcore radius. 
-Each microtubule is initialized with an independent random walk, and the system is allowed to run.
+\section{Properties of the Many Polymer Model}
 
+Now more microtubules are added to the simulation, so that there are on the order of tens to hundreds of them.
+The microtubules are anchored with their (plus?) ends relatively close to each other in a plane, on the order of the hardcore radius. 
+This grouping of microtubules exhibits additional behaviors not found in the single microtubule system.
 
-\section{Correlation between multiple microtubules}
-A key feature found in the microtubules during fast streaming is the formation of correlated groups to enable larger scale coordinated forces on the fluid. These correlations can be seen in various experiments performed here [cite].
+\subsection{Correlation between multiple microtubules}
+A key feature found during fast streaming in the biological system is the formation of correlated groups to enable larger scale coordinated forces on the fluid. 
+These correlations can be seen in various experiments performed here [cite].
 
 [***picture***]
 
-We have previously shown that the motions of the microtubules is potentially consistent with the simple model of kinesin driven impellers in a pre-existing flow field. We still need to determine if a large group of microtubules are capable of spontaneously generating such a flow field.
-In the stages before fast streaming, the microtubules on a large size scale in a state of disorder. However, since the microtubules align with a local flow field and then, once aligned, they contribute to that flow, it believable that a type of field amplification occurs.
+We have previously shown that the motions of the microtubules is potentially consistent with the simple model of kinesin driven impellers in a pre-existing flow field. 
+We still need to determine if a large group of microtubules are capable of spontaneously generating such a flow field.
+In the stages before fast streaming, the microtubules on a large size scale in a state of disorder.
+However, since the microtubules align with a local flow field and then, once aligned, they contribute to that flow, it believable that a type of field amplification occurs.
 Essentially, the long range interaction through the fluid should bring about a transition to a phase of long range order.
 The spontaneous generation of this ordered phase will cause some aspects of the resulting system, such as the direction of the resulting global flow field, to depend sensitively on the initial conditions of the system.
 However, many properties of the system in this phase, such as the flow speed and characteristic oscillation frequencies, should be independent of the initial conditions.
-In fact, the derivation used to find the flow velocity for the case of an entire volume filled with microtubules and impellers continues to work in lower dimensions.
-As long as the microtubules are essentially at rest in a steady state, the fluid velocity will be determined as a fraction of the impeller velocity given by $a/(a+d)$, which is entirely determined by the size and density of the microtubule and impellers.
+As long as the microtubules are essentially at rest in a steady state, the fluid velocity will be determined as a fraction of the impeller velocity given by $a/(a+d)$ as determined in \ref{findit}.
+
+\subsection{Tension Distribution During Correlated Streaming}
+Can has analytics?
+In the fast correlated streaming phase, the microtubules align and become largely straight.
+This configuration reduces the complexity of the system considerably, as the microtubules become largely stationary.
+In addition, the stiffness force term will vanish from the bulk of the microtubules.
+
+\subsection{Transition to the Fast Streaming Phase}
+In our numerical model, a strongly correlated streaming phase is also observed to develope for a wide range of parameters.
 
 \subsection{Hysterisus of Streaming}
 Because it is a self reinforcing effect, the fast streaming behavior could very easily depend on the initial configuration of the microtubules. 
