@@ -1369,11 +1369,12 @@ it suggests a characteristic time.
 
 
 
-The motion studied here can be contrasted with ciliary
-motion~\cite{Kennedy} which has a period on the order of $.05 s$. Clearly
-the two mechanisms have fundamentally different explanations. 
-The experimental time scale points to the mechanism described here rather
-than ciliary motion.  The agreement found with experiment in our above
+% The motion studied here can be contrasted with ciliary
+% motion~\cite{Kennedy} which has a period on the order of $.05 s$. Clearly
+% the two mechanisms have fundamentally different explanations. 
+% The experimental time scale points to the mechanism described here rather
+% than ciliary motion.  
+The agreement found with experiment in our above
 analysis is to some extent fortuitous, given the large uncertainties
 in the experimental system. But nevertheless, it provides evidence that
 the simple mechanism proposed is the origin of the behavior seen in
@@ -1566,11 +1567,11 @@ Of particular interest is its use in modeling polymers as a long chain of beads,
 \section{Model for Hydrodynamic Interactions}
 For our model, we are going to use the same structure for the microtubule as for the solitary case. This models the microtubule as a chain of beads with some tension $T$ and stiffness parameter $C$. The equation of motion for the microtubule is very similar, except now we need to include the Oseen interaction tensor.
 The microtubule and impellers are in direct contact with the fluid and at the interface the velocity of the fluid must match the velocity of the objects suspended in it.
-This means that any force exerted on the objects will be also transmitted to the fluid locally. 
+This means that any force exerted on the objects will also be transmitted to the fluid locally. 
 These forces form the force density used in the Oseen tensor to determine the fluid velocity in all of space, which will also determine the motion of the microtubule impeller system.
 
 This is a bit more complex than simply adding the tensor to the previous equation of motion, as the interaction tensor needs to include the forces of all objects moving in the fluid. 
-Before we simply included the kinesin as a force tangent to the backbone of the microtubule, and while that is still going to be the case, we now need to include consideration for the reaction force produced against the impeller, as this will be transmitted back to the microtubule by the long range hydrodynamic forces.
+Before we simply included the kinesin as a force tangent to the backbone of the microtubule, and while that is still going to be our model, we now need to include consideration for the reaction force produced against the impeller, as this will be transmitted back to the microtubule by the long range hydrodynamic forces.
 In order to determine the effect that this extra force density will have on the dynamics, we need to be more explicit with the configuration of the impellers.
 Consider the impellers of largest dimension $q$ to be attached to the microtubule by kinesin motors with no side being preferred at a characteristic distance $a$ with, as in the single microtubule consideration, $a < q \ll L$, with $L$ again being the microtubule length. 
 We can consider this to form a uniform density of impellers around the microtubule, and the kinesin motors cause the impeller and the microtubule to move relative to each other with a fixed velocity in the direction of the tangent of the microtubule backbone. 
@@ -1621,7 +1622,7 @@ The force due to the kinesin coupling and walking is much harder to work out, ho
 In order for the kinesin to drag the impeller along, it must pull against the microtubule, and as such the force dragging the impeller through the fluid has a corresponding opposite force on the microtubule by Newton's third law. 
 Both of these forces are then transmitted to the fluid, so it seems reasonable to try to express these forces as some multipole expansion in a small parameter.
 The microtubules have a significant stiffness which leads to a characteristic buckling length as described in Eq. \ref{eq:R}, which sets a size scale for features of the microtubule motion. Compared to this size scale, the impellers are very small, and bound very tightly to the microtubule backbone. 
-In addition to this, we are assuming that the impellers are attached to the microtubule in a cylindrically symmetric fashion. This leads to a small scale force distribution that looks like a classic quadrapole configuration.
+In addition to this, we are assuming that the impellers are attached to the microtubule in a cylindrically symmetric fashion. This leads to a small scale force distribution that looks like a classic quadrapole configuration, as shown in figure \ref{fig:quadforce}.
 
 \begin{figure}[htp]
 \begin{center}
@@ -1640,7 +1641,7 @@ We can now write down the fluid response due to this force density.
 \label{eq:forcedensitystart}
 \delta \mathbf{u}(\br) = \frac{1}{8\pi\mu}\int \frac{ \mathbf{f}}{|\br +  \mathbf{a}|} + \frac{(\br+ \mathbf{a}) ((\br +  \mathbf{a}) \cdot  \mathbf{f})}{|\br +  \mathbf{a}|^3} d\hat{ \mathbf{a}} - \frac{ \mathbf{F}}{|\br|} - \frac{\br (\br \cdot  \mathbf{F})}{|\br|^3}
 \end{equation}
-Where $\delta  \mathbf{u}(\br)$ is the contribution to the fluid velocity at position $\br$ from a differential segment of the microtubule impeller system, $a$ is the vector pointing from the center of the microtubule to a point in the impeller sheath, and $f$ and $F$ are the force densities produced by the kinesin interaction. Note that $F$ is a linear force density and $f$ is a force per unit area, due to the radial nature of the coupling.
+Where $\delta  \mathbf{u}(\br)$ is the contribution to the fluid velocity at position $\br$ from a differential segment of the microtubule impeller system, $a$ is the vector pointing from the center of the microtubule to a point in the impeller sheath, $F$ is the linear force density on the microtubule backbnoe produced by the kinesin walkers, and $f$ is an area force density of the force needed to drag the impeller sheath through the fluid. 
 Because the kinesin binds the microtubule and the impeller together, Newton's Third Law dictates that the linear force density along the backbone needs to be equal and opposite for the impeller microtubule pair. This gives us that integrating $f$ around the full circle must give the same value as $F$.
 Due to the small size of the kinesin molecule, for long range interaction on the order of the length of the microtubule, or even characteristic curvatures of the microtubule, we should have $a << r$, where $a$ and $r$ are the magnitudes of $ \mathbf{a}$ and $\br$ respectively. We can pull out a factor of $r$ to obtain these expressions in terms of a unit-less small parameter $\epsilon = a/r$.
 \begin{equation}
@@ -1703,7 +1704,7 @@ The separation between the two opposing forces is axial, and lacks the mirror sy
 And even in the case of the dipolar term,  the corresponding small parameter needed to form the multipole cancellation is directly tied to the characteristic length scale of the microtubule curvature; indeed, the curvature is defined by these forces. 
 So not only would it be a chain of dipoles, the density of those dipoles would need to diverge in the limit of small separation between the opposing forces.
 Luckily, if we instead sum the forces on each individual segment, we are left with the simple linear force density of the gradient of the tension. This gradient is expected to be nonzero due to the tethering of one end of the microtubule.
-A nonzero linear force density along the axis of the microtubule would apply directly through the Oseen tensor with no cancellation, and thus fall off as $\br^{-1}$, where as as we saw the kinesin forces fall off as $\br^{-3}$.
+A nonzero linear force density along the axis of the microtubule would apply directly through the Oseen tensor with no cancellation, and thus fall off as $\br^{-1}$, where as we saw the kinesin forces fall off as $\br^{-3}$.
  
 That is not to say that the kinesin does not effect the system at all.
 
@@ -1750,14 +1751,15 @@ With
 \mathbf{d}_{i+} &= \br_{i+1} - \br_i
 \end{eqnarray*}
 
-Where $\br_i$ are the positions of the individual microtubule segments and $k_T$ and $l$  are adjustable parameters, with $k_T$ being the spring constant and $l$ being the rest length of the segment.  The spring constant is chosen to be as strong as possible for the given time step, in order to match as closely as possible to and incompressible chain.
+Where $\br_i$ are the positions of the individual microtubule segments, with $k_T$ being the backbone spring constant and $l$ being the rest length of the segment. 
+The spring constant is chosen to be as strong as possible for the given time step, in order to match as closely as possible to and incompressible chain.
 In addition to the spring force tension term, the backbone stiffness is modeled as a discrete fourth derivative along the spine, with an adjustable scaling parameter.
 \begin{equation}
 \label{eq:discretestiff}
 \mathbf{C}(\br_i) =  - k_C[ (\br_{i+2} - \br_i) - (\br_i - \br_{i-2})]
 \end{equation}
 
-In order for the microtubules to not cross through each other, they are also given a hardcore repulsion force that sharply and smoothly falls off to zero at some characteristic radius $d$.
+In order for the microtubules to not cross through each other, they are also given a hardcore repulsion force that is divergent at zero distance along with rapidly and smoothly falling off to zero at some characteristic radius $d$.
 This was implemented as a inverse fourth power law with a cutoff:
 \begin{align}
 \label{eq:discretehardcore}
@@ -1775,7 +1777,7 @@ The standard practice in this case is to use the Oseen tensor as an interaction 
 \label{eq:discretesum}
 \mathbf{J}_{ii} = \frac{1}{4\pi\mu} \mathbf{f}_i
 \end{equation}
-Finally we see that for any point in space, the fluid velocity is given by:
+By combining equations \ref{eq:discretespring}, \ref{eq:discretehardcore}, \ref{eq:discretestiff}, and \ref{eq:fluidvelocity}, we see that for any point in space, the fluid velocity is given by:
 \begin{equation}
 \label{eq:discretesum}
 \mathbf{u}(\br_i) = k_s[T(\br_i) + C(\br_i) + H(\br_i)] + \sum_{j\neq i} J(r_i - r_j) [T(\br_j) + C(\br_j)+ H(\br_j)]
@@ -1788,10 +1790,10 @@ However, due to the relative velocity between the fluid and the microtubule back
 This derivative is then used for a standard fourth order Runge Kutte integration in order to advance the system in time.
 
 \section{Single Microtubule verification}
-The new algorithm was then used to simulate a single microtubule in order to see what effect the fluid interaction would have on the single microtubule solution, as well as verify that the algorithm works.
+The new algorithm was then used to simulate a single microtubule in order to see what effect the fluid interaction would have on the single microtubule solution.
 Because this simulation does not apply any external flow fields, we expect the solution to closely resemble the zero field case from the theory without fluid coupling.
 
-We ran this simulation using a range of parameters similar to that used in the single microtubule simulation, again using a random starting configuration and tethering the minus end of the microtubule to a fixed point in space. 
+We ran this simulation using the same parameters for a single microtububel with and without the fluid interaction, again using a random starting configuration and tethering the minus end of the microtubule to a fixed point in space. 
 The result was essentially as expected, with a solution that asymptotically approached a circle rotating at a constant rate. A typical solution is shown here:
 
 \begin{figure}[htp]
@@ -1805,13 +1807,12 @@ Simulation results for a single polymer without fluid interaction(blue) and with
 \end{figure}
 
 It is interesting to note that the hydrodynamic interaction have little to no effect on this type of solution. 
-The explanation for this is that in this configuration the stiffness and the gradient in the tension exactly cancel each other, producing no velocity perturbations in the fluid from the main circular portion of the microtubule.
-Because the primary long range force generators are gone, very little interaction is achieved through the fluid, and the result looks very similar to the non interacting case.
 
 \section{Properties of the Many Polymer Model}
 
 Now more microtubules are added to the simulation, so that there are on the order of tens to hundreds of them.
-The microtubules are anchored with their (plus?) ends relatively close to each other in a plane, on the order of the hardcore radius. 
+The microtubules have their minus ends anchored in a planar configuration, in order to closely resemble attachment to the cortex.
+The spaceing between the individual anchors can be varried, but will never be close enough for their hardcore radii to overlap.
 This grouping of microtubules exhibits additional behaviors not found in the single microtubule system.
 
 \subsection{Correlation between multiple microtubules}
@@ -1827,7 +1828,7 @@ However, since the microtubules align with a local flow field and then, once ali
 Essentially, the long range interaction through the fluid should bring about a transition to a phase of long range order.
 The spontaneous generation of this ordered phase will cause some aspects of the resulting system, such as the direction of the resulting global flow field, to depend sensitively on the initial conditions of the system.
 However, many properties of the system in this phase, such as the flow speed and characteristic oscillation frequencies, should be independent of the initial conditions.
-As long as the microtubules are essentially at rest in a steady state, the fluid velocity will be determined as a fraction of the impeller velocity given by $a/(a+d)$ as determined in \ref{findit}.
+As long as the microtubules are essentially at rest in a steady state, the fluid velocity should be determined by the analysis from \ref{eq:mfflowlimit}; as a fraction of the impeller velocity given by $a/(a+d)$.
 
 \subsection{Tension Distribution During Correlated Streaming}
 Can has analytics?
