@@ -1843,9 +1843,9 @@ This grouping of microtubules exhibits additional behaviors not found in the sin
 \subsection{Important Lengthscales}
 The introduction of more than one microtubule, along with the addition of the hard wall, introduce new length scales to the system.
 The microtubules are placed with their anchor points in a plane. 
-Within this plane, the anchors have a charateristic seperation, and this seperation defines one of the new length scales in the system.
+Within this plane, the anchors have a charateristic seperation,$R_s$, and this seperation defines one of the new length scales in the system.
 The plane of anchors is parallel to the hard wall, but not directly on it. 
-The seperation between the hard wall and the plane of anchors is a second new length scale.
+The seperation between the hard wall and the plane of anchors, $h$ is a second new length scale.
 These two new lengths are usually set to be less than the characteristic buckling lentgh of the microtubule, $R_b$, in order to more closely match what is seen in the biological data.
 We will see that these two length scales play an important role in determining the corellation behavior of the system.
 
@@ -1857,7 +1857,7 @@ These correlations can be seen in various experiments performed here [cite].
 \begin{center}
 \includegraphics[width=\hsize]{fast.png}
 \caption{ 
-An image taken with a two photon microscope of a Drosophila ooctye during fast streaming. The Oocyte was treated so that the microtubules would flores and traces of them can be seen. In the regions of fast fluid motion, the microtubules can be seen to align with the direction of the fluid motion. [*** thank Bill and Corey ***]
+An image taken with a two photon microscope of a Drosophila ooctye during fast streaming. The Oocyte was treated so that the microtubules would flouress and traces of them can be seen. In the regions of fast fluid motion, the microtubules can be seen to align with the direction of the fluid motion. [*** thank Bill and Corey ***]
 }
 \label{fig:biostream}
 \end{center}
@@ -1874,7 +1874,28 @@ However, after a few periods of revolution the microtubules eventually collapse 
 
 [*** pictures ***]
 
-While this correlation is a promising feature, it will not be enough to produce a long range directed flow field due to the circular nature of the motion. 
+While this correlation is a promising feature, it will not be enough to produce a long range directed flow field due to the circular nature of the motion.
+In order to sustain linear streaming, the forces transmitted to any one microtubule from the rest of the system need to be stronger than the local kickback force from the kinesin motors.
+A small number of microtubules will not be able to achieve this, so more need to be added to the simulation.
+
+\subsection{Microtubule Patches}
+In order to attain linear streaming in our simulation, we include a much larger group of microtubules.
+These microtubules are placed with their anchor points in a square grid, and then some small random jitter is applied within the plane to their positions.
+The random noise is added in order to suppress periodic lattice effects, which shouldn't be present in the cell.
+Once the anchor points are chosen, the microtubules are initialized with a random walk biased slightly in the positive z direction to avoid problems caused by starting in the hard wall.
+Any configuration that penetrated the wall was rejected.
+Due to the random nature of the initial conditions, the microtubules often start with high curvatures.
+This causes the first few steps of the simulation to be dominated by the microtubules rapidly relaxing to their more typical curvature.
+This artifact of the somewhat artificial initial conditions shouldn't be relavent to the actual biological system, so these steps are generally not shown.
+The forces that cause this relaxation are quite high, and occasionally they could cause the microtubules to break through the hard wall. 
+This most often results in a divergence due to the hard wall Oseen tensor having odd behavior for negative z values.
+Initial conditions that lead to this effect are also rejected.
+A typical initialized patch is shown in Fig. \ref{fig:patchstart}
+
+[*** fig:patchstart ***]
+
+\subsection{Linear Streaming with Microtubule Patches}
+
 
 The spontaneous generation of this ordered phase will cause some aspects of the resulting system, such as the direction of the resulting global flow field, to depend sensitively on the initial conditions of the system.
 However, many properties of the system in this phase, such as the flow speed and characteristic oscillation frequencies, should be independent of the initial conditions.
