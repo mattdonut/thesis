@@ -438,8 +438,7 @@ The exact components of the streaming mechanism are still under investigation, a
 \section{Drosophila Oocyte}
 The specific example of cytoplasmic streaming we studied is that found in certain stages of the development of Drosophila, a commonly studied type of fly.
 The streaming takes place during the Drosophila's oocyte stage, when it consists of one large cell and a few nurse cellls.
-They make an for an excelent system in which to study cytoplasmic streaming.
-They are extensivly studied and provide a well understood basis on which to perform variations to explore the parameters involved in streaming.
+Drosophila are extensivly studied and provide a well understood basis on which to perform variations to explore the parameters involved in streaming.
 
 In Drosophila oocytes there are two forms of microtubule based streaming. 
 First is a slow disorganized streaming, where slow localized motion of cytoplasm is thought to help distribute pattern forming determinants. 
@@ -447,9 +446,7 @@ These slow streams are rather chaotic in appearance, and do not show long range 
 The second type of streaming present is a fast, well-ordered motion of cytoplasm that begins just before nurse cells inject more cytoplasm into the oocyte. 
 In this stage, the streaming displays correlations in direction on the size scale of the entire cell. It is beleived that this fast streaming is crucial for proper distribution of material withing the oocyte.
 In both of these cases, motor proteins walking along a microtubule mesh-work appear to play a vital role. 
-A great deal of work has been done to determine what components are involved in this particular instance of streaming [***Cite some of it here***]
-
-
+Some examples of this type of streaming are shown in Fig. \ref{fig:streamslow}
 
 \subsection{Microtubule Pathways}
 Microtubules are flexible hollow polymers of tubulin subunits that
@@ -467,12 +464,14 @@ asymmetries that are essential for complex cellular functions.
 \begin{center}
 \includegraphics[width=0.5\hsize]{biomodel.png}
 \caption{ 
-A speculative model for fast streaming in Drosophila oocytes, care of Bill Saxton et al. (A) During the slow streaming stage, microtubules are not aligned and only small scale motion is observed. (B) During the fast streaming stage, microtubules are see in correlated into long dynamic arrays. The lower panels show expanded views of the boxes shown in the upper panels. 
+A speculative model for fast streaming in Drosophila oocytes, care of Bill Saxton et al. 
+(A) During the slow streaming stage, microtubules are not aligned and only small scale motion is observed. 
+(B) During the fast streaming stage, microtubules are see in correlated into long dynamic arrays. 
+The lower panels show expanded views of the boxes shown in the upper panels. 
 }
 \label{fig:biomodel}
 \end{center}
 \end{figure}
-
 
 
 It is not only important to understand the mechanism at work during the streaming itself, but also in the mechanisms used to control the timing of that streaming phase.
@@ -1901,14 +1900,20 @@ The spontaneous generation of this ordered phase will cause some aspects of the 
 However, many properties of the system in this phase, such as the flow speed and characteristic oscillation frequencies, should be independent of the initial conditions.
 As long as the microtubules are essentially at rest in a steady state, the fluid velocity should be determined by the analysis from \ref{eq:mfflowlimit}; as a fraction of the impeller velocity given by $a/(a+d)$.
 
+\section{Conditions for Linear Streaming}
+
+\subsection{Effects of the wall}
+The hard wall serves to damp out fluid motion near its surface due to its strong interaction with the fluid viscosity. 
+This is seen in the interaction tensor as a negative force mirrored across the wall, opposing the motion of the true force above it.
+One can imagine that, much like the case in electromagnetism, these mirror forces could form some sort of dipolar arrangement. 
+This arrangement would have faster falloff with distance and could easily interfere with the ability of the entire system of microtubules to correlate over large distances.
+\subsection{Suppression of Correlation}
+
 \subsection{Tension Distribution During Correlated Streaming}
 Can has analytics?
 In the fast correlated streaming phase, the microtubules align and become largely straight.
 This configuration reduces the complexity of the system considerably, as the microtubules become largely stationary.
 In addition, the stiffness force term will vanish from the bulk of the microtubules.
-
-\subsection{Transition to the Fast Streaming Phase}
-In our numerical model, a strongly correlated streaming phase is also observed to develope for a wide range of parameters.
 
 \subsection{Hysterisus of Streaming}
 Because it is a self reinforcing effect, the fast streaming behavior could very easily depend on the initial configuration of the microtubules. 
@@ -1918,14 +1923,12 @@ One region is where the system always transitions to correlated streaming. One w
 Another region is one where the system can support fast, correlated streaming, but may only reach it from certain classes of initial configurations. This region is obviously less robust if the intent is to achieve fast streaming.
 A third region is one in which the system can never support fast correlated streaming. This would most likely be a region in which the interaction between microtubules is cut off at a range less than the typical spacing between microtubues.
 
+\section{Biologicaly Accesable Parameters for Streaming}
+We have seen that many parameters can effect the ability of the model system to initiate linear fast streaming.
+However, if the cell is indeed crossing this phase boundry in the transition from slow to fast streaming, it can only do so using parameters that can be changed in the cell in a relatively short timescale.
 
 
-\section{Effects of the wall}
-The hard wall serves to damp out fluid motion near its surface due to its strong interaction with the fluid viscosity. 
-This is seen in the interaction tensor as a negative force mirrored across the wall, opposing the motion of the true force above it.
-One can imagine that, much like the case in electromagnetism, these mirror forces could form some sort of dipolar arrangement. 
-This arrangement would have faster falloff with distance and could easily interfere with the ability of the entire system of microtubules to correlate over large distances.
-\subsection{Suppression of Correlation}
+
 
 \part{Acknolegments}
 % Create the reference section using BibTeX:
