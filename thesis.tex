@@ -1737,6 +1737,30 @@ Even if that is not the case, while the exact value of this suppression depends 
 \frac{d \br}{dt} = \mathbf{u}(\br ) - \mathbf{v}_k \frac{\partial \br}{\partial s}
 \end{equation}
 
+\section{Hydrodynamics near a hard wall}
+Up until now, we have only considered microtubules pinned at one end freely floating in the cytoplasm, but in a biological system, the microtubules are believed to be anchored to the cell cortex. 
+The presence of this stationary wall may have a significant effect on the microtubule motion, as it imposes a new boundary condition on the fluid motion; namely that the velocity must vanish at the cortex.
+
+This new boundary condition changes the greens function used to construct the fluid velocity from the forces applied to the system. The determination of this greens function is dependent on the specific boundary geometry, and potentially intractable.
+Because of this difficulty, we will first investigate the case of an infinite plane hard wall at $z=0$. Hopefully, this should provide some insight into the behavior of the microtubule impeller system near the cortex.
+
+Fortunately, the Green's function for the infinite wall case has already been solved[CITE]. The technique is  similar to that of the method of image charges in classical electromagnetism, with the added complication of the sources being vector quantities instead of scalers. This vector nature of the sources gives rise to a number of corrections to the simple reflection.
+Unfortunately, it is somewhat complex, though luckily not of higher order scaling than the unmodified Oseen tensor. The interaction $\mathbf{J}^w(\mathbf{x},\mathbf{y})$ between a point force $\bf f$ at location $\bf x$ and a fluid location $\bf y$ is now:
+\begin{equation}
+\label{eq:oseenwall}
+\mathbf{J}^w(\mathbf{x}, \mathbf{y}) = \frac{1}{8\pi\mu \br^*} [ 
+- (\mathbf{I} + \frac{(\br^*\cdot\mathbf{f})\br^*}{\br^{*2}}) 
++ \frac{2 h}{\br^{*2}}( (\frac{3 x_3(\br^*\cdot\tilde{\mathbf{f}})}{\br^{*2}} \br^* - \tilde{\mathbf{f}}_3)\br^* - x_3\tilde{\mathbf{f}} + (\br^*\cdot\tilde{\mathbf{f}})\hat{\mathbf{z}})]
+\end{equation}
+Where $\br^*$ is equal to $(x_1-y_1,x_2-y_2,x_3+y_3)$, the reflected displacement vector, $h = y_3$ the distance of the fluid from the wall, and $\tilde{\mathbf{f}} = (f_1,f_2,-f_3)$, the reflected force. 
+One can recognize the first term as the reflected Oseen tensor, similar to a negative charge in the method of images. 
+However, as previously mentioned, the fact the force must also have its direction flipped adds several additional terms. These terms together ensure that the velocity of the fluid will vanish at the boundary.
+
+Other than the modification of the interaction tensor, the model remains almost unchanged.
+Due to the assumptions used to generate this solution, it is of course only valid for $z>0$, and can result in very strange behaviors if applied for regions below the plane. 
+These usually result in extremely singular velocities, and so extra care must be made to ensure that no part of the finite time step used in a simulation will cross this boundary. 
+To ensure this, a hard wall potential similar to that used for the hard core repulsion of the microtubule segments is placed at $z=0$.
+
 \section{Numeric Implementation of the Model}
 The complexity of the interaction makes analytic solutions difficult, however, the dependence of the fluid flow only on the current state of the microtubule makes it suitable for direct simulation. A straightforward integration of the velocity field will yield the complete system dynamics.
 \subsection{The discrete model}
@@ -1808,6 +1832,7 @@ Simulation results for a single polymer without fluid interaction(blue) and with
 
 It is interesting to note that the hydrodynamic interaction have little to no effect on this type of solution. 
 
+
 \section{Properties of the Many Polymer Model}
 
 Now more microtubules are added to the simulation, so that there are on the order of tens to hundreds of them.
@@ -1815,17 +1840,42 @@ The microtubules have their minus ends anchored in a planar configuration, in or
 The spaceing between the individual anchors can be varried, but will never be close enough for their hardcore radii to overlap.
 This grouping of microtubules exhibits additional behaviors not found in the single microtubule system.
 
+\subsection{Important Lengthscales}
+The introduction of more than one microtubule, along with the addition of the hard wall, introduce new length scales to the system.
+The microtubules are placed with their anchor points in a plane. 
+Within this plane, the anchors have a charateristic seperation, and this seperation defines one of the new length scales in the system.
+The plane of anchors is parallel to the hard wall, but not directly on it. 
+The seperation between the hard wall and the plane of anchors is a second new length scale.
+These two new lengths are usually set to be less than the characteristic buckling lentgh of the microtubule, $R_b$, in order to more closely match what is seen in the biological data.
+We will see that these two length scales play an important role in determining the corellation behavior of the system.
+
 \subsection{Correlation between multiple microtubules}
 A key feature found during fast streaming in the biological system is the formation of correlated groups to enable larger scale coordinated forces on the fluid. 
 These correlations can be seen in various experiments performed here [cite].
 
-[***picture***]
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=\hsize]{fast.png}
+\caption{ 
+An image taken with a two photon microscope of a Drosophila ooctye during fast streaming. The Oocyte was treated so that the microtubules would flores and traces of them can be seen. In the regions of fast fluid motion, the microtubules can be seen to align with the direction of the fluid motion. [*** thank Bill and Corey ***]
+}
+\label{fig:biostream}
+\end{center}
+\end{figure}
 
 We have previously shown that the motions of the microtubules is potentially consistent with the simple model of kinesin driven impellers in a pre-existing flow field. 
 We still need to determine if a large group of microtubules are capable of spontaneously generating such a flow field.
-In the stages before fast streaming, the microtubules on a large size scale in a state of disorder.
 However, since the microtubules align with a local flow field and then, once aligned, they contribute to that flow, it believable that a type of field amplification occurs.
-Essentially, the long range interaction through the fluid should bring about a transition to a phase of long range order.
+Essentially, the long range interaction through the fluid could bring about a transition to a phase of long range order.
+
+When the simulation is run with a small number of microtubules placed with their anchors near each other (less than the buckling length), short range correllation almost always emerges.
+Using a random walk starting condition, the microtubules initially fall into seemingly independant circular solutions simialr to those in the single microtubule case.
+However, after a few periods of revolution the microtubules eventually collapse into one circular solution.
+
+[*** pictures ***]
+
+While this correlation is a promising feature, it will not be enough to produce a long range directed flow field due to the circular nature of the motion. 
+
 The spontaneous generation of this ordered phase will cause some aspects of the resulting system, such as the direction of the resulting global flow field, to depend sensitively on the initial conditions of the system.
 However, many properties of the system in this phase, such as the flow speed and characteristic oscillation frequencies, should be independent of the initial conditions.
 As long as the microtubules are essentially at rest in a steady state, the fluid velocity should be determined by the analysis from \ref{eq:mfflowlimit}; as a fraction of the impeller velocity given by $a/(a+d)$.
@@ -1847,30 +1897,7 @@ One region is where the system always transitions to correlated streaming. One w
 Another region is one where the system can support fast, correlated streaming, but may only reach it from certain classes of initial configurations. This region is obviously less robust if the intent is to achieve fast streaming.
 A third region is one in which the system can never support fast correlated streaming. This would most likely be a region in which the interaction between microtubules is cut off at a range less than the typical spacing between microtubues.
 
-\section{Hydrodynamics near a hard wall}
-Up until now, we have only considered microtubules pinned at one end freely floating in the cytoplasm, but in a biological system, the microtubules are believed to be anchored to the cell cortex. 
-The presence of this stationary wall may have a significant effect on the microtubule motion, as it imposes a new boundary condition on the fluid motion; namely that the velocity must vanish at the cortex.
 
-
-This new boundary condition changes the greens function used to construct the fluid velocity from the forces applied to the system. The determination of this greens function is dependent on the specific boundary geometry, and potentially intractable.
-Because of this difficulty, we will first investigate the case of an infinite plane hard wall at $z=0$. Hopefully, this should provide some insight into the behavior of the microtubule impeller system near the cortex.
-
-Fortunately, the Green's function for the infinite wall case has already been solved[CITE]. The technique is  similar to that of the method of image charges in classical electromagnetism, with the added complication of the sources being vector quantities instead of scalers. This vector nature of the sources gives rise to a number of corrections to the simple reflection.
-Unfortunately, it is somewhat complex, though luckily not of higher order scaling than the unmodified Oseen tensor. The interaction $\mathbf{J}^w(\mathbf{x},\mathbf{y})$ between a point force $\bf f$ at location $\bf x$ and a fluid location $\bf y$ is now:
-\begin{equation}
-\label{eq:oseenwall}
-\mathbf{J}^w(\mathbf{x}, \mathbf{y}) = \frac{1}{8\pi\mu \br^*} [ 
-- (\mathbf{I} + \frac{(\br^*\cdot\mathbf{f})\br^*}{\br^{*2}}) 
-+ \frac{2 h}{\br^{*2}}( (\frac{3 x_3(\br^*\cdot\tilde{\mathbf{f}})}{\br^{*2}} \br^* - \tilde{\mathbf{f}}_3)\br^* - x_3\tilde{\mathbf{f}} + (\br^*\cdot\tilde{\mathbf{f}})\hat{\mathbf{z}})]
-\end{equation}
-Where $\br^*$ is equal to $(x_1-y_1,x_2-y_2,x_3+y_3)$, the reflected displacement vector, $h = y_3$ the distance of the fluid from the wall, and $\tilde{\mathbf{f}} = (f_1,f_2,-f_3)$, the reflected force. 
-One can recognize the first term as the reflected Oseen tensor, similar to a negative charge in the method of images. 
-However, as previously mentioned, the fact the force must also have its direction flipped adds several additional terms. These terms together ensure that the velocity of the fluid will vanish at the boundary.
-
-Other than the modification of the interaction tensor, the model remains almost unchanged.
-Due to the assumptions used to generate this solution, it is of course only valid for $z>0$, and can result in very strange behaviors if applied for regions below the plane. 
-These usually result in extremely singular velocities, and so extra care must be made to ensure that no part of the finite time step used in a simulation will cross this boundary. 
-To ensure this, a hard wall potential similar to that used for the hard core repulsion of the microtubule segments is placed at $z=0$.
 
 \section{Effects of the wall}
 The hard wall serves to damp out fluid motion near its surface due to its strong interaction with the fluid viscosity. 
