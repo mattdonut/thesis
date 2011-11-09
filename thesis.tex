@@ -55,7 +55,7 @@
 
 \tableofcontents
 \listoffigures
-\listoftables
+%\listoftables
 
 \begin{abstract}
 Should probably write this after I finish the rest of this...
@@ -82,12 +82,23 @@ would have graduated so, so, very much faster.
 \end{frontmatter}
 
 
-
 \chapter{Introduction}
-Polymer dynamics is a new and exciting field with applications across many different disciplines. 
+Polymer dynamics is an exciting field with applications across many different disciplines. 
 While the bulk statistical properties have been studied for quite some time, improvements in microscopic techniques have allowed investigations into individual and dynamical properties.
+A polymer is a long chain molecule that is made up of repeated monomer sub units. Polymers can be made of a wide variety of substances, and the microscopic details can vary. 
+However, they share common traits and scaling.
+Polymers are in general long and thin, as well as flexible with perhaps with some stiffness constant.
+They are also in generally fairly inextensible, with the monomer sub units being bound tightly together.
+These sub units can themselves be complex molecules, as long as they can provide a tight but flexible linkage to the adjacent monomers.
+Since polymers have such a large number of components, an individual polymer can be studied using statistical methods.
+The first part of this work investigates some of the general statistical properties of polymers in a vacuum, which deviate from those found in more conventional many polymer treatments.
 
-Then talk about how the motions of individual polymers play a large role in biological systems, and how they can produce more complex behaviors through fluid interactions.
+While the statistics of a single polymer can be a fantastic tool for analysis, polymers are generally found in more complex systems.
+Biology makes extensive use of polymers and their properties in a huge number of processes vital to living.
+Biological systems tend to simultaneously use many layers of complex interactions which may overlap substantially.
+In the second part of this work, we shall investigate a biological process called cytoplasmic streaming, which appears to be well described by an unusually simple model of polymer dynamics.
+While the model is relatively simple, it shows a wide range of behaviors also observed in the biological system.
+These behaviors can be adjusted through a number of parameters that can be mapped onto biological triggers, allowing controlled dynamics within the system.
 
 
 %My Vacuum polymer paper
@@ -97,13 +108,13 @@ Then talk about how the motions of individual polymers play a large role in biol
 Polymer chains in a vacuum have been shown to have great importance
 in many experimental situations, most often in application to mass
 spectroscopy techniques that utilize Matrix-assisted laser desorption/ionization(MALDI). 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.6\hsize]{maldi}
-\caption{A MALDI TOF mass spectrometer.}
-\label{fig:MALDI}
-\end{center}
-\end{figure}
+% \begin{figure}
+% \begin{center}
+% \includegraphics[width=0.6\hsize]{maldi}
+% \caption{A MALDI TOF mass spectrometer.}
+% \label{fig:MALDI}
+% \end{center}
+% \end{figure}
 The MALDI technique involves embedding the large polymers of interest into a matrix of much smaller molecules, commonly acids to promote ionization during the vaporization process. 
 Once the analate and matrix are co-crystallized, they are placed into a vacuum and bombarded with a laser, usually in the UV. 
 The matrix is chosen to be absorptive in the range of the excitation laser, and produces a hot plume that carries the polymer of interest into the vacuum undamaged.
@@ -464,7 +475,6 @@ serve many critical functions in eukaryotic cells. A cartoon of the microtubule 
 Microtubules are made out of dimers composed of $\alpha$-tubulin and $\beta$-tubulin.
 (b)
 The Tubulin dimers form a hollow tube with either 13 or 15 linear tracks running along its length. These tracks are followed by the molecular motors as they walk along the microtubule.
-
 Images courtesy of Bill Saxton.
 }
 \label{fig:tubestruct}
@@ -1946,7 +1956,7 @@ An example of this configuration can be seen in Fig. \ref{fig:streamline}
 
 \begin{figure}[htp]
 \begin{center}
-\includegraphics[width=\hsize]{fastsim.png}
+\includegraphics[width=\hsize]{streamline.png}
 \caption{ 
 A typical configuration after correlation. The microtubules on the edges of the patch can be seen to execute a helical pattern reminecent of the single microtubule dynamics.
 }
