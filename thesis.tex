@@ -42,10 +42,10 @@
 \committeememberone{Professor Bill Saxton}
 \committeemembertwo{Professor Peter Young}
 \numberofmembers{3} %% (including chair) possible: 3, 4, 5, 6
-\deanlineone{Dean John Doe}
+\deanlineone{Tyrus Miller}
 \deanlinetwo{Vice Provost and Dean of Graduate Studies}
 \deanlinethree{}
-\field{Biophysics}
+\field{Physics}
 \campus{Santa Cruz}
 
 \begin{frontmatter}
@@ -1829,12 +1829,12 @@ For this reason, the effect of the forces generated on a specific segment on the
 The standard practice in this case is to use the Oseen tensor as an interaction between elements, and to use a simple free draining drag model for the local motion. Since our model is that of a long chain of beads we simply use the drag due to a small sphere.
 \begin{equation}
 \label{eq:discretesum}
-\mathbf{J}_{ii} = \frac{1}{4\pi\mu} \mathbf{f}_i
+\mathbf{J}_{ii} = \frac{1}{4\pi\mu}
 \end{equation}
 By combining equations \ref{eq:discretespring}, \ref{eq:discretehardcore}, \ref{eq:discretestiff}, and \ref{eq:fluidvelocity}, we see that for any point in space, the fluid velocity is given by:
 \begin{equation}
 \label{eq:discretesum}
-\mathbf{u}(\br_i) = k_s[T(\br_i) + C(\br_i) + H(\br_i)] + \sum_{j\neq i} J(r_i - r_j) [T(\br_j) + C(\br_j)+ H(\br_j)]
+\mathbf{u}(\br_i) = \mathbf{J}_{ii}[T(\br_i) + C(\br_i) + H(\br_i)] + \sum_{j\neq i} \mathbf{J}(r_i - r_j) [T(\br_j) + C(\br_j)+ H(\br_j)]
 \end{equation}
 However, due to the relative velocity between the fluid and the microtubule backbone, the velocity used to update the position of the microtubule locations $r_i$ is found by subtracting the kinesin walk speed.
 \begin{equation}
@@ -1958,7 +1958,7 @@ An example of this configuration can be seen in Fig. \ref{fig:streamline}
 \begin{center}
 \includegraphics[width=\hsize]{streamline.png}
 \caption{ 
-A typical configuration after correlation. The microtubules on the edges of the patch can be seen to execute a helical pattern reminecent of the single microtubule dynamics.
+A typical configuration after correlation, viewed from an angle to better show the planar nature of the solution. The microtubules on the edges of the patch can be seen to execute a helical pattern reminecent of the single microtubule dynamics.
 }
 \label{fig:streamline}
 \end{center}
@@ -1982,7 +1982,17 @@ The hard wall serves to damp out fluid motion near its surface due to its strong
 This is seen in the interaction tensor as a negative force mirrored across the wall, opposing the motion of the true force above it.
 One can imagine that, much like the case in electromagnetism, these mirror forces could form some sort of dipolar arrangement. 
 This arrangement would have faster falloff with distance and could easily interfere with the ability of the entire system of microtubules to correlate over large distances.
-\subsection{Suppression of Correlation}
+
+\subsection{Changing $R_b$}
+The characteristic buckling length is one of the primary length scales of the microtubule system, and unsurprisingly plays a key role in determining the phase of correlation the system will tend toward.
+
+\subsection{Relative Viscosity}
+One can also vary the viscosity of the fluid in this system.
+As can be seen from Eq. \ref{eq:discretesum}, there is a global factor of $\mu^{-1}$ on all of the driving force terms.
+Changing the viscosity will then inversely effect the fluid velocity field from the any given set of forces.
+At first, it might seem that this would only cause a change in the overall timescale of the dynamics, but that turns out to be not quite true.
+The motion of the microtubule itself is given by Eq. \ref{eq:discretelevel}, which includes a term only proportional to the kinesin walk speed.
+If this speed remains unchanged, the effect of the kinesin forces will be scaled proportionately to the viscosity.
 
 \subsection{Tension Distribution During Correlated Streaming}
 Can has analytics?
@@ -2002,8 +2012,6 @@ A third region is one in which the system can never support fast correlated stre
 We have seen that many parameters can effect the ability of the model system to initiate linear fast streaming.
 However, if the cell is indeed crossing this phase boundry in the transition from slow to fast streaming, it can only do so using parameters that can be changed in the cell in a relatively short timescale.
 
-
-\part{Acknolegments}
 % Create the reference section using BibTeX:
 
 %bibliography from Vacuum paper
