@@ -84,8 +84,9 @@ would have graduated so, so, very much faster.
 
 
 \chapter{Introduction}
-Polymer dynamics is a new and exciting field with applications across many different disciplines. While the bulk statistical properties have been studied for quite some time, improvements in microscopic techniques have allowed investigations into individual and dynamical properties.
-Here I would need to add more flowery prose to introduce the topics of my dissertation. I intend to talk about how neat it is to study polymers in vacuum as dynamic systems in their own right.
+Polymer dynamics is a new and exciting field with applications across many different disciplines. 
+While the bulk statistical properties have been studied for quite some time, improvements in microscopic techniques have allowed investigations into individual and dynamical properties.
+
 Then talk about how the motions of individual polymers play a large role in biological systems, and how they can produce more complex behaviors through fluid interactions.
 
 
@@ -100,7 +101,7 @@ spectroscopy techniques that utilize Matrix-assisted laser desorption/ionization
 \begin{center}
 \includegraphics[width=0.6\hsize]{maldi}
 \caption{A MALDI TOF mass spectrometer.}
-\label{fig:rgplot}
+\label{fig:MALDI}
 \end{center}
 \end{figure}
 The MALDI technique involves embedding the large polymers of interest into a matrix of much smaller molecules, commonly acids to promote ionization during the vaporization process. 
@@ -450,7 +451,27 @@ Some examples of this type of streaming are shown in Fig. \ref{fig:streamslow}
 
 \subsection{Microtubule Pathways}
 Microtubules are flexible hollow polymers of tubulin subunits that
-serve many critical functions in eukaryotic cells. They are utilized
+serve many critical functions in eukaryotic cells. A cartoon of the microtubule structure is shown in Fig \ref{fig:tubestruct}
+
+\begin{figure}[htp]
+\begin{center}
+(a)
+\includegraphics[width=0.45\hsize]{alphabeta.png}
+(b)
+\includegraphics[width=0.45\hsize]{tubestruct.png}
+\caption{
+(a)
+Microtubules are made out of dimers composed of $\alpha$-tubulin and $\beta$-tubulin.
+(b)
+The Tubulin dimers form a hollow tube with either 13 or 15 linear tracks running along its length. These tracks are followed by the molecular motors as they walk along the microtubule.
+
+Images courtesy of Bill Saxton.
+}
+\label{fig:tubestruct}
+\end{center}
+\end{figure}
+
+They are utilized
 in structural contexts, because of their relatively stiff, yet flexible,
 mechanical properties.  They also act as directional highways through the
 viscous cytoplasm. Molecular motor proteins carry cellular constituents
@@ -1547,14 +1568,14 @@ The linearity of the Stokes equations allows for solutions to be obtained via a 
 \begin{equation}
 \label{eq:fluidgreensfunc}
 \begin{array}{rcl}
- \mathbf{u}(\br ) &=& \int  \mathbf{f}(\br^\prime \cdot  \mathbf{J} (\br - \br^\prime) d\br^\prime \\
+ \mathbf{u}(\br ) &=& \int  \mathbf{f}(\br^\prime) \cdot  \mathbf{J} (\br - \br^\prime) d\br^\prime \\
 p(\br) &=& \frac{ \mathbf{f}(\br^\prime) \cdot (\br - \br^\prime)}{4 \pi | \br - \br^\prime|^3} d\br^\prime
 \end{array}
 \end{equation}
 Where 
 \begin{equation}
 \label{eq:oseentensordef}
- \mathbf{J}(\br) = \frac{1}{8\pi\mu} ( \frac{I}{|\br|} + \frac{\br\br^T}{|\br^3|})
+ \mathbf{J}(\br) = \frac{1}{8\pi\mu} \left( \frac{I}{|\br|} + \frac{\br\br^T}{|\br^3|}\right)
 \end{equation}
 
 is a second rank tensor field known as the Oseen Tensor.
@@ -1580,7 +1601,7 @@ We can consider this to form a uniform density of impellers around the microtubu
 \caption{ 
 The impellers are carried along the microtubule by the kinesin motors. Kinesin is a small protein, so the impellers are aranged very close to the microtubule relative to the impeller size as well as the characteristic buckling length of the microtubule, which is itself very thin.
 }
-\label{fig:quadforce}
+\label{fig:impellerpic}
 \end{center}
 \end{figure}
 \begin{equation}
@@ -1696,7 +1717,7 @@ In comparison, the tension can be decomposed into equal and opposite pairs betwe
 \caption{ 
 While the forces connecting the microtubule backbone must balance, these forces are a) axial and lack the symmetric cancellation of the quadrapole and b) the separation between them is the basis for the characteristic length scale of the microtubule itself, and is thus fixed in relation to the size scale of the interaction.
 }
-\label{fig:quadforce}
+\label{fig:tenforce}
 \end{center}
 \end{figure}
 The separation between the two opposing forces is axial, and lacks the mirror symmetry needed to form the quadrapole. This means that it would at best form a chain of dipoles. 
@@ -1869,9 +1890,27 @@ Essentially, the long range interaction through the fluid could bring about a tr
 
 When the simulation is run with a small number of microtubules placed with their anchors near each other (less than the buckling length), short range correllation almost always emerges.
 Using a random walk starting condition, the microtubules initially fall into seemingly independant circular solutions simialr to those in the single microtubule case.
-However, after a few periods of revolution the microtubules eventually collapse into one circular solution.
+However, after a few periods of revolution the microtubules eventually collapse into one circular solution, as seen in Fig. \ref{fourpoly}
 
-[*** pictures ***]
+\begin{figure}[htp]
+\begin{center}
+(a)
+\includegraphics[width=0.45\hsize]{start.png}
+(b)
+\includegraphics[width=0.45\hsize]{circ.png}
+(c)
+\includegraphics[width=0.45\hsize]{corr.png}
+\caption{ 
+(a)
+A typical starting configuration of four microtubules, with $R_s = 2$ and $h = 2$.
+(b)
+After a short time, the microtubules fall into individual circular solutions, with some correlation
+(c)
+After a few revolutions, all of the microtubules collapse into correlated circles.
+}
+\label{fig:fourpoly}
+\end{center}
+\end{figure}
 
 While this correlation is a promising feature, it will not be enough to produce a long range directed flow field due to the circular nature of the motion.
 In order to sustain linear streaming, the forces transmitted to any one microtubule from the rest of the system need to be stronger than the local kickback force from the kinesin motors.
@@ -1891,16 +1930,42 @@ This most often results in a divergence due to the hard wall Oseen tensor having
 Initial conditions that lead to this effect are also rejected.
 A typical initialized patch is shown in Fig. \ref{fig:patchstart}
 
-[*** fig:patchstart ***]
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=\hsize]{fastsim.png}
+\caption{ 
+A typical starting configuration for a microtubule patch, viewed from directly above the plane.
+}
+\label{fig:patchstart}
+\end{center}
+\end{figure}
 
 \subsection{Linear Streaming with Microtubule Patches}
+There are a fairly wide range of parameters for which, regardless of the random inititialization, the microtubule patch will self organize into a stable directed flow.
+An example of this configuration can be seen in Fig. \ref{fig:streamline}
 
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=\hsize]{fastsim.png}
+\caption{ 
+A typical configuration after correlation. The microtubules on the edges of the patch can be seen to execute a helical pattern reminecent of the single microtubule dynamics.
+}
+\label{fig:streamline}
+\end{center}
+\end{figure}
+
+The length of time needed for the patch to reach this linear streaming phase can vary based on the parameters of the simulation, but in general it will be within a few periods of the single microtubule rotation.
+It is important to re-emphasize that there is no externaly imposed fluid motion in this simulation, and that the linear configuration is brought about by the fluid interactions between the microtubules.
+The direction chosen for streaming is dependent on the exact nature of the random initial conditions, whuch are not guarenteed to be perfectly isotropic.
 
 The spontaneous generation of this ordered phase will cause some aspects of the resulting system, such as the direction of the resulting global flow field, to depend sensitively on the initial conditions of the system.
 However, many properties of the system in this phase, such as the flow speed and characteristic oscillation frequencies, should be independent of the initial conditions.
 As long as the microtubules are essentially at rest in a steady state, the fluid velocity should be determined by the analysis from \ref{eq:mfflowlimit}; as a fraction of the impeller velocity given by $a/(a+d)$.
 
 \section{Conditions for Linear Streaming}
+Not all microtubule patches will reach the linear streaming phase from a random initial condition.
+There are ranges of parameters for which the system will only exhibit short range correlation, often in the same manner as the systems with only a few microtubules.
+In these cases the forces from the fluid interaction are not strong enough to overcome the local kinesin reaction force, and the microtubules buckle and rotate around their anchor points.
 
 \subsection{Effects of the wall}
 The hard wall serves to damp out fluid motion near its surface due to its strong interaction with the fluid viscosity. 
@@ -1926,8 +1991,6 @@ A third region is one in which the system can never support fast correlated stre
 \section{Biologicaly Accesable Parameters for Streaming}
 We have seen that many parameters can effect the ability of the model system to initiate linear fast streaming.
 However, if the cell is indeed crossing this phase boundry in the transition from slow to fast streaming, it can only do so using parameters that can be changed in the cell in a relatively short timescale.
-
-
 
 
 \part{Acknolegments}
