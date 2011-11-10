@@ -1982,9 +1982,6 @@ Even though the hydrodynamic interaction is not strong enough to force a straigh
 Regions of correlated microtubules can develope, as see in Fig. \ref{fig:noodles}
 The dynamic correlations found in this phase might include large numbers of microtubules, but rarely include the anchor points.
 These masses of loose microtubule ends tend to flow back along their length, and as such represent very little  long range fluid motion.
-The fluid flow lines can be computed using the Oseen tensor, and a few typical results are shown in Fig. \ref{fig:flowlines}
-
-[*** fig:flowlines ***]
 
 \section{Conditions for Linear Streaming}
 Not all microtubule patches will reach the linear streaming phase from a random initial condition.
@@ -1999,7 +1996,27 @@ This arrangement would have faster falloff with distance and could easily interf
 We can see this effect in the simulation by simply placing the microtubule patch at several distances from the wall while holding the other parameters fixed.
 Fig. \ref{fig:walldist} shows a sequence of seperate patches, each at different distances from the wall. 
 
-[*** fig:walldist ***]
+\begin{figure}[htp]
+\begin{center}
+(a)
+\includegraphics[width=0.45\hsize]{h5.png}
+(b)
+\includegraphics[width=0.45\hsize]{h3.png}
+(c)
+\includegraphics[width=0.45\hsize]{h2.png}
+(d)
+\includegraphics[width=0.45\hsize]{h1.png}
+\caption{
+(a-d) Configuration of microtubule patches after 200 simulation frames.
+(a)Patch at $h=5$, shows strong directed streaming
+(b)Patch at $h=3$, shows directed streaming, but with more loose edges
+(c)Patch at $h=2$, shows directed streaming, but still "waves" and is not as straight
+(d)Patch at $h=1$, shows no directed streaming, only correlation in cicular motions
+}
+\label{fig:walldist}
+\end{center}
+\end{figure}
+
 At large distances, the patches reach the linear streaming phase from the random initial state quite rapidly(within only a few rotation periods). 
 As the distance from the wall is decreased, the time the system takes to reach the linear streaming state increases.
 
