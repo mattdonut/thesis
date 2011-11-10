@@ -1828,7 +1828,7 @@ For this reason, the effect of the forces generated on a specific segment on the
 %By symetry, one would expect that any effect on the fluid should share direction with that of the force generating it, and as such we can use the fact that the contribution to the fluid motion is proportional to the force to introduce an adjustable parameter to scale this effect. Because this is occurs locally, we don't expect this to effect the long range behavior of the system as a whole. 
 The standard practice in this case is to use the Oseen tensor as an interaction between elements, and to use a simple free draining drag model for the local motion. Since our model is that of a long chain of beads we simply use the drag due to a small sphere.
 \begin{equation}
-\label{eq:discretesum}
+\label{eq:discreteself}
 \mathbf{J}_{ii} = \frac{1}{4\pi\mu}
 \end{equation}
 By combining equations \ref{eq:discretespring}, \ref{eq:discretehardcore}, \ref{eq:discretestiff}, and \ref{eq:fluidvelocity}, we see that for any point in space, the fluid velocity is given by:
@@ -1910,7 +1910,7 @@ However, after a few periods of revolution the microtubules eventually collapse 
 \includegraphics[width=0.45\hsize]{circ.png}
 (c)
 \includegraphics[width=0.45\hsize]{corr.png}
-\caption{ 
+\caption{
 (a)
 A typical starting configuration of four microtubules, with $R_s = 2$ and $h = 2$.
 (b)
@@ -1965,12 +1965,26 @@ A typical configuration after correlation, viewed from an angle to better show t
 \end{figure}
 
 The length of time needed for the patch to reach this linear streaming phase can vary based on the parameters of the simulation, but in general it will be within a few periods of the single microtubule rotation.
+During this correlation time, smaller sub regions of extended microtubules appear.
+These sub regions can slowly rotate as a unit, and tend to cause more microtubules to correlate along with them as they pass nearby.
+Once established, the linear streaming regions are stable and settle into a single direction.
+
 It is important to re-emphasize that there is no externaly imposed fluid motion in this simulation, and that the linear configuration is brought about by the fluid interactions between the microtubules.
 The direction chosen for streaming is dependent on the exact nature of the random initial conditions, whuch are not guarenteed to be perfectly isotropic.
-
 The spontaneous generation of this ordered phase will cause some aspects of the resulting system, such as the direction of the resulting global flow field, to depend sensitively on the initial conditions of the system.
 However, many properties of the system in this phase, such as the flow speed and characteristic oscillation frequencies, should be independent of the initial conditions.
 As long as the microtubules are essentially at rest in a steady state, the fluid velocity should be determined by the analysis from \ref{eq:mfflowlimit}; as a fraction of the impeller velocity given by $a/(a+d)$.
+
+\subsection{Chaotic Solutions}
+For some ranges of input parameters, the system will not manage to set up the fast linear streaming phase.
+When the fluid interaction forces are not enough too overcome the kinesin reation force, the microtubules will buckle and begin rotating around their anchor points.
+Even though the hydrodynamic interaction is not strong enough to force a straight line solution, it can still cause the rotational solutions to correlate with each other, much like in the case of just a few microtubules.
+Regions of correlated microtubules can develope, as see in Fig. \ref{fig:noodles}
+The dynamic correlations found in this phase might include large numbers of microtubules, but rarely include the anchor points.
+These masses of loose microtubule ends tend to flow back along their length, and as such represent very little  long range fluid motion.
+The fluid flow lines can be computed using the Oseen tensor, and a few typical results are shown in Fig. \ref{fig:flowlines}
+
+[*** fig:flowlines ***]
 
 \section{Conditions for Linear Streaming}
 Not all microtubule patches will reach the linear streaming phase from a random initial condition.
@@ -1982,6 +1996,15 @@ The hard wall serves to damp out fluid motion near its surface due to its strong
 This is seen in the interaction tensor as a negative force mirrored across the wall, opposing the motion of the true force above it.
 One can imagine that, much like the case in electromagnetism, these mirror forces could form some sort of dipolar arrangement. 
 This arrangement would have faster falloff with distance and could easily interfere with the ability of the entire system of microtubules to correlate over large distances.
+We can see this effect in the simulation by simply placing the microtubule patch at several distances from the wall while holding the other parameters fixed.
+Fig. \ref{fig:walldist} shows a sequence of seperate patches, each at different distances from the wall. 
+
+[*** fig:walldist ***]
+At large distances, the patches reach the linear streaming phase from the random initial state quite rapidly(within only a few rotation periods). 
+As the distance from the wall is decreased, the time the system takes to reach the linear streaming state increases.
+
+Eventually, the wall decreases the interaction stregth significantly enough that the nucleation of the linear streaming regions cannot occur.
+At these distances, the microtubules will often still correlate, but don't manage to achieve the straight line configuration.
 
 \subsection{Changing $R_b$}
 The characteristic buckling length is one of the primary length scales of the microtubule system, and unsurprisingly plays a key role in determining the phase of correlation the system will tend toward.
