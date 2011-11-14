@@ -145,7 +145,7 @@ to that of Kelvin damping~\cite{SethnaBookKelvinFriction}.  Adding local angular
 potentials to polymers increases this type of damping but does not
 inhibit oscillations for sufficiently long chains~\cite{DeutschCerf}.
 
-In this paper, we further investigate the equilibrium statistics
+In this chapter, we further investigate the equilibrium statistics
 of a noninteracting polymer chain of $N$ links in a vacuum, where
 energy, momentum, and angular momentum are conserved. Previous
 work~\cite{DeutschExactVac} found an analytical solution for a ring
@@ -159,7 +159,7 @@ to $\sqrt{N}$ but now with a different proportionality constant.
 The calculation performed for a ring chain~\cite{DeutschExactVac} does not
 extend easily to linear chains.  Here we use an approach that diverges considerably
 from the previous one to obtain the statistics of a linear chain under
-the same conditions. The new approach has some similarities to techniques used in statistical quantum mechanics~\cite{KleinertBook}In both cases, although the intermediate steps
+the same conditions. The new approach has some similarities to techniques used in statistical quantum mechanics~\cite{KleinertBook}. In both cases, although the intermediate steps
 produce rather lengthy expressions, the final answers are quite simple.
 This suggests that there may be another underlying principle that can be
 used to understand systems with constant angular momentum.
@@ -238,12 +238,12 @@ These decouple into path integrals over the $x$, $y$, and $z$ directions and eac
 \int_0^{\beta_0} \frac{M}{2}(\dot{x}^2 + \omega_0^2 x^2)dt .
 \end{equation}
 $M$ does not depend on $k$ or $\epsilon$, and $\omega_z$ has no $k$ dependence.
-After making this analogy, we can see that for any two fixed path endpoints, the functional integration will give the Greens function for a thermal harmonic oscillator. To obtain a sum over all paths, we simply need to integrate the Greens function $\rho$ ~\cite{feynman} over both its arguments,
+After making this analogy, we can see that for any two fixed path endpoints, the functional integration will give the Green's function for a thermal harmonic oscillator. To obtain a sum over all paths, we simply need to integrate the Green's function $\rho$ ~\cite{feynman} over both its arguments,
 \begin{equation}
 \zeta_i = \int \rho_i(x_1,x_2)dx_1dx_2
 \end{equation}
 where $i = 1,2,3$ represent the $x$, $y$, and $z$, path integrals respectively.
-The Greens function is easily integrated and the result is 
+The Green's function is easily integrated and the result is 
 \begin{equation}\label{eqn:zomega}
 \zeta_i \propto \frac{\omega_i}{\sqrt{ \sinh{(\sqrt{12}\omega_i)}}}
 \end{equation}
@@ -396,7 +396,7 @@ power law or logarithmic in nature.
 
 \section{Conclusions}
 
-In this paper, we considered the equilibrium properties of an ideal linear chain in a vacuum
+In this chapter, we considered the equilibrium properties of an ideal linear chain in a vacuum
 that conserves energy, momentum, and angular momentum. We were able to compute the average
 radius of gyration of such a chain as a function of its angular momentum $L$. We also computed
 the distribution of angular momenta for chains in thermal equilibrium. 
@@ -417,7 +417,7 @@ equivalent to an additional potential $- m \Omega^2 r^2_{xy}/2$, where
 $r_{xy}$ is the projection of a coordinate onto the $x-y$ plane.  For an ideal
 gaussian chain, all three directions decouple and$\langle z^2\rangle$
 is independent of $L$. However a more rigorous analysis based on the
-approach of this paper is not equivalent to this, and it is not clear
+approach of this chapter is not equivalent to this, and it is not clear
 how statistics in the $x-y$ plane and $z$ direction are coupled to cause
 this effect.
 
@@ -496,7 +496,7 @@ asymmetries that are essential for complex cellular functions.
 \begin{center}
 \includegraphics[width=0.5\hsize]{biomodel.png}
 \caption{ 
-A speculative model for fast streaming in \emph{Drosophila} oocytes, care of Bill Saxton et al. 
+A speculative model for fast streaming in \emph{Drosophila} oocytes, courtesy of Bill Saxton et al. 
 (A) During the slow streaming stage, microtubules are not aligned and only small scale motion is observed. 
 (B) During the fast streaming stage, microtubules are see in correlated into long dynamic arrays. 
 The lower panels show expanded views of the boxes shown in the upper panels. 
@@ -521,7 +521,7 @@ organelles.  The mixing process is important for subsequent
 embryonic development, and cannot be accomplished by
 diffusion alone.  
 The fluid viscosity is quite high and, on the size scale of the cell, the organelles are actually rather large. 
-This gives a diffusion timescale that is far to long to be effective for biological processes. 
+This gives a diffusion timescale that is far too long to be effective for biological processes. 
 For example  a $ 1\mu m$ yolk-filled vesicle in
 the cytoplasm, assuming a viscosity 8 times that of water ~\cite{LubyPhelps}
 would take approximately a week to diffuse the $500 \mu m$  length
@@ -673,7 +673,7 @@ There are two other forces acting on the segment; the kinesin and the neighborin
 \label{eq:mfnetMforce}
 b_M v = \frac{\partial}{\partial s}T(s) + F_k
 \end{equation}
-Where $b_M$ is the local drag coefficient of the segment of microtubule, which can be approximated to within logarithmic corrections as that of a sphere with radius equal to the segment length, therefore in an fluid of viscosity $\eta$, $b_M = 6\pi \eta d$
+Where $T(s)$ is the tension along the microtubule backbone and $b_M$ is the local drag coefficient of the segment of microtubule, which can be approximated to within logarithmic corrections as that of a sphere with radius equal to the segment length, therefore in an fluid of viscosity $\eta$, $b_M = 6\pi \eta d$
 
 We also know that the same force balance must hold for the impellers, with their drag force relative to their fixed velocity. 
 However, they don't have connections between neighbors so there is no tension term. 
@@ -856,7 +856,7 @@ of the fluid and will not lead to efficient cytoplasmic streaming by relatively 
 
 %Single chain math Paper
 \section{Motion of Microtubule With Kinesin Walkers}
-
+\label{mathpaper}
 % Here we study the motion of microtubules in the context of cytoplasmic
 % streaming in stage 10B-11 Drosophila oocytes.  At that stage, the roughly
 % hemispherical oocyte is bounded by a plasma membrane and an underlying
@@ -985,7 +985,7 @@ constraint
 \langle \bw \rangle = \alpha {\hat k}
 \end{equation}
 The constant $g$ and the initial conditions of the particle must be chosen so as to satisfy this constraint.
-There is an infinite number of solutions satisfying these conditions leading to different 
+There are an infinite number of solutions satisfying these conditions leading to different 
 steady state solutions for the microtubule.
 
 The spherical pendulum Eq. \ref{eq:sphericalmotion} has been analyzed~\cite{CushmanBates} in detail. In general
@@ -1332,7 +1332,7 @@ results will be the subject of future research.
 
 
 %%%END MATH PAPAER
-This analysis was extended to non-zero $v_s$ and as shown in the supplemental materials~\cite{SupplMat}, does not
+This analysis was extended to non-zero $v_s$ and as shown in the supplemental materials~\ref{mathpaper}, does not
 appreciably change the estimate we will give below for microtubule wave parameters in fast streaming oocytes. 
 
 
@@ -1342,7 +1342,7 @@ lying close to the surface. For low enough $v_s$, travelling wave
 solutions are close to prolate cycloids, meaning that the microtubule periodically loops back
 on itself (see supplemental movie 2~\cite{SupplMovies}. This can be understood analytically. For sufficiently large $v_s$ it transitions to other states finally becoming 
 two dimensional and looking close to a sinusoid (see supplemental movie 3~\cite{SupplMovies}. This is analyzed in detail in
-the supplemental materials~\cite{SupplMat}.
+the supplemental materials~\ref{mathpaper}.
 
 We have not included hydrodynamic and steric interactions between
 different microtubules except in the approximate way of giving rise to
@@ -1368,7 +1368,7 @@ $a/d$ is between $1/4$ and $1$. We will take the kinesin velocity $v_k$ to be ap
 particles has been studied extensively and appears to vary depending on the type of cell and on the length scale~\cite{LubyPhelps}. 
 Particles of different sizes diffusing in the cytoplasm diffuse as if the medium had a different viscosity. Its viscoelastic properties will depend on many
 factors such as the state of gelation of actin filaments~\cite{YinStossel}.
-We will assume that during fast cytoplasmic streaming, the cytoplasmic actin is mainly in a "sol" state allowing fast streaming
+We will assume that during fast cytoplasmic streaming, the cytoplasmic actin is mainly in a ``sol" state allowing fast streaming
 to more readily take place. If this is not the case, the effective viscosity could be much higher~\cite{LubyPhelps}
 but the dissipation would increase proportionally requiring a higher energy input. 
 For small particles of radius approximately $20 nm$, the effective  viscosity 
@@ -1579,7 +1579,7 @@ The linearity of the Stokes equations allows for solutions to be obtained via a 
 \label{eq:fluidgreensfunc}
 \begin{array}{rcl}
  \mathbf{u}(\br ) &=& \int  \mathbf{f}(\br^\prime) \cdot  \mathbf{J} (\br - \br^\prime) d\br^\prime \\
-p(\br) &=& \frac{ \mathbf{f}(\br^\prime) \cdot (\br - \br^\prime)}{4 \pi | \br - \br^\prime|^3} d\br^\prime
+p(\br) &=& \int \frac{ \mathbf{f}(\br^\prime) \cdot (\br - \br^\prime)}{4 \pi | \br - \br^\prime|^3} d\br^\prime
 \end{array}
 \end{equation}
 Where 
@@ -1587,7 +1587,6 @@ Where
 \label{eq:oseentensordef}
  \mathbf{J}(\br) = \frac{1}{8\pi\mu} \left( \frac{I}{|\br|} + \frac{\br\br^T}{|\br^3|}\right)
 \end{equation}
-
 is a second rank tensor field known as the Oseen Tensor.
 The Oseen tensor has had great success in describing how small or thin objects interact in fluid, as well as the self interaction of polymers. 
 In general the Oseen tensor has higher order corrections in $a/R$, but these begin at $(a/R)^3$ and should not play a significant role in cross polymer interactions.
@@ -1743,7 +1742,7 @@ Because the relative motion between the microtubule and the impeller layer is kn
 As we have shown, the forces do to the kinesin motors directly do not contribute to the long range fluid motion, and the only remaining forces are those from microtubule backbone.
 
 %describe fluid coupling
-This leads us to a method for determining the dynamics of the system. The Oseen tensor should be integrated over the force densities $f_{int}$along the backbone of the microtubule, ignoring the contribution from the impeller directly. 
+This leads us to a method for determining the dynamics of the system. The Oseen tensor should be integrated over the force densities $f_{int}$ along the backbone of the microtubule, ignoring the contribution from the impeller directly. 
 \begin{equation}
 \label{eq:fluidvelocity}
 \mathbf{u}(\br ) = \int_{backbone} \mathbf{f}_{int}(\br^\prime) \cdot \mathbf{J} (\br - \br^\prime) d\br^\prime
@@ -1771,7 +1770,7 @@ Even if that is not the case, while the exact value of this suppression depends 
 Up until now, we have only considered microtubules pinned at one end freely floating in the cytoplasm, but in a biological system, the microtubules are believed to be anchored to the cell cortex. 
 The presence of this stationary wall may have a significant effect on the microtubule motion, as it imposes a new boundary condition on the fluid motion; namely that the velocity must vanish at the cortex.
 
-This new boundary condition changes the greens function used to construct the fluid velocity from the forces applied to the system. The determination of this greens function is dependent on the specific boundary geometry, and potentially intractable.
+This new boundary condition changes the Green's function used to construct the fluid velocity from the forces applied to the system. The determination of this Green's function is dependent on the specific boundary geometry, and potentially intractable.
 Because of this difficulty, we will first investigate the case of an infinite plane hard wall at $z=0$. Hopefully, this should provide some insight into the behavior of the microtubule impeller system near the cortex.
 
 Fortunately, the Green's function for the infinite wall case has already been solved[***CITE***]. The technique is  similar to that of the method of image charges in classical electromagnetism, with the added complication of the sources being vector quantities instead of scalers. This vector nature of the sources gives rise to a number of corrections to the simple reflection.
@@ -1847,7 +1846,7 @@ This derivative is then used for a standard fourth order Runge Kutte integration
 The new algorithm was then used to simulate a single microtubule in order to see what effect the fluid interaction would have on the single microtubule solution.
 Because this simulation does not apply any external flow fields, we expect the solution to closely resemble the zero field case from the theory without fluid coupling.
 
-We ran this simulation using the same parameters for a single microtububel with and without the fluid interaction, again using a random starting configuration and tethering the minus end of the microtubule to a fixed point in space. 
+We ran this simulation using the same parameters for a single microtubule with and without the fluid interaction, again using a random starting configuration and tethering the minus end of the microtubule to a fixed point in space. 
 The result was essentially as expected, with a solution that asymptotically approached a circle rotating at a constant rate. A typical solution is shown here:
 
 \begin{figure}[htp]
@@ -1867,13 +1866,13 @@ It is interesting to note that the hydrodynamic interaction have little to no ef
 
 Now more microtubules are added to the simulation, so that there are on the order of tens to hundreds of them.
 The microtubules have their minus ends anchored in a planar configuration, in order to closely resemble attachment to the cortex.
-The spacing between the individual anchors can be varried, but will never be close enough for their hardcore radii to overlap.
+The spacing between the individual anchors can be varied, but will never be close enough for their hardcore radii to overlap.
 This grouping of microtubules exhibits additional behaviors not found in the single microtubule system.
 
 \subsection{Important Length Scales}
 The introduction of more than one microtubule, along with the addition of the hard wall, introduce new length scales to the system.
 The microtubules are placed with their anchor points in a plane. 
-Within this plane, the anchors have a characteristic separation,$R_s$, and this separation defines one of the new length scales in the system.
+Within this plane, the anchors have a characteristic separation, $R_s$, and this separation defines one of the new length scales in the system.
 The plane of anchors is parallel to the hard wall, but not directly on it. 
 The separation between the hard wall and the plane of anchors, $h$ is a second new length scale.
 These two new lengths are usually set to be less than the characteristic buckling length of the microtubule, $R_b$, in order to more closely match what is seen in the biological data.
@@ -1895,7 +1894,7 @@ An image taken with a two photon microscope of a \emph{Drosophila} ooctye during
 
 We have previously shown that the motions of the microtubules is potentially consistent with the simple model of kinesin driven impellers in a pre-existing flow field. 
 We still need to determine if a large group of microtubules are capable of spontaneously generating such a flow field.
-However, since the microtubules align with a local flow field and then, once aligned, they contribute to that flow, it believable that a type of field amplification occurs.
+However, since the microtubules align with a local flow field and then, once aligned, they contribute to that flow, it is plausable that a type of field amplification occurs.
 Essentially, the long range interaction through the fluid could bring about a transition to a phase of long range order.
 
 When the simulation is run with a small number of microtubules placed with their anchors near each other (less than the buckling length), short range correlation almost always emerges.
@@ -2010,7 +2009,7 @@ Fig. \ref{fig:walldist} shows a sequence of separate patches, each at different 
 (a-d) Configuration of microtubule patches after 200 simulation frames.
 (a)Patch at $h=5$, shows strong directed streaming
 (b)Patch at $h=3$, shows directed streaming, but with more loose edges
-(c)Patch at $h=2$, shows directed streaming, but still "waves" and is not as straight
+(c)Patch at $h=2$, shows directed streaming, but still ``waves" and is not as straight
 (d)Patch at $h=1$, shows no directed streaming, only correlation in circular motions
 }
 \label{fig:walldist}
@@ -2028,8 +2027,8 @@ At these distances, the microtubules will often still correlate, but don't manag
 
 \subsection{Relative Viscosity}
 One can also vary the viscosity of the fluid in this system.
-As can be seen from Eq. \ref{eq:discretesum}, there is a global factor of $\mu^{-1}$ on all of the driving force terms.
-Changing the viscosity will then inversely effect the fluid velocity field from the any given set of forces.
+As can be seen from Eq. \ref{eq:discretesum} and  \ref{eq:oseentensordef}, there is a global factor of $\mu^{-1}$ on all of the driving force terms.
+Changing the viscosity on any given system will then inversely effect the fluid velocity field from the any given set of forces.
 At first, it might seem that this would only cause a change in the overall timescale of the dynamics, but that turns out to be not quite true.
 The motion of the microtubule itself is given by Eq. \ref{eq:discretelevel}, which includes a term only proportional to the kinesin walk speed.
 If this speed remains unchanged, the effect of the kinesin forces will be scaled proportionately to the viscosity.
@@ -2040,9 +2039,9 @@ If this speed remains unchanged, the effect of the kinesin forces will be scaled
 % This configuration reduces the complexity of the system considerably, as the microtubules become largely stationary.
 % In addition, the stiffness force term will vanish from the bulk of the microtubules.
 
-\subsection{Hysterisus of Streaming}
+\subsection{Hysteresis of Streaming}
 Because it is a self reinforcing effect, the fast streaming behavior could very easily depend on the initial configuration of the microtubules. 
-For instance, it is believable that a the system could be just barely able to support streaming with the microtubules aligned, but that such a system would be unable to spontaneously generate that alignment.
+For instance, it is believable that a system could be just barely able to support streaming with the microtubules aligned, but that such a system would be unable to spontaneously generate that alignment.
 This divides our phase space up into additional regions.
 One region is where the system always transitions to correlated streaming. One would imagine that this region would be one where interactions between microtubules are strong and long range compared to the other length scales in the system.
 Another region is one where the system can support fast, correlated streaming, but may only reach it from certain classes of initial configurations. This region is obviously less robust if the intent is to achieve fast streaming.
@@ -2054,13 +2053,13 @@ In the cell, microtubules are observed to be uncorrelated in the slow streaming 
 The cell may undergo some change of internal parameters to cross the phase boundary from uncorrelated slow streaming to correlated fast streaming.
 
 
-\section{Biologicaly Accesable Parameters for Streaming}
+\section{Biologicaly Accessible Parameters for Streaming}
 We have seen that many parameters can effect the ability of the model system to initiate linear fast streaming.
 However, if the cell is indeed crossing this phase boundary in the transition from slow to fast streaming, it can only do so using parameters that can be changed in the cell in a relatively short timescale.
 Some of the parameters can be artificially changed to try to isolate their effects.
 
 Studies have been done to investigate the nature of the anchoring of the microtubules to the cell cortex \cite{WangRiechmann}.
-These stuies show that in the stages of slow streaming, the microtubules are mostly anchor tightly against the sell cortex by think bundles of actin, another polymer used in the cytoskeleton.
+These studies show that in the stages of slow streaming, the microtubules are mostly anchor tightly against the sell cortex by thick bundles of actin, another polymer used in the cytoskeleton.
 These bundles are thought to hold the microtubule ends in a think layer very close to the cell wall, something which could prevent the production of correlated fast streaming.
 
 After the fast streaming phase begins, the actin is no longer observed in tight bundles, but instead in a loose disorganized mesh.
