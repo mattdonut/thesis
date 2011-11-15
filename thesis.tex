@@ -16,7 +16,8 @@
 \documentclass[11pt]{ucthesis}
 \def\dsp{\def\baselinestretch{2.0}\large\normalsize}
 \dsp
-
+%\usepackage{natbib}
+%\bibliographystyle{plainnat}
 \usepackage[pdfpagemode=None,pdfstartview=FitH]{hyperref}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -63,8 +64,7 @@
 Advances in molocular manipulation allows for more detailed more detailed analysis of large biological molecules, such as protein and DNA.
 Identification and characterization of these large molecules can lead to greater understanding of the biological systems that use them.
 While current systems use time-of-flight metheds to examine the mass of these polymers, photon scattering techniques could be used to study the their average size and aspect ratio.
-Here we report the development of an analytic expression for the dependance of the radius of gyration of a polymer suspended in vacuum to its angular momentum.
-We show the agreement of that expression with dynamic simulations using an angular momentum conserving system of rigid links.
+Here we report the development of an analytic expression for the dependance of the radius of gyration of a polymer suspended in vacuum to its angular momentum, it the agreement of that expression with numerical simulations.
 
 Polymer dynamics can also be studied in vivo, with a great deal of the behavior captured by some simple models.
 Here we study cytoplasmic streaming in \emph{Drosophila} oocytes. The oocyte displays two stages of fluid movement; a slow stage that is generally chaotic and localized and a fast stage that is highly correlated across the entire cell.
@@ -151,7 +151,7 @@ applications~\cite{DeutschPolyVac}, there is also the intrinsic interest
 in understanding such systems. 
 
 The dynamics of vacuum polymers has been the subject of a number of recent
-investigations~\cite{Kleinert,mossa,DeutschPolyVac,DeutschCerf,Taylor,DeutschExactVac}  and show
+investigations~\cite{DeutschPolyVac,Kleinert,mossa,DeutschCerf,Taylor,DeutschExactVac}  and show
 many unusual features different from what are seen in solution. Polymers close to the coil-globule
 transition show small Lyapunov exponents~\cite{mossa}. However in many situations,
 the dynamics are in accord with detailed microcanonical calculations,
@@ -2139,7 +2139,7 @@ The simple model used here shows many of the features seen in the oocyte, and co
 % Create the reference section using BibTeX:
 
 %bibliography from Vacuum paper
-\begin{thebibliography}{}
+\begin{thebibliography}{9}
 \bibitem{Hillenkamp} F. Hillenkamp (Editor), J. Peter-Katalinic (eds.). 
 \bibitem{DeutschPolyVac} J.M. Deutsch, Phys. Rev. Lett. {\bf 99}, 238301 (2007).
 \bibitem{Kleinert} H. Kleinert, Phys. Rev. B {\bf76}, 052202 (2007). 
@@ -2148,11 +2148,11 @@ The simple model used here shows many of the features seen in the oocyte, and co
 \bibitem{DeutschCerf} J.M. Deutsch, arXiv:1003.0944v2 
 \bibitem{Taylor} M. P. Taylor, K. Isik and J. Luettmer-Strathmann,  Phys. Rev. E {\bf 78}, 051805  (2008).
 \bibitem{DeutschExactVac} J.M. Deutsch, Phys. Rev. E {\bf 77}, 051804 (2008).
+\bibitem{SethnaBookKelvinFriction} J.P. Sethna ``Statistical Mechanics Entropy, Order
 \bibitem{KleinertBook} H. Kleinert, ``Path Integrals in Quantum Mechanics, Statistics, Polymer Physics, and Financial Markets" Freie Universitat Berlin, Germany
 \bibitem{laliena} V Laliena, Phys. Rev. E {\bf 59}, 4786 (1999).
 \bibitem{feynman} R. P. Feynman, Statistical Mechanics: A Set of Lectures, Westview Press; 2nd Edition (1998)
-\bibitem{SethnaBookKelvinFriction} J.P. Sethna ``Statistical Mechanics Entropy, Order
-\bibitem{DeGennesBook} P.G. de Gennes ``Scaling Concepts in Polymer Physics" Cornell University Press (1985).
+%\bibitem{DeGennesBook} P.G. de Gennes ``Scaling Concepts in Polymer Physics" Cornell University Press (1985).
 \bibitem{FPU} E. Fermi, J. Pasta, and S. Ulam, {\em Studies of nonlinear problems} 
 (Los Alamos Document LA-1940, 1955).
 \bibitem{BermanIzrailev} For a review see G.P. Berman and F.M. Izrailev, Chaos
@@ -2161,9 +2161,7 @@ The simple model used here shows many of the features seen in the oocyte, and co
 
 %Bibliography from Mixing paper
 
-\bibitem{SerbusSaxton} L.R. Serbus, B.J. Cha, W.E. Theurkauf, and  W.M. Saxton, 
-``Dynein and the actin cytoskeleton control kinesin-driven cytoplasmic streaming in Drosophila oocytes."  Development {\bf 132},  3743-3752 (2005).
-\bibitem{Movie13} See ref. \cite{SerbusSaxton} \href{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1534125/bin/NIHMS11364-supplement-Movie_13.mov}{Movie 13}.
+%\bibitem{Movie13} See ref. \cite{SerbusSaxton} \href{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1534125/bin/NIHMS11364-supplement-Movie_13.mov}{Movie 13}.
 \bibitem{LubyPhelps} K. Luby-Phelps, ``Cytoarchitecture and physical properties of cytoplasm: volume, viscosity, diffusion, intracellular 
 surface area." Int. Rev. Cytol. {\bf 192} 189–221 (2000).
 fluorescence redistribution after photobleaching." Journal of Cell Biology.  {\bf 99} 2165-2174 (1984). 
@@ -2177,6 +2175,8 @@ Soc. {\bf 19}, 417-431 (1988).
 {\bf 66} (Seminaire Orsay) (1979).
 \bibitem{Handel} M. Handel, ``Global shadowing of pseudo-Anosov homeomorphisms." Ergod. Theor. Dyn. Syst.
 {\bf 5}, 373-377 (1985).
+\bibitem{SerbusSaxton} L.R. Serbus, B.J. Cha, W.E. Theurkauf, and  W.M. Saxton, 
+``Dynein and the actin cytoskeleton control kinesin-driven cytoplasmic streaming in Drosophila oocytes."  Development {\bf 132},  3743-3752 (2005).
 \bibitem{BergRandomWalksinBiology} Berg H. C. Random Walks in Biology (Princeton University Press, Princeton, NJ, 1983). 
 \bibitem{SvobodaBlock} K. Svoboda and S. M. Block, ``Force and velocity measured for single kinesin molecules." Cell {\bf 77}, 773-784 (1994).
 \bibitem{MeyhoferHoward} E. Meyh\"ofer and J. Howard,  ``The force generated by a single kinesin
@@ -2188,31 +2188,7 @@ molecule against an elastic load." Proc. Natl. Acad Sci. USA. {\bf 92} 574-578 (
 \bibitem{Seeger}  M. A. Seeger and  S.  E. Rice, ``Microtubule-associated Protein-like Binding of the Kinesin-1 Tail to Microtubules", J. Biol. Cheme. {\bf 285}
 8155-8162 (2010).
 \bibitem{SupplMovies} The movies can be seen \href{http://physics.ucsc.edu/~josh/MTsim_videos/}{here}.
-\bibitem{Kessler} D. A. Kessler, J. Koplik, H. Levine, ``Geometrical models of interface evolution. III. Theory of dendritic growth"  Phys. Rev. A {\bf 31}  1712 (1985).
-\bibitem{Barbieri} A. Barbieri, D. C. Hong, J. S. Langer, ``Velocity selection in the symmetrical model of dendritic crystal growth." 
-Phys. Rev. A {\bf 35} 1802 (1987).
-\bibitem{SupplMat} J.M Deutsch, M. E.  Brunner, and W.M. Saxton, ``Analysis of microtubule motion due to drag from kinesin walkers" to be published.
-\bibitem{Felgner} H. Felgner, R. Frank and M. Schliwa, ``Flexural rigidity of microtubules measured with the use of optical tweezers",
-J. Cell Science 109, 509 (1996).
-\bibitem{GittesRigidity} Gittes, F., B. Mickey, J. Nettleton, and J. Howard. 1993. ``Flexural rigidity
-of microtubules and actin filaments measured from thermal fluctuations in shape." J. Cell Biol. 120:923-934.
-\bibitem{YinStossel} H. L. Yin and T. P. Stossel, ``Control of cytoplasmic actin gel−sol transformation by gelsolin, a calcium-dependent regulatory protein"
-Nature {\bf 281}, 583-586 (1979) 
-\bibitem{Kennedy} J. R. Kennedy and K. E. Duckett, ``The study of ciliary frequencies with an optical spectrum analysis system",
-Experimental Cell Research {\bf 135} 147 (1981).
-\bibitem{ValeSchnappEtAl} R.D. Vale, B.J.  Schnapp, T.S. Reese, and M.P.  Sheetz,``Identification of a novel force-generating protein, kinesin, involved in microtubule-based motility"   Cell 40, 559-569 (1985).
-\bibitem{MaloneyHerskowitzKoch} A. Maloney, L. J. Herskowitz and S. J. Koch, ``Effects of surface passivation on gliding motility assays""
-Nature Precedings \href{http://precedings.nature.com/documents/4469/version/2}{hdl:10101/npre.2010.5278.1} (2010).
-\bibitem{MaloneyKochVideo} Video is available at \href{http://www.kochlab.org/}{http://www.kochlab.org/} and\\ 
-\href{http://www.youtube.com/watch?v=y0QCkObJIto}{http://www.youtube.com/watch?v=y0QCkObJIto}
-\bibitem{KochLab} See the \href{http://openwetware.org/wiki/Koch_Lab}{Koch Lab Web Page}. 
-\bibitem{OpenNotebookScience} See the wikipedia page on \href{http://en.wikipedia.org/wiki/Open_Notebook_Science}{Open Notebook Science}.
 
-
-
-%Bibliography from Single Chain Paper
-\bibitem{DeutschBrunnerSaxton} J.M. Deutsch, M.E. Brunner, and W. M. Saxton,
-``The mechanics of a microscopic mixer: microtubules and cytoplasmic streaming in Drosophila oocytes", arXiv:1101.2225v1 [q-bio.SC] (2011).
 \bibitem{CushmanBates} R. H. Cushman and L. M. Bates, ``Global aspects of classical integrable systems" Ch. IV, Birkh\"auser Basel, Boston, Berlin (1997).
 \bibitem{Kessler} D. A. Kessler, J. Koplik, H. Levine, ``Geometrical models of interface evolution. III. Theory of dendritic growth"  Phys. Rev. A {\bf 31}  1712 (1985).
 \bibitem{Barbieri} A. Barbieri, D. C. Hong, J. S. Langer, ``Velocity selection in the symmetrical model of dendritic crystal growth." 
@@ -2221,6 +2197,23 @@ Phys. Rev. A {\bf 35} 1802 (1987).
 \bibitem{DeutschMadden}  J.M. Deutsch and TM. Madden,  ``Theoretical Studies of DNA During Gel electrophoresis." J Chem. Phys. {\bf 90} 2476-2485 (1989).
 \bibitem{DeutschCerfFriction} J.M. Deutsch ``Internal dissipation of a polymer" Phys. Rev. E {\bf 81}, 061804/(16) (2010).
 \bibitem{ValeSchnappEtAl} R.D. Vale, B.J.  Schnapp, T.S. Reese, and M.P.  Sheetz,``Identification of a novel force-generating protein, kinesin, involved in microtubule-based motility"   Cell 40, 559-569 (1985).
+\bibitem{DeutschBrunnerSaxton} J.M. Deutsch, M.E. Brunner, and W. M. Saxton,
+``The mechanics of a microscopic mixer: microtubules and cytoplasmic streaming in Drosophila oocytes", arXiv:1101.2225v1 [q-bio.SC] (2011).
+
+
+%\bibitem{SupplMat} J.M Deutsch, M. E.  Brunner, and W.M. Saxton, ``Analysis of microtubule motion due to drag from kinesin walkers" to be published.
+\bibitem{Felgner} H. Felgner, R. Frank and M. Schliwa, ``Flexural rigidity of microtubules measured with the use of optical tweezers",
+J. Cell Science 109, 509 (1996).
+\bibitem{GittesRigidity} Gittes, F., B. Mickey, J. Nettleton, and J. Howard. 1993. ``Flexural rigidity
+of microtubules and actin filaments measured from thermal fluctuations in shape." J. Cell Biol. 120:923-934.
+\bibitem{YinStossel} H. L. Yin and T. P. Stossel, ``Control of cytoplasmic actin gel−sol transformation by gelsolin, a calcium-dependent regulatory protein"
+Nature {\bf 281}, 583-586 (1979) 
+% \bibitem{Kennedy} J. R. Kennedy and K. E. Duckett, ``The study of ciliary frequencies with an optical spectrum analysis system",
+% Experimental Cell Research {\bf 135} 147 (1981).
+\bibitem{MaloneyHerskowitzKoch} A. Maloney, L. J. Herskowitz and S. J. Koch, ``Effects of surface passivation on gliding motility assays""
+Nature Precedings \href{http://precedings.nature.com/documents/4469/version/2}{hdl:10101/npre.2010.5278.1} (2010).
+\bibitem{MaloneyKochVideo} Video is available at \href{http://www.kochlab.org/}{http://www.kochlab.org/} and\\ 
+\href{http://www.youtube.com/watch?v=y0QCkObJIto}{http://www.youtube.com/watch?v=y0QCkObJIto}
 \bibitem{GoldsteinTuvalvandeMeentPNAS} R.E. Goldstein, I. Tuval, and J.W. van de Meent, ``Microfluidics of cytoplasmic streaming and its
 implications for intracellular transport" Proc. Nat. Acad. Sci.,  {\bf 105}, 3663-3667 (2008).
 \bibitem{GoldsteinTuvalvandeMeentPRL} R.E. Goldstein, I. Tuval, and J.W. van de Meent, 
@@ -2234,8 +2227,17 @@ J. Verchot-Lubicz  and R. E. Goldstein, ``Cytoplasmic streaming enables the dist
 and vesicles in large plant cells" Protoplasma {\bf 240} 99-107 (2010) 
 \bibitem{DabrosVanDeVen}
 T. Dabros and T. G. M. van de Ven, ``Hydrodynamic Interactions Between Two Spheres Near a Solid Plane" Int. J. Multiphase Flow Vol. 18, No. 5, pp. 751-764, (1992)
-\bibitem{WangRiechmann}
-Ying Wang and Veit Riechmann, ``Microtubule anchoring by cortical actin bundles prevents streaming of the oocyte cytoplasm" Mechanisms of Developement {\bf 125} 142-152 (2007)
+
+%\bibitem{KochLab} See the \href{http://openwetware.org/wiki/Koch_Lab}{Koch Lab Web Page}. 
+%\bibitem{OpenNotebookScience} See the wikipedia page on \href{http://en.wikipedia.org/wiki/Open_Notebook_Science}{Open Notebook Science}.
+
+
+
+
+%Bibliography from Single Chain Paper
+
+% \bibitem{WangRiechmann}
+% Ying Wang and Veit Riechmann, ``Microtubule anchoring by cortical actin bundles prevents streaming of the oocyte cytoplasm" Mechanisms of Developement {\bf 125} 142-152 (2007)
 \end{thebibliography}
 
 \end{document}
