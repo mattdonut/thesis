@@ -58,7 +58,6 @@
 %\listoftables
 
 \begin{abstract}
-Should probably write this after I finish the rest of this...
 
 \end{abstract}
 
@@ -2084,9 +2083,23 @@ Is simply moving the anchors away from the cell wall enough? Or is a more comple
 \chapter{Conclusion}
 In this work we have explored two different ways in which the theory of polymers can be applied to help understand complex biological systems.
 First, we looked at the statistics of polymers isolated in a vacuum. 
-These results can be applied to help with the identification and analysis of large biopolymers, such as proteins or DNA.
+An analytic expression for the dependance of the radius of gyration on the angular momentum of the polymer was obtained, and then compared to the results of a dynamic simulation.
+The simulation was then used to investigate the anisotropy of the spatial distribution of the polymer caused by its rotation.
+These results could potentially be used to help identify large biological polymers such as proteins or DNA.
+They could also be useful in further study of the internal distributions of mass within the polymers.
 
-Second, we looked at a simple model for describing some of the complex
+Second, we looked at a simple model for describing the motion of microtubules and cytoplasm in \emph{Drosophila} oocytes.
+Considering a single microtubule suspended in a high viscosity flow allowed for an analytic treatment of potential steady state solutions.
+These solutions are generally helical except in the presence of a hard wall, in which they are still generally curved with some characteristic period.
+The equations of motion allowed for solutions of arbitrary scale, with the actual scale chosen by the boundry conditions; in this case a fixed location at one end and free at the other.
+The system was simulated numerically, whiched conformed to these analytic forms, and allowed for an estimation of the scale parameter chosen.
+
+The single polymer analysis assumed an externally imposed flow field, and we then studied if a group of microtubules could create such a field.
+To study this, patches of microtubules were simulated using a modified Oseen tensor to model the hydrodynamic interactions between the microtubules in the presence of the nearby cell wall.
+These simulations displayed spontaneos corellation into a directed streaming phase for a wide range of parameters.
+Several of these parameters could be tuned to prevent the system from reaching the fast streaming phase, with the simplest being the distance of the anchor points from the hard wall.
+There is biological evidence that these anchor points move away from the cell cortex during the transition from slow to fast streaming, which is in agreement with what is seen in the simulation.
+The simple model used here shows many of the features seen in the oocyte, and could provide a useful tool for discovering more about how the cell functions.
 
 % Create the reference section using BibTeX:
 
