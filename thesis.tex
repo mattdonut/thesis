@@ -224,11 +224,11 @@ Z(\beta,L,N) \propto  \int d^3k \int e^{ i\mathbf{k\cdot L} }e^{ -\beta(K+\Phi) 
 After integrating over the momenta and taking into account rotational symmetry we arrive at the form~\cite{DeutschExactVac}
 
 \begin{equation}\label{partzeta}
-Z[\beta,L,N] = \frac{c}{L} \int_0^\infty \sin(kL)\zeta(\beta,k)dk
+Z[\beta,L,N] = \frac{c}{L} \int_0^\infty \sin(kL)\zeta(\beta,k)kdk
 \end{equation}
 where $\zeta$ is a function of the magnitude of $k$ and inverse temperature  $\beta$ only. The constant $c$ is of no physical importance leading to:
 \begin{equation}\label{rawzeta}
-\zeta(\beta,k)= \int e^{ -\int^{Nl}_0 (\frac{Tmk^2}{2l} +\epsilon)(x(s)^2 + y(s)^2)+\epsilon z(s)^2 + \frac{3}{2l}  |\dot{\mathbf{r}}|^2  ds}\delta(\mathbf{r}_{cm}) \delta \mathbf{r}(s) .
+\zeta(\beta,k)= \int e^{ -\int^{Nl}_0 (\frac{Tmk^2}{2l} +\epsilon)(x(s)^2 + y(s)^2)+\epsilon z(s)^2 + \frac{3}{2l}  |\dot{\mathbf{r}}|^2  ds}\delta(\mathbf{r}_{cm}) D[\mathbf{r}(s)].%\delta \mathbf{r}(s) .
 \end{equation}
 Now we perform a scaling on $L$, $k$, and $s$ in order to normalize out the length of the chain and the temperature.
 \begin{eqnarray}
@@ -239,18 +239,18 @@ s^\prime = \frac{\sqrt{12}}{Nl} s
 The rescaling factors are based on the expected value of $L$ for the statistical model without conservation of angular momentum, and produce a set of dimensionless variables. This will allow us to compare chains of all sizes and temperatures on a common scale.
 After doing these rescalings, the form of Eq. \ref{partzeta} remains unchanged, and Eq. \ref{rawzeta} changes to:
 \begin{equation}\label{scaledzeta}
-\zeta(\beta,k^\prime)= \int e^{-\int_0^{\sqrt{12}} (k^{\prime2}/2l + \epsilon^\prime)(x^\prime(s^\prime)^2 + y^\prime(s^\prime)^2 ) + \epsilon^\prime z^\prime(s^\prime)^2  + \frac{3}{2l} |\dot{\mathbf{r}^\prime}|^2 ds^\prime}\delta(\mathbf{r}^\prime_{cm}) \delta \mathbf{r^\prime}(s^\prime)
+\zeta(\beta,k^\prime)= \int e^{-\int_0^{\sqrt{12}} (k^{\prime2}/2l + \epsilon^\prime)(x^\prime(s^\prime)^2 + y^\prime(s^\prime)^2 ) + \epsilon^\prime z^\prime(s^\prime)^2  + \frac{3}{2l} |\dot{\mathbf{r}^\prime}|^2 ds^\prime}\delta(\mathbf{r}^\prime_{cm}) D[ \mathbf{r^\prime}(s^\prime) ]
 \end{equation}
 It is interesting to note that the explicit dependence on $\beta$ has disappeared and $\zeta$ is now only a function of $k^\prime$. The dependence on the total length of the chain has also been factored into $k^\prime$, but the length of the individual monomers remains.
 Now we expand the center of mass conserving delta function in complex exponential form.
 \begin{equation}
-\zeta(k^\prime)= \int e^{-\int_0^{\sqrt{12}} (k^{\prime2}/2l + \epsilon^\prime)(x^{\prime2} + y^{\prime2} ) + \epsilon^\prime z^{\prime2}  + \frac{3}{2l} |\dot{\mathbf{r}^\prime}|^2 + i x^\prime l_x + i y^\prime l_y + i z^\prime l_z ds^\prime}  dl_xdl_ydl_z \delta \mathbf{r^\prime}(s^\prime) .
+\zeta(k^\prime)= \int e^{-\int_0^{\sqrt{12}} (k^{\prime2}/2l + \epsilon^\prime)(x^{\prime2} + y^{\prime2} ) + \epsilon^\prime z^{\prime2}  + \frac{3}{2l} |\dot{\mathbf{r}^\prime}|^2 + i x^\prime l_x + i y^\prime l_y + i z^\prime l_z ds^\prime}  dl_xdl_ydl_z D[ \mathbf{r^\prime}(s^\prime) ] .
 \end{equation}
 These terms can be combined with the existing exponents using completion of squares which results in path independent phase factors and a constant offset to the paths, e.g. $x^\prime (s) \to x^\prime (s) + const.$ . Since all possible paths are included in the integral, the offset has no effect.
 
 We now have a nice separation into a simple Gaussian integral and a factor that is very similar to the path integral form of a harmonic oscillator. 
 \begin{equation}
-(\int e^{\sqrt{12}[ -(l_x^2 + l_y^2)/4(\frac{k^{\prime2}}{2l} +\epsilon^\prime) - l_z^2/4\epsilon^\prime]}dl_xdl_ydl_z)  (\int e^{-\int_0^{\sqrt{12}} (k^{\prime2}/2l + \epsilon^\prime)(x^{\prime2} + y^{\prime2} ) + \epsilon^\prime z^{\prime2}  + \frac{3}{2l} |\dot{\mathbf{r}^\prime}|^2 } \delta \mathbf{r}^\prime)
+(\int e^{\sqrt{12}[ -(l_x^2 + l_y^2)/4(\frac{k^{\prime2}}{2l} +\epsilon^\prime) - l_z^2/4\epsilon^\prime]}dl_xdl_ydl_z)  (\int e^{-\int_0^{\sqrt{12}} (k^{\prime2}/2l + \epsilon^\prime)(x^{\prime2} + y^{\prime2} ) + \epsilon^\prime z^{\prime2}  + \frac{3}{2l} |\dot{\mathbf{r}^\prime}|^2 } D[ \mathbf{r^\prime}(s^\prime) ]
 \end{equation}
 The first integrals of the $l$'s are trivially integrated but we must still perform the path integral in parentheses. 
 These decouple into path integrals over the $x$, $y$, and $z$ directions and each one has an action of the form
@@ -512,6 +512,7 @@ Many studies have focused on motor driven transport processes that
 generate asymmetric distributions of specific cytoplasmic constituents;
 asymmetries that are essential for complex cellular functions. 
 
+
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[width=0.5\hsize]{biomodel.png}
@@ -595,7 +596,7 @@ Inhibition of the opposing minus-end directed motor protein,
 dynein, has a complementary effect,
 actually stimulating fast cytoplasmic streaming ~\cite{SerbusSaxton}.  Microscopy studies
 suggest that microtubules participating in this motion have their
-minus ends attached to the cortex and their plus ends away from
+minus ends attached to the cell cortex(the inner layer of the cell wall) and their plus ends away from
 the cortex in the interior of the oocyte~\cite{SerbusSaxton,ChaSerbus}.  
 
 The explanation
@@ -681,11 +682,14 @@ by a factor of order $a/d$.
 \section{Enhancement of Streaming Due to Hydrodynamics} 
 
 As we have seen, there are actually many microtubules in these cells. To understand how this
-affects the above analysis, consider all space filled with an infinite forest of them all oriented
+affects the above analysis, we need to consider the case of many microtubules working together.
+Instead of a single microtubule isolated in fluid with an externally imposed flow field, consider all space filled with an infinite forest of microtubules all oriented
 in the same direction. 
 
 %%% Begin new explaination
-Let us assume that the microtubules and impellers have managed to set up fast streaming and the fluid now has a long range global velocity $v$.
+Let us assume that the microtubules and impellers have managed to set up fast streaming and the fluid now has a long range global velocity $v$, brought about by the hydrodynamics of the motion of impellers running along the microtubules.
+For the purposes of estimating the magnatude of this streaming velocity, assume that the microtubules have achieved a global correlation of direction, and have achieved a configuration in which they are largely straight and aligned with the fluid.
+
 Because they are tethered at one end, the microtubules are stationary in this configuration, and as such the net force on them must be zero. 
 This means that the hydrodynamic drag on a section of microtubule must be exactly balanced by the other forces acting on that segment.
 There are two other forces acting on the segment; the kinesin and the neighboring segments.
@@ -693,7 +697,7 @@ There are two other forces acting on the segment; the kinesin and the neighborin
 \label{eq:mfnetMforce}
 b_M v = \frac{\partial}{\partial s}T(s) + F_k
 \end{equation}
-Where $T(s)$ is the tension along the microtubule backbone and $b_M$ is the local drag coefficient of the segment of microtubule, which can be approximated to within logarithmic corrections as that of a sphere with radius equal to the segment length, therefore in an fluid of viscosity $\eta$, $b_M = 6\pi \eta d$
+Where $T(s)$ is the tension along the microtubule backbone, $F_k$ is the reaction force due to the walking kinesin, $v$ is the fluid velocity relative to the stationary microtubules, and $b_M$ is the local drag coefficient of the segment of microtubule, which can be approximated to within logarithmic corrections as that of a sphere with radius equal to the segment length, therefore in an fluid of viscosity $\eta$, $b_M = 6\pi \eta d$
 
 We also know that the same force balance must hold for the impellers, with their drag force relative to their fixed velocity. 
 However, they don't have connections between neighbors so there is no tension term. 
@@ -702,10 +706,11 @@ Their force balance is
 \label{eq:mfnetIforce}
 b_I (v - v_0) =  -F_k
 \end{equation}
-Where $b_I$ is the local drag coefficient for the impellers, with $b_I = 6\pi\eta a$.
+Where $v_0$ is the kinesin walk speed, and $b_I$ is the local drag coefficient for the impellers, with $b_I = 6\pi\eta a$. 
+$F_k$ is negative here as it is the oposite reaction force from that applied to the microtubule.
 
 The force exerted on the fluid is simply opposite of the drag terms. It is important to note here that these two equations are for forces acting in slightly different locations, as one is for the microtubule segment and the other for the impeller. 
-We will go on later to show that this small separation (on the order of the length of the kinesin), will give rise to a quadrapole like term in the fluid motion.
+We will go on later to show that this small separation (on the order of the length of the kinesin), will give rise to a quadrupole like term in the fluid motion.
 This term falls off as $1/\br^3$ and should not have significant effect on the long distance fluid motion.
 For considering the long range flow field of the fluid, it is safe to neglect these terms and for now treat these two force equations as happening at the same location.
 The total force acting on the fluid per unit length is then:
@@ -729,7 +734,7 @@ Solve this for $v$
 \label{eq:mfflowsol}
 v = \frac{2\pi \kappa R^2 b_I}{2\pi \kappa R^2(b_I + b_M) + 1} v_0
 \end{equation}
-And now take the limit as the total system size goes to infinity
+And now take the limit as the total system size goes to infinity to give the generated fluid velocity due to a large patch of aligned microtubules.
 \begin{equation}
 \label{eq:mfflowlimit}
 \lim_{R\to\infty} v = \frac{b_I}{b_I + b_M} v_0 = \frac{a}{a+d} v_0
@@ -738,8 +743,8 @@ The second equality comes from the fact that the drag coefficients are proportio
 In this case $a$ for the impellers, and $d$ for the segment of microtubule. 
 Because of this, we expect $b_M > b_I$ because the impellers must be able to fit along the microtubule.
 
-This result makes good intuitive sense, as we would expect the fluid velocity to be some form of weighted average between the velocities of the two classes of objects in contact with it. 
-It also has the nice limit that if the drag from the microtubule were to be small, the fluid would move at the walk speed of the kinesin, and that if the drag from the microtubule were to be very large, the fluid velocity would be greatly suppressed but never quite zero.
+This result tells us that if the microtubules manage to achieve a configuration such that they align into long straight bundles(as is seen in the oocyte during fast streaming), we would expect the fluid velocity generated by such a configuration to be a fraction of the maximum kinesin motor speed, with that fraction given by the relative drag coefficients of the microtubule segments and impellers.
+Checking the limits of this ratio we find that if the drag from the microtubule were to be small, the fluid would move at the walk speed of the kinesin, and that if the drag from the microtubule were to be very large, the fluid velocity would be greatly suppressed but never quite zero.
 In the case of exact symmetry between the two lengths, the fluid velocity becomes halfway between the walk speed and zero, as one would expect.
 
 The exact result will depend on the shape of the impellers, and the local fluid velocities near the microtubule impeller system will of course be more complex than a constant uniform flow field.
@@ -896,7 +901,7 @@ and the system is dominated by the drag coefficient per unit length $\nu$,
 \begin{equation}
 \label{eq:microtubule}
 \nu \frac{\partial \br}{\partial t} =  -C \frac{\partial^4 \br}{\partial s^4} + \frac{\partial}{\partial s}(T(s)\frac{\partial \br}{\partial s}) -
-f_k \frac{\partial \br}{\partial s} + \nu v_{s}{\hat k} .
+f_k \frac{\partial \br}{\partial s} + \nu v{\hat k} .
 \end{equation}
 $C$ denotes the elastic bending constant of the microtubule. The tension $T(s)$ enforces the inextensibility of microtubules which
 can be written as  $|\partial \br/\partial s| = 1.$ 
@@ -920,13 +925,13 @@ Kinesin motors walking along the microtubule are assumed to be carrying cargo th
 cytoplasmic medium. By Newton's third law, this force produces a drag on the impellers that transmits this force to the
 attached microtubule. Assuming a high density of kinesin walkers, the effective force on the microtubule will be in the
 direction of the local tangent to $\br(s)$ which is $\partial \br/\partial s$. The coefficient $f_k$ gives the strength of the force.
-Lastly we add a uniform flow field representing the velocity of the cytoplasm $v_s$ in the vicinity of the microtubule
+Lastly we add a uniform flow field representing the velocity of the cytoplasm $v$ in the vicinity of the microtubule
 which we take to be in the $\hat k$ direction.
 
 We rescale to dimensionless variables 
 \begin{equation}
 \label{eq:rescale}
-\sigma = s/\rho_0,~ \bu = \br/\rho_0, ~ \tau = t \omega_0,  ~ T' = T \rho_0^2/C, ~{\rm and} ~ h = \nu v_s/f_k 
+\sigma = s/\rho_0,~ \bu = \br/\rho_0, ~ \tau = t \omega_0,  ~ T' = T \rho_0^2/C, ~{\rm and} ~ h = \nu v/f_k 
 \end{equation}
 so that
 \begin{equation}
@@ -959,21 +964,23 @@ the travelling wave solution is valid) is tethered.
 The position averaged over one period of a monomer, $\langle u \rangle$, should be  time independent.
 If the microtubule is stretched out
 in one particular direction, there should be a displacement $\bu_d$ of the microtubule about a straight
-line solution,
+line solution, so we can look for solutions of the form
 \begin{equation}
 \label{eq:travelling}
-\bu(\sigma, \tau) = \bu_d(\sigma-v\tau) + \alpha \sigma {\hat k}.
+\bu(\sigma, \tau) = \bu_d(\sigma-v_d\tau) + \alpha \sigma {\hat k}.
 \end{equation}
-The term $\bu_d$ describes a displacement that travels along the backbone of the chain maintaining its shape.
+The term $\bu_d$ describes a transverse displacement waveform that travels along the backbone of the chain at velocity $v_d$, maintaining its shape.
+Here $\alpha$ is the extent to which the chain is extended in the direction of the fluild motion.
 Therefore we require
 \begin{equation}
 \label{eq:ud_constraint}
 \frac{\partial \langle \bu_d \rangle}{\partial \sigma} = 0
 \end{equation}
+where the average is taken over the argument $\sigma-v_d\tau$.
 
 Substituting Eq. \ref{eq:travelling} into Eq. \ref{eq:dimensionless} gives a left hand side
-of $-v \partial \bu_d/\partial \sigma$ and a term of the form $-\partial \bu_d/\partial \sigma$ on
-the right hand side. Choosing $v = 1$ and in addition $\alpha = h$, we are left with
+of $-v_d \partial \bu_d/\partial \sigma$ and a term of the form $-\partial \bu_d/\partial \sigma$ on
+the right hand side. If we choose $v_d = 1$ and in addition $\alpha = h$, the equation simplifies to
 
 \begin{equation}
 \label{eq:reduced_steadystate}
@@ -1336,7 +1343,7 @@ to one of these travelling solutions in that region but will differ
 greatly near the ends.
 
 As an example, consider the circular solutions of
-Sec. \ref{subsec:CircularOrbits} with $h = \alpha = v_s = 0$. There the
+Sec. \ref{subsec:CircularOrbits} with $h = \alpha = v = 0$. There the
 steady state solution is a rotating circle wrapped around on itself of
 {\em arbitrary radius} $R$.  However near the end $s=0$, the solutions
 goes into the circle's center. Similarly it deviates from a circle
@@ -1352,15 +1359,15 @@ results will be the subject of future research.
 
 
 %%%END MATH PAPAER
-This analysis was extended to non-zero $v_s$ and as shown in the supplemental materials~\ref{mathpaper}, does not
+This analysis was extended to non-zero $v$ and as shown in section ~\ref{mathpaper}, does not
 appreciably change the estimate we will give below for microtubule wave parameters in fast streaming oocytes. 
 
 
-When the microtubule is tethered to an impenetrable surface (in this case, the oocyte cortex) and the external cytoplasmic streaming velocity $v_s$
+When the microtubule is tethered to an impenetrable surface (in this case, the oocyte cortex) and the external cytoplasmic streaming velocity $v$
 is parallel to that surface, the form of the solution changes considerably. Numerical results show that the microtubule becomes completely two dimensional,
-lying close to the surface. For low enough $v_s$, travelling wave
+lying close to the surface. For low enough $v$, travelling wave
 solutions are close to prolate cycloids, meaning that the microtubule periodically loops back
-on itself (see supplemental movie 2~\cite{SupplMovies}. This can be understood analytically. For sufficiently large $v_s$ it transitions to other states finally becoming 
+on itself (see supplemental movie 2~\cite{SupplMovies}. This can be understood analytically. For sufficiently large $v$ it transitions to other states finally becoming 
 two dimensional and looking close to a sinusoid (see supplemental movie 3~\cite{SupplMovies}. This is analyzed in detail in
 the supplemental materials~\ref{mathpaper}.
 
@@ -1608,8 +1615,8 @@ Where
  \mathbf{J}(\br) = \frac{1}{8\pi\mu} \left( \frac{I}{|\br|} + \frac{\br\br^T}{|\br^3|}\right)
 \end{equation}
 is a second rank tensor field known as the Oseen Tensor.
-The Oseen tensor has had great success in describing how small or thin objects interact in fluid, as well as the self interaction of polymers. 
-In general the Oseen tensor has higher order corrections in $a/R$, but these begin at $(a/R)^3$ and should not play a significant role in cross polymer interactions.
+The Oseen tensor has had great success in describing how small or thin objects interact in fluid, as well as the self interaction of polymers.
+When used to describe the effect of applying force to a very small sphere of radius $a$, the Oseen tensor has higher order corrections in $a/\mathbf{r}$, where $\mathbf{r}$ is the distance from the sphere, but these begin at $(a/\mathbf{r})^3$ and should not play a significant role in cross polymer interactions.
 Of particular interest is its use in modeling polymers as a long chain of beads, which will lend itself well to numerical simulation.
 %[***Cite some places using the tensor***]
 
@@ -1623,7 +1630,7 @@ This is a bit more complex than simply adding the tensor to the previous equatio
 Before we simply included the kinesin as a force tangent to the backbone of the microtubule, and while that is still going to be our model, we now need to include consideration for the reaction force produced against the impeller, as this will be transmitted back to the microtubule by the long range hydrodynamic forces.
 
 In order to determine the effect that this extra force density will have on the dynamics, we need to be more explicit with the configuration of the impellers.
-Consider the impellers of largest dimension $q$ to be attached to the microtubule by kinesin motors with no side being preferred at a characteristic distance $a$ with, as in the single microtubule consideration, $a < q \ll L$, with $L$ again being the microtubule length. 
+Consider the impellers of largest dimension $q$ to be attached to the microtubule by kinesin motors with no side being preferred at a characteristic distance $a$ with, as in the single microtubule consideration, $a < q \ll L$, with $L$ again being the microtubule length.
 We can consider this to form a uniform density of impellers around the microtubule, and the kinesin motors cause the impeller and the microtubule to move relative to each other with a fixed velocity in the direction of the tangent of the microtubule backbone. 
 \begin{figure}[htp]
 \begin{center}
@@ -1634,11 +1641,17 @@ The impellers are carried along the microtubule by the kinesin motors. Kinesin i
 \label{fig:impellerpic}
 \end{center}
 \end{figure}
+
+The fluid velocity field can now be computed by applying the Oseen tensor and integrating over the force densities present in the system. 
+The forces acting on the microtubule can be integrated by integrating over the backbone of the chain.
+The forces acting on the impellers can be computed by integrating over a cylindrical sheath around the microtubule, giving us
+
 \begin{equation}
 \label{eq:fluidmodel}
- \mathbf{u}(\br) =  \int \left[ \mathbf{J}(\br-\br^\prime(s))[-C \frac{\partial^4 \br^\prime}{\partial s^4} + \frac{\partial}{\partial s}(T(s)\frac{\partial \br^\prime}{\partial s}) - f_k \frac{\partial \br^\prime}{\partial s}] + \int  \mathbf{J}(\br-\br^\prime(s)+ \mathbf{a}(s)) \frac{ \mathbf{f_k}}{2\pi| \mathbf{a}|} \frac{\partial \br^\prime}{\partial s} d \hat{ \mathbf{a}} \right] \;ds
+ \mathbf{u}(\br) =  \int \left[ \mathbf{J}(\br-\br^\prime(s))[-C \frac{\partial^4 \br^\prime}{\partial s^4} + \frac{\partial}{\partial s}(T(s)\frac{\partial \br^\prime}{\partial s}) - \mathbf{f_k}] + \int  \mathbf{J}(\br-\br^\prime(s)+ \mathbf{a}(s)) \frac{ \mathbf{f_k}}{2\pi| \mathbf{a}|} \frac{\partial \br^\prime}{\partial s} d \hat{ \mathbf{a}} \right] \;ds
 \end{equation}
 where $ \mathbf{u}$ is the fluid velocity and $ \mathbf{a}$ is a vector pointing radially outward from the microtubule axis to the impeller location. 
+Recall that $C$, $T(s)$, and $\mathbf{f_k}$ are the microtubule stiffness parameter, microtubule tension, and kinesin walk force respectively.
 Because the microtubule system is in contact with the fluid, the motion of the microtubule will follow that of the fluid along the backbone locations.
 However, due to the long range of the hydrodynamic interaction, the system can now be far more sensitive to the overall configuration which could potentially lead to more complex steady state solutions than the non interacting single microtubule.
 
@@ -1667,12 +1680,12 @@ The kinesin motors act on both the microtubule and the impellers, applying force
 There are three primary generators of force; backbone stiffness, a gradient in backbone tension, and the kinesin motors. The first two force densities can be computed entirely from the microtubule configuration, and these values can then be used as inputs to the Oseen tensor.
 The force due to the kinesin coupling and walking is much harder to work out, however, we will show that it has negligible effect on the long range fluid motion.
 
-%thus begins the math to show its a quadrapole
-\subsection{Kinesin Quadrapole}
+%thus begins the math to show its a quadrupole
+\subsection{Kinesin Quadrupole}
 In order for the kinesin to drag the impeller along, it must pull against the microtubule, and as such the force dragging the impeller through the fluid has a corresponding opposite force on the microtubule by Newton's third law. 
 Both of these forces are then transmitted to the fluid, so it seems reasonable to try to express these forces as some multipole expansion in a small parameter.
 The microtubules have a significant stiffness which leads to a characteristic buckling length as described in Eq. \ref{eq:R}, which sets a size scale for features of the microtubule motion. Compared to this size scale, the impellers are very small, and bound very tightly to the microtubule backbone. 
-In addition to this, we are assuming that the impellers are attached to the microtubule in a cylindrically symmetric fashion. This leads to a small scale force distribution that looks like a classic quadrapole configuration, as shown in figure \ref{fig:quadforce}.
+In addition to this, we are assuming that the impellers are attached to the microtubule in a cylindrically symmetric fashion. This leads to a small scale force distribution that looks like a classic quadrupole configuration, as shown in figure \ref{fig:quadforce}.
 
 \begin{figure}[htp]
 \begin{center}
@@ -1740,17 +1753,17 @@ The first order term in $\epsilon$ requires a bit more work, but is still a stra
 
 As we can see, each term in the integrand is an odd function of $\hat{a}$, and the integral is around the whole circle, so this vanishes. 
 This means that the leading order term from the kinesin coupling force density is going to be suppressed by two factors of the small parameter $\epsilon$.
-In comparison, the tension can be decomposed into equal and opposite pairs between adjacent segments of the microtubule. However, we will find that they are not able to form a quadrapole like the kinesin forces do.
+In comparison, the tension can be decomposed into equal and opposite pairs between adjacent segments of the microtubule. However, we will find that they are not able to form a quadrupole like the kinesin forces do.
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[width=\hsize]{tenbal.png}
 \caption{ 
-While the forces connecting the microtubule backbone must balance, these forces are a) axial and lack the symmetric cancellation of the quadrapole and b) the separation between them is the basis for the characteristic length scale of the microtubule itself, and is thus fixed in relation to the size scale of the interaction.
+While the forces connecting the microtubule backbone must balance, these forces are a) axial and lack the symmetric cancellation of the quadrupole and b) the separation between them is the basis for the characteristic length scale of the microtubule itself, and is thus fixed in relation to the size scale of the interaction.
 }
 \label{fig:tenforce}
 \end{center}
 \end{figure}
-The separation between the two opposing forces is axial, and lacks the mirror symmetry needed to form the quadrapole. This means that it would give rise to a dipolar term.
+The separation between the two opposing forces is axial, and lacks the mirror symmetry needed to form the quadrupole. This means that it would give rise to a dipolar term.
 And even in the case of the dipolar term,  the corresponding small parameter needed to form the multipole cancellation is directly tied to the characteristic length scale of the microtubule curvature; indeed, the curvature is defined by these forces. 
 So not only would it be a chain of dipoles, the density of those dipoles would need to diverge in the limit of small separation between the opposing forces.
 Luckily, if we instead sum the forces on each individual segment, we are left with the simple linear force density of the gradient of the tension. This gradient is expected to be nonzero due to the tethering of one end of the microtubule.
@@ -1775,7 +1788,7 @@ By symmetry, the difference in velocities will be axial, and the kinesin will st
 \label{eq:systemvelocity}
 \mathbf{u}(\br) = \mathbf{v}_I(1-\delta) + \mathbf{v}_M \delta
 \end{equation}
-Where $\mathbf{v}_I$ and $\mathbf{v}_M$ are the impeller and microtubule velocities, respectively. If we use the relation between these two velocities we find an expression for our microtubule velocity
+Where $\mathbf{v}_I$ and $\mathbf{v}_M$ are the impeller and microtubule velocities, respectively. If we use the fact that $\mathbf{v}_I - \mathbf{v}_M = v_k \frac{\partial \br}{\partial s}$, we find an expression for our microtubule velocity
 \begin{equation}
 \label{eq:mtubevelocity}
 \frac{d \br}{dt} = \mathbf{v}_M = \mathbf{u}(\br) - (1-\delta)v_k \frac{\partial \br}{\partial s}
