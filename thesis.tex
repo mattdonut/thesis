@@ -1889,7 +1889,7 @@ The result was essentially as expected, with a solution that asymptotically appr
 \begin{center}
 \includegraphics[width=\hsize]{singtest.png}
 \caption{ 
-Simulation results for a single polymer without fluid interaction(blue) and with fluid interaction(orange), with all other parameters held the same. They are qualitatively the same, though the radius is slightly larger with fluid interactions activated.
+Simulation results for a single polymer without fluid interaction(blue) and with fluid interaction(orange), with all other parameters held the same. Both polymers are anchored at the center of the image, near the center of the circular configuration. The images are super imposed, but the polymers were simulated seperately. They are qualitatively the same, though the radius is slightly larger with fluid interactions activated.
 }
 \label{fig:singtest}
 \end{center}
@@ -1922,7 +1922,7 @@ An image showing the grouping of microtubules during fast streaming can be seen 
 \begin{center}
 \includegraphics[width=\hsize]{fast.png}
 \caption{ 
-An image taken with a two photon microscope of a \emph{Drosophila} ooctye during fast streaming. The Oocyte was treated so that the microtubules would fluoresce and traces of them can be seen. In the regions of fast fluid motion, the microtubules can be seen to align with the direction of the fluid motion. Image care of Bill Saxton et. al.
+An image taken with a two photon microscope of a \emph{Drosophila} ooctye during fast streaming. The Oocyte was treated so that the microtubules would fluoresce and traces of them can be seen. In this view, the cytoplasm flows from the top left corner of the image toward the bottom right corner. In the regions of fast fluid motion, the microtubules can be seen to align with the direction of the fluid motion. Image care of Bill Saxton et. al.
 }
 \label{fig:biostream}
 \end{center}
@@ -1979,7 +1979,7 @@ A typical initialized patch is shown in Fig. \ref{fig:patchstart}
 \begin{center}
 \includegraphics[width=\hsize]{fastsim.png}
 \caption{ 
-A typical starting configuration for a microtubule patch, viewed from directly above the plane.
+A typical starting configuration for a microtubule patch, viewed from directly above the plane of the hard wall. The microtubules are anchored at their minus ends in a square grid pattern above the wall by the same distance as the seperation between the anchor points. The grid of anchor points occupies the majority of the view, though it is slightly shifted to give a better view of the microtubules.
 }
 \label{fig:patchstart}
 \end{center}
@@ -1993,7 +1993,7 @@ An example of this configuration can be seen in Fig. \ref{fig:streamline}
 \begin{center}
 \includegraphics[width=\hsize]{streamline.png}
 \caption{ 
-A typical configuration after correlation, viewed from an angle to better show the planar nature of the solution. The microtubules on the edges of the patch can be seen to execute a helical pattern reminiscent of the single microtubule dynamics.
+A typical configuration after correlation, viewed from an angle to better show the planar nature of the solution. The grid of anchor points is significantly farther from the hard wall boundry in this simulation than was used in the previous image, in order to facilitate faster correlation. The microtubules are anchored at their rightmost endpoint in this image, and the fluid flow is left and away from the viewer. The microtubules on the edges of the patch can be seen to execute a helical pattern reminiscent of the single microtubule dynamics.
 }
 \label{fig:streamline}
 \end{center}
@@ -2096,7 +2096,7 @@ A third region is one in which the system can never support fast correlated stre
 
 We focus here primarily on the transition from disordered microtubules into correlated fast streaming.
 This focus comes from the behavior of the cell during the stages before and after cytoplasmic streaming.
-In the cell, microtubules are observed to be uncorrelated in the slow streaming phase, then during the fast streaming phase they are observed in correlated bundles.
+In the cell, microtubules are observed to be uncorrelated in the slow streaming phase, while during the fast streaming phase they are observed in correlated bundles.
 The cell may undergo some change of internal parameters to cross the phase boundary from uncorrelated slow streaming to correlated fast streaming.
 
 
@@ -2106,7 +2106,7 @@ However, if the cell is indeed crossing this phase boundary in the transition fr
 Some of the parameters can be artificially changed to try to isolate their effects.
 
 Studies have been done to investigate the nature of the anchoring of the microtubules to the cell cortex \cite{WangRiechmann}.
-These studies show that in the stages of slow streaming, the microtubules are mostly anchor tightly against the sell cortex by thick bundles of actin, another polymer used in the cytoskeleton.
+These studies show that in the stages of slow streaming, the microtubules mostly anchor tightly against the sell cortex by thick bundles of actin, another polymer used in the cytoskeleton.
 These bundles are thought to hold the microtubule ends in a thin layer very close to the cell wall, something which could prevent the production of correlated fast streaming.
 
 After the fast streaming phase begins, the actin is no longer observed in tight bundles, but instead in a loose disorganized mesh.
