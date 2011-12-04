@@ -216,13 +216,31 @@ below,
 \end{equation}
 where $l$ is the chain link length, which is independent of the other properties of the chain.
 
-Because we are taking $N$ to be large, we can convert this to a partition function, with the energy conserving delta function expanded in exponential form.
+We can use the Fourier representation of the $\delta$ functions, particularly the the one conserving energy, to write the phase space volume as a contour integral in the complex plane.
+
+\begin{equation}
+Z(E,L,N) \propto  \int_C d\lambda e^{\lambda E} \int e^{ -\lambda(K+\Phi) }\delta^{(3)}(\mathbf{L} - \sum_i \mathbf{r}_i \times \mathbf{p}_i)\delta^{(3)}(\mathbf{r}_{cm})\left(\prod_{i=1}^N d^3r_id^3p_i\right)
+\end{equation}
+The contour of integration can
+be deformed in the complex $\lambda$ plane using the method of steepest descents. The three conditions,
+(a) that a saddle point exists, (b) that an observable not be of order exp(const.N),
+and (c) that there be no singularity in the observable in the neighborhood of the saddle
+point. Conditions (b) and (c) are first obtained through the canonical ensemble and then
+tested to see if they are satisfied. Condition (a), that a saddle point exists, is satisfied
+because we can find a relationship between the energy and the temperature. In the case
+of an athermal system, say of rigid links, this would just be that $E \propto 1/\beta$, where $\beta$ is the
+value of $\lambda$ at the saddle point. Condition (b) is satisfied for the quantity of interest here,
+the average radius of gyration. Condition (c) is also satisfied because we will see that the
+average radius of gyration is smooth function of the temperature for $T$ for finite $T = 1/\beta$.
+Thus we can drop the integration over $\lambda$ and replace $\lambda$ by the inverse temperature, $\beta$, and
+consider the partition function $Z$ instead of the phase space volume integral (which
+is simply related to the entropy.)
+
+With the energy conserving delta function expanded in exponential form.
 \begin{equation}
 Z(\beta,L,N) \propto  \int d^3k \int e^{ i\mathbf{k\cdot L} }e^{ -\beta(K+\Phi) }e^{ -i\mathbf{k}\cdot \sum_i \mathbf{r}_i\times \mathbf{p}_i }\delta^{(3)}(\mathbf{r}_{cm})(\prod_{i=1}^N d^3r_id^3p_i)
 \end{equation}
-
 After integrating over the momenta and taking into account rotational symmetry we arrive at the form~\cite{DeutschExactVac}
-
 \begin{equation}\label{partzeta}
 Z[\beta,L,N] = \frac{c}{L} \int_0^\infty \sin(kL)\zeta(\beta,k)kdk
 \end{equation}
@@ -618,7 +636,7 @@ predicted are in good agreement with the previous experimental
 results.
 
 %Mixing Paper
-\chapter{Single Polymer Dynamics}
+\chapter{Single Polymer Dynamics and Global Fluid Motion}
 
 \section{Microtubules and Molecular Motors}
 Consider impellers to be objects each with maximum linear dimension
@@ -688,7 +706,7 @@ in the same direction.
 
 %%% Begin new explaination
 Let us assume that the microtubules and impellers have managed to set up fast streaming and the fluid now has a long range global velocity $v$, brought about by the hydrodynamics of the motion of impellers running along the microtubules.
-For the purposes of estimating the magnatude of this streaming velocity, assume that the microtubules have achieved a global correlation of direction, and have achieved a configuration in which they are largely straight and aligned with the fluid.
+For the purposes of estimating the magnitude of this streaming velocity, assume that the microtubules have achieved a global correlation of direction, and have achieved a configuration in which they are largely straight and aligned with the fluid.
 
 Because they are tethered at one end, the microtubules are stationary in this configuration, and as such the net force on them must be zero. 
 This means that the hydrodynamic drag on a section of microtubule must be exactly balanced by the other forces acting on that segment.
@@ -895,7 +913,9 @@ of the fluid and will not lead to efficient cytoplasmic streaming by relatively 
 % its length.  The results of this work have been used to understand this
 % phenomenon in recent work by the authors~\cite{DeutschBrunnerSaxton}.
 \label{sect:MathAnalysis}
-We begin with the equation for a microtubule with an applied force tangent to the direction of chain. The position
+While during fast streaming of the oocyte the microtubules are seen to be largely aligned with each other and the fluid motion, they do exhibit chaotic wavelike motion.
+After estimating the fluid flow field one could expect from a field of microtubules carrying kinesin motors, we now need to investigate the behavior of the microtubule itself in the presence of such a field.
+We begin with the equation for a single microtubule with an applied force tangent to the direction of chain. The position
 of the microtubule at arclength $s$ and at time $t$ is denoted $\br(s,t)$. As is usual at small scales, all inertial effects are negligible
 and the system is dominated by the drag coefficient per unit length $\nu$,
 \begin{equation}
@@ -978,9 +998,15 @@ Therefore we require
 \end{equation}
 where the average is taken over the argument $\sigma-v_d\tau$.
 
+Since $u_d$ is transverse, $\alpha$ sets the relation between $\sigma$ and the z-axis ($\hat{k}$), such that $v_z = \alpha v_d$.
+If we choose $v_d = 1$ and in addition $\alpha = h$, we should obtain solutions which propagate along the fluid direction with the same unitless velocity as the fluid motion.
+Looking back to our original units, $v_d = 1$ corresponds to a wave propagating along the backbone of the chain at velocity $f_k/\nu$ (roughly the kinesin walking speed).
+Recall that $h$ is the rescaled unitless velocity of the external flow field, so $\alpha = h$ is the condition that the traveling wave form should propagate along the axis aligned with the globally imposed fluid velocity at the same speed as the fluid.
+This will allow us to look for configurations that are stationary along that axis in the frame of the fluid.
+
 Substituting Eq. \ref{eq:travelling} into Eq. \ref{eq:dimensionless} gives a left hand side
 of $-v_d \partial \bu_d/\partial \sigma$ and a term of the form $-\partial \bu_d/\partial \sigma$ on
-the right hand side. If we choose $v_d = 1$ and in addition $\alpha = h$, the equation simplifies to
+the right hand side, simplifying the equation to
 
 \begin{equation}
 \label{eq:reduced_steadystate}
@@ -1018,7 +1044,7 @@ steady state solutions for the microtubule.
 The spherical pendulum Eq. \ref{eq:sphericalmotion} has been analyzed~\cite{CushmanBates} in detail. In general
 the orbits will not be closed, but we will relegate
 our discussion below to two cases where this is the case, circular motion in Eq. \ref{eq:sphericalmotion}, corresponding to helical
-conformations of a microtubule, and motion in the $x-z$ plane, corresponding to solutions similar in shape to cycloids.
+conformations of a microtubule, and motion in the $x-z$ plane(the plane of the hard wall, with the z axis being the direction of the global fluid field), corresponding to solutions similar in shape to cycloids.
 
 \subsection{Scale Invariant Family of Solutions}
 \label{subsec:ScaleInvariance}
@@ -1037,7 +1063,7 @@ shape but arbitrary size.
 \label{subsec:CircularOrbits}
 
 Circular orbits are solutions to Eq. \ref{eq:sphericalmotion}. Eq. \ref{eq:alpha_constraint} requires that the vertical
-height of the orbit be at $w_z = \alpha$. Therefore the radius perpendicular to $\hat k$ (the $w_x, w_y$ plane) is 
+height of the orbit be at $w_z = \alpha$. Therefore the radius perpendicular to the global fluid velocity $\hat k$ (the $w_x, w_y$ plane) is 
 \begin{equation}
 \label{eq:w_perp_alpha}
 w_\perp \equiv \sqrt{1-\alpha^2}. 
@@ -1050,7 +1076,7 @@ of gravity $g$ and the centripetal acceleration $v^2/w_\perp$ giving
 \frac{g}{v^2} \equiv \frac{\alpha}{1-\alpha^2} 
 \end{equation}
 Where $v$ is not the real velocity of the microtubule but $|d \bw_\perp/d\xi|$. This is the rate at which the
-tangent vector rotates in the $x-y$ plane. 
+tangent vector rotates in the $x-y$ plane (the plane perpendicular to the fluid motion). 
 Because $|d\bu_d/d\xi|  = |\bw_d| = r_c$ is a constant, $\bw_d$ is a circle. 
 Therefore according to Eq. \ref{eq:travelling}, this will give a helical conformation of the microtubule. 
 
@@ -1154,7 +1180,7 @@ $E/g$ corresponding to one value of positive $\alpha$.
 \begin{center}
 \includegraphics[width=\hsize]{alpha_vs_E.eps}
 \caption{ 
-A plot of the value of $\alpha$ as a function of $1/G$.
+A plot of the value of $\alpha$, the wave propagation velocity, as a function of $1/G$, which is the energy of the analogous spherical pendulum.
 }
 \label{fig:AlphaVsE}
 \end{center}
@@ -1190,7 +1216,7 @@ in other problems in pattern selection such as dendritic growth~\cite{Kessler,Ba
 \begin{center}
 \includegraphics[width=\hsize]{rad_curv_vs_h.eps}
 \caption{ 
-The rescaled radius of curvature $R_c/\rho_0$ versus the rescaled velocity field $h=\alpha$.
+The rescaled radius of curvature for the helical configuration, $R_c/\rho_0$, versus the rescaled fluid velocity field $h=\alpha$.
 The green triangles are for $64$ link chains, the red $+$ symbols are for chains of $128$ links.
 }
 \label{fig:RadCurvVSh}
@@ -1224,12 +1250,13 @@ show good agreement for both chain sizes at all values of $h$ studied.
 \caption{ 
 (a)The rescaled period $P' = P\omega$ versus the rescaled velocity field $h=\alpha$.
 The blue circles are for $64$ link chains, the red $+$ symbols are for chains of $128$ links.
+Here the period is measured directly by timing repeated motion. The line is a guide for the eye.
 (b)
 The rescaled period $P' = P\omega$ versus the rescaled velocity field $h=\alpha$
 calculated by using Eq. \ref{eq:PvsRc} and data on the radius of the helix versus $h$ shown
 in Fig. \ref{fig:RadCurvVSh}. The result is shown by the green triangles. 
-The blue circles are the same data shown in Fig. \ref{fig:PeriodVSh} by directly
-measuring the period. 
+The blue circles are the same data shown in Fig. \ref{fig:PeriodVSh}(a) by directly
+measuring the period, which shows good agreement with the numbers produced by using Eq. \ref{eq:PvsRc}. Again the line is a guide for the eye.
 }
 \label{fig:PeriodVSh}
 \end{center}
@@ -1369,7 +1396,7 @@ lying close to the surface. For low enough $v$, travelling wave
 solutions are close to prolate cycloids, meaning that the microtubule periodically loops back
 on itself (see supplemental movie 2~\cite{SupplMovies}. This can be understood analytically. For sufficiently large $v$ it transitions to other states finally becoming 
 two dimensional and looking close to a sinusoid (see supplemental movie 3~\cite{SupplMovies}. This is analyzed in detail in
-the supplemental materials~\ref{mathpaper}.
+section ~\ref{mathpaper}.
 
 We have not included hydrodynamic and steric interactions between
 different microtubules except in the approximate way of giving rise to
@@ -1889,7 +1916,7 @@ The result was essentially as expected, with a solution that asymptotically appr
 \begin{center}
 \includegraphics[width=\hsize]{singtest.png}
 \caption{ 
-Simulation results for a single polymer without fluid interaction(blue) and with fluid interaction(orange), with all other parameters held the same. Both polymers are anchored at the center of the image, near the center of the circular configuration. The images are super imposed, but the polymers were simulated seperately. They are qualitatively the same, though the radius is slightly larger with fluid interactions activated.
+Simulation results for a single polymer without fluid interaction(blue) and with fluid interaction(orange), with all other parameters held the same. Both polymers are anchored at the center of the image, near the center of the circular configuration. The images are super imposed, but the polymers were simulated separately. They are qualitatively the same, though the radius is slightly larger with fluid interactions activated.
 }
 \label{fig:singtest}
 \end{center}
@@ -1907,16 +1934,20 @@ This grouping of microtubules exhibits additional behaviors not found in the sin
 
 \subsection{Important Length Scales}
 The introduction of more than one microtubule, along with the addition of the hard wall, introduce new length scales to the system.
-The microtubules are placed with their anchor points in a plane. 
+The microtubules are placed with their anchor points in a plane parallel to the hard wall, and initialized with a random configuartion subject to the constraint that they not pass through the wall. 
 Within this plane, the anchors have a characteristic separation, $R_s$, and this separation defines one of the new length scales in the system.
-The plane of anchors is parallel to the hard wall, but not directly on it. 
-The separation between the hard wall and the plane of anchors, $h$ is a second new length scale.
+
+In the cell, the hard wall is actually believed to be a complex mesh work of actin filaments and other proteins, to which the microtubules are attached.
+This mesh is potentially porous to the fluid and there is additional evidence that the microtubule anchors extend out into the cytoplasm during fast streaming.
+For this reason we study microtubule patches that are at some small fixed distance away from the hard wall boundary.
+The separation between the plane of the hard wall and the plane of anchors, $h$ is a second new length scale.
+
 These two new lengths are usually set to be less than the characteristic buckling length of the microtubule, $R_b$, in order to more closely match what is seen in the biological data.
 We will see that these two length scales play an important role in determining the correlation behavior of the system.
 
 \subsection{Correlation Between Multiple Microtubules}
 A key feature found during fast streaming in the biological system is the formation of correlated groups to enable larger scale coordinated forces on the fluid. 
-These correlations arise as the motion of fluid near a microtubule cause that microtubule to align with the prexisting flow.
+These correlations arise as the motion of fluid near a microtubule cause that microtubule to align with the preexisting flow.
 An image showing the grouping of microtubules during fast streaming can be seen in Fig. \ref{fig:biostream}.
 \begin{figure}[htp]
 \begin{center}
@@ -1930,7 +1961,7 @@ An image taken with a two photon microscope of a \emph{Drosophila} ooctye during
 
 We have previously shown that the motions of the microtubules is potentially consistent with the simple model of kinesin driven impellers in a pre-existing flow field. 
 We still need to determine if a large group of microtubules are capable of spontaneously generating such a flow field.
-However, since the microtubules align with a local flow field and then, once aligned, they contribute to that flow, it is plausable that a type of field amplification occurs.
+However, since the microtubules align with a local flow field and then, once aligned, they contribute to that flow, it is plausible that a type of field amplification occurs.
 Essentially, the long range interaction through the fluid could bring about a transition to a phase of long range order.
 
 When the simulation is run with a small number of microtubules placed with their anchors near each other (less than the buckling length), short range correlation almost always emerges.
@@ -1979,7 +2010,7 @@ A typical initialized patch is shown in Fig. \ref{fig:patchstart}
 \begin{center}
 \includegraphics[width=\hsize]{fastsim.png}
 \caption{ 
-A typical starting configuration for a microtubule patch, viewed from directly above the plane of the hard wall. The microtubules are anchored at their minus ends in a square grid pattern above the wall by the same distance as the seperation between the anchor points. The grid of anchor points occupies the majority of the view, though it is slightly shifted to give a better view of the microtubules.
+A typical starting configuration for a microtubule patch, viewed from directly above the plane of the hard wall. The microtubules are anchored at their minus ends in a square grid pattern above the wall by the same distance as the separation between the anchor points. The grid of anchor points occupies the majority of the view, though it is slightly shifted to give a better view of the microtubules.
 }
 \label{fig:patchstart}
 \end{center}
@@ -1993,7 +2024,7 @@ An example of this configuration can be seen in Fig. \ref{fig:streamline}
 \begin{center}
 \includegraphics[width=\hsize]{streamline.png}
 \caption{ 
-A typical configuration after correlation, viewed from an angle to better show the planar nature of the solution. The grid of anchor points is significantly farther from the hard wall boundry in this simulation than was used in the previous image, in order to facilitate faster correlation. The microtubules are anchored at their rightmost endpoint in this image, and the fluid flow is left and away from the viewer. The microtubules on the edges of the patch can be seen to execute a helical pattern reminiscent of the single microtubule dynamics.
+A typical configuration after correlation, viewed from an angle to better show the planar nature of the solution. The grid of anchor points is significantly farther from the hard wall boundary in this simulation than was used in the previous image, in order to facilitate faster correlation. The microtubules are anchored at their rightmost endpoint in this image, and the fluid flow is left and away from the viewer. The microtubules on the edges of the patch can be seen to execute a helical pattern reminiscent of the single microtubule dynamics.
 }
 \label{fig:streamline}
 \end{center}
@@ -2031,7 +2062,7 @@ These masses of loose microtubule ends tend to flow back along their length, and
 % Not all microtubule patches will reach the linear streaming phase from a random initial condition.
 % There are ranges of parameters for which the system will only exhibit short range correlation, often in the same manner as the systems with only a few microtubules.
 % In these cases the forces from the fluid interaction are not strong enough to overcome the local kinesin reaction force, and the microtubules buckle and rotate around their anchor points.
-Whether a system will reach the correlated directed fast streaming phase is determined by a number of paremeters that effect the relative strength of the forces in the system.
+Whether a system will reach the correlated directed fast streaming phase is determined by a number of parameters that effect the relative strength of the forces in the system.
 These parameters can be the internal properties of the microtubule/impeller system, or properties of the arrangement of the microtubules in the patch.
 
 \subsection{Effects of the wall}
@@ -2106,7 +2137,7 @@ However, if the cell is indeed crossing this phase boundary in the transition fr
 Some of the parameters can be artificially changed to try to isolate their effects.
 
 Studies have been done to investigate the nature of the anchoring of the microtubules to the cell cortex \cite{WangRiechmann}.
-These studies show that in the stages of slow streaming, the microtubules mostly anchor tightly against the sell cortex by thick bundles of actin, another polymer used in the cytoskeleton.
+These studies show that in the stages of slow streaming, the microtubules mostly anchor tightly against the cell cortex by thick bundles of actin, another polymer used in the cytoskeleton.
 These bundles are thought to hold the microtubule ends in a thin layer very close to the cell wall, something which could prevent the production of correlated fast streaming.
 
 After the fast streaming phase begins, the actin is no longer observed in tight bundles, but instead in a loose disorganized mesh.
